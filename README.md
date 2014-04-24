@@ -1,6 +1,18 @@
 RubyNEAT Examples
 =================
 
+Please see
+
+https://github.com/flajann2/rubyneat
+
+For the actual engine, and:
+
+http://rubyneat.com
+
+for the latest docs.
+
+
+
 xor
 ---
 Basic neural net test for functionality.
