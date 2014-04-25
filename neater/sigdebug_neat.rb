@@ -1,5 +1,3 @@
-#!/usr/bin/env neat
-require 'rubyneat/dsl'
 require 'xor'
 
 include NEAT::DSL
