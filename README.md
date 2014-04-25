@@ -15,7 +15,8 @@ for the latest docs.
 
 xor
 ---
-Basic neural net test for functionality.
+Basic neural net test for functionality. This is the one exampled used in the
+documentation at: http://rubyneat.com/wiki/Documentation
 
 xorall
 ------
