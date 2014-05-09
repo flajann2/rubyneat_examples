@@ -3,7 +3,19 @@ GEM
   specs:
     aquarium (0.5.1)
     awesome_print (1.2.0)
+    barista (1.3.0)
+      coffee-script (~> 2.2)
+    chunky_png (1.3.1)
+    coffee-script (2.2.0)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.7.0)
     columnize (0.8.9)
+    compass (0.12.6)
+      chunky_png (~> 1.2)
+      fssm (>= 0.2.7)
+      sass (~> 3.2.19)
+    daemons (1.1.9)
     debase (0.0.9)
       debugger-ruby_core_source
     debugger (1.6.6)
@@ -15,8 +27,22 @@ GEM
     deep_dive (0.1.0)
       debase
     distribution (0.7.0)
+    eventmachine (1.0.3)
+    execjs (2.0.2)
+    fssm (0.2.10)
     gosu (0.7.50)
-    rubyneat (0.3.5.alpha.6)
+    haml (4.0.5)
+      tilt
+    jsmin (1.0.1)
+    json (1.8.1)
+    libv8 (3.16.14.3)
+    rack (1.5.2)
+    rack-protection (1.5.3)
+      rack
+    rack-test (0.6.2)
+      rack (>= 1.0)
+    ref (1.0.5)
+    rubyneat (0.3.5.alpha.7)
       aquarium (~> 0)
       awesome_print (~> 1)
       debase (~> 0)
@@ -26,9 +52,37 @@ GEM
       rubyvis (~> 0)
       statistics2 (~> 0)
       thor (~> 0)
+    rubyneat_dashboard (0.0.0.alpha.0)
+      barista
+      compass
+      haml
+      json
+      sass
+      sinatra (~> 1.4.5)
+      sinatra-assetpack
+      therubyracer
+      thin (~> 1.6.2)
     rubyvis (0.6.0)
+    sass (3.2.19)
+    sinatra (1.4.5)
+      rack (~> 1.4)
+      rack-protection (~> 1.4)
+      tilt (~> 1.3, >= 1.3.4)
+    sinatra-assetpack (0.3.2)
+      jsmin
+      rack-test
+      sinatra
+      tilt (>= 1.3.0, < 2.0)
     statistics2 (0.54)
+    therubyracer (0.12.1)
+      libv8 (~> 3.16.14.0)
+      ref
+    thin (1.6.2)
+      daemons (>= 1.0.9)
+      eventmachine (>= 1.0.0)
+      rack (>= 1.0.0)
     thor (0.19.1)
+    tilt (1.4.1)
 
 PLATFORMS
   ruby
@@ -37,4 +91,5 @@ DEPENDENCIES
   debugger
   gosu
   rubyneat
+  rubyneat_dashboard
   rubyvis

@@ -14,5 +14,11 @@ gem 'gosu', require: false
 gem 'rubyvis', require: false
 
 group :development do
+  # If this fails, comment this out as the
+  # dashboard is still under development.
+  gem 'rubyneat_dashboard'
+
+  # If you are using an IDE, you may wish to remove
+  # or replace with the IDE's debugger gem
   gem 'debugger'
 end
