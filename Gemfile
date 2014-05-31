@@ -1,7 +1,7 @@
 # Gemfile for your RubyNEAT RubyneatExamples project.
 source 'https://rubygems.org'
 
-ruby '2.1.1'
+#ruby '2.1.2'
 gem 'rubyneat'
 
 # For demo purposes, we include the gosu library, but if you don't
@@ -13,12 +13,20 @@ gem 'gosu', require: false
 # this if you don't need it.
 gem 'rubyvis', require: false
 
+
 group :development do
   # If this fails, comment this out as the
   # dashboard is still under development.
-  gem 'rubyneat_dashboard'
+  #gem 'rubyneat_dashboard'
 
   # If you are using an IDE, you may wish to remove
   # or replace with the IDE's debugger gem
-  gem 'debugger'
+  # gem 'debugger'
 end
+
+#FIXME this should not be necessary and will need to be addressed in the
+#FIXME gem.
+gem 'sinatra-assetpack', :require => 'sinatra/assetpack', git: 'https://github.com/rstacruz/sinatra-assetpack.git'
+
+#FIXME this should not be necessary here.
+gem 'semver'
