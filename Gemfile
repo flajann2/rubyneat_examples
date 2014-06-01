@@ -24,9 +24,5 @@ group :development do
   # gem 'debugger'
 end
 
-#FIXME this should not be necessary and will need to be addressed in the
-#FIXME gem.
-gem 'sinatra-assetpack', :require => 'sinatra/assetpack', git: 'https://github.com/rstacruz/sinatra-assetpack.git'
-
 #FIXME this should not be necessary here.
 gem 'semver'
