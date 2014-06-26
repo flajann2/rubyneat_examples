@@ -26,3 +26,7 @@ end
 
 #FIXME this should not be necessary here.
 gem 'semver'
+
+# So we can have a dashboard to monitor and control the
+# progress of RubyNEAT
+gem 'rubyneat_dashboard'
