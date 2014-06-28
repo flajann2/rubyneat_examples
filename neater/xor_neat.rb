@@ -104,13 +104,14 @@ evolve do
       fit = (bout == bactual) ? 0.00 : 1.00
       #simple_fitness_error(vout, vactual.map{|f| f * 0.50 })
       bfit = (bout == bactual) ? 'T' : 'F'
-      $log.debug "(%s) Fitness bin=%s, bout=%s, bactual=%s, vout=%s, fit=%6.3f, seq=%s" % [bfit,
-                                                                                           bin,
-                                                                                           bout,
-                                                                                           bactual,
-                                                                                           vout,
-                                                                                           fit,
-                                                                                           seq]
+      $log.debug "(%s) Fitness bin=%s, bout=%s, bactual=%s, vout=%s, fit=%6.3f, seq=%s" %
+                     [bfit,
+                      bin,
+                      bout,
+                      bactual,
+                      vout,
+                      fit,
+                      seq]
       fit
     else
       $log.debug "Error on #{vin} [#{seq}]"
@@ -118,10 +119,15 @@ evolve do
     end
   }
 
-  stop_on_fitness {|fitness, c|
+  stop_on_fitness { |fitness, c|
     puts "*** Generation Run #{c.generation_num}, best is #{fitness[:best]} ***\n\n"
     fitness[:best] >= ALMOST_FIT
   }
+end
+
+# This requires the rubyneat_dashboard plugin.
+dashboard do
+  puts '**** Dashboard Running *****'
 end
 
 report do |rept|
