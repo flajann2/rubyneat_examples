@@ -2,7 +2,8 @@
 source 'https://rubygems.org'
 
 #ruby '2.1.2'
-gem 'rubyneat'
+# TODO: Uncomment the following
+#gem 'rubyneat'
 
 # For demo purposes, we include the gosu library, but if you don't
 # need this, then comment it out  or remove it.
@@ -29,4 +30,43 @@ gem 'semver'
 
 # So we can have a dashboard to monitor and control the
 # progress of RubyNEAT
-gem 'rubyneat_dashboard'
+# TODO: Uncomment the following
+#gem 'rubyneat_dashboard'
+
+################################################################
+################################################################
+################################################################
+# TODO: Debugging only -- remove all below
+
+gem 'distribution', '~> 0'
+gem 'statistics2', '~> 0'
+gem 'debase', '~> 0'
+gem 'aquarium', '~> 0'
+gem 'thor', '~> 0'
+gem 'awesome_print', '~> 1'
+gem 'deep_dive', '~> 0'
+gem 'bond', '~> 0.5'
+gem 'rb-readline', '~> 0.5'
+group :development do
+  gem 'rspec', '~> 2'
+  gem 'yard', '~> 0'
+  gem 'guard', '~> 2'
+  gem 'guard-rspec', '~> 4'
+  gem "simplecov", '~> 0'
+end
+
+gem 'sinatra', '~> 1'
+gem 'thin', '~> 1'
+gem 'haml', '~> 4'
+gem 'sass', '~> 3'
+gem 'json', '~> 1'
+gem 'json-stream', '~> 0'
+gem 'compass'
+gem 'barista'
+gem 'sinatra-assetpack'
+gem 'sinatra-websocket'
+
+group :development do
+  gem "rdoc", "~> 3.12"
+  gem "bundler", "~> 1.0"
+end

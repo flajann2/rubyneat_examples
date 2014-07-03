@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+# TODO: This is hacked up so we can debug everything in Rubymine
+# TODO: and to avoid loading the modules as gems.
+# TODO: on my local machine. It is incredibly ugly, and will be
+# TODO: removed later.
+
+%w{
+/home/alveric/development/ruby_proj/rubyneat/lib
+/home/alveric/development/ruby_proj/rubyneat_dashboard/lib
+}.each do |dir|
+  $:.unshift dir
+end
+
+NEAT_PATH = File.expand_path '..', File.dirname(__FILE__)
+require_relative '../config/boot'
+
+require 'rubyneat_dashboard'
+
+RubyNEAT::Cli::Main.start
