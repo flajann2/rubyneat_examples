@@ -125,7 +125,7 @@ evolve do
   }
 end
 
-report do |rept|
+report do |pop, rept|
   $log.info "REPORT #{rept.to_yaml}"
 end
 

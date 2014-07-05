@@ -130,7 +130,7 @@ dashboard do
   puts '**** Dashboard Running *****'
 end
 
-report do |rept|
+report do |pop, rept|
   $log.info "REPORT #{rept.to_yaml}"
 end
 
