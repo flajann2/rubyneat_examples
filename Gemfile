@@ -65,6 +65,7 @@ gem 'compass'
 gem 'barista'
 gem 'sinatra-assetpack'
 gem 'sinatra-websocket'
+gem 'sinatra-contrib'
 
 group :development do
   gem "rdoc", "~> 3.12"
