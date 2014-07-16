@@ -8,7 +8,7 @@ include NEAT::DSL
 XOR_INPUTS = 2
 XOR_STATES = 2 ** XOR_INPUTS
 MAX_FIT    = XOR_STATES
-ALMOST_FIT = XOR_STATES - 0.5
+ALMOST_FIT = XOR_STATES - 1.5 # FIXME: this is supposed to be 0.5
 
 # This defines the controller
 define "XOR System" do
