@@ -8,15 +8,17 @@ include NEAT::DSL
 XOR_INPUTS = 2
 XOR_STATES = 2 ** XOR_INPUTS
 MAX_FIT    = XOR_STATES
-ALMOST_FIT = XOR_STATES - 1.5 # FIXME: this is supposed to be 0.5
+ALMOST_FIT = XOR_STATES - 0.5
 
 # This defines the controller
 define "XOR System" do
   # Define the IO neurons
   inputs {
-    cinv = Hash[(1..XOR_INPUTS).map{|i| [("i%s" % i).to_sym, InputNeuron]}]
-    cinv[:bias] = BiasNeuron
-    cinv
+    Hash[
+        (1..XOR_INPUTS).map{ |i|
+          [("i%d" % i).to_sym, InputNeuron]
+        } + [[:bias, BiasNeuron]]
+    ]
   }
   outputs out: TanhNeuron
 
@@ -121,13 +123,13 @@ evolve do
 
   stop_on_fitness { |fitness, c|
     puts "*** Generation Run #{c.generation_num}, best is #{fitness[:best]} ***\n\n"
-    fitness[:best] >= ALMOST_FIT
+    fitness[:overall] >= ALMOST_FIT # FIXME: This should be the :best here
   }
 end
 
 # This requires the rubyneat_dashboard plugin.
 dashboard do
-  puts '**** Dashboard Running *****'
+  $log.info '**** Dashboard Running *****'
 end
 
 report do |pop, rept|
