@@ -1,0 +1,1783 @@
+WARN: Unresolved specs during Gem::Specification.reset:
+      debugger-ruby_core_source (>= 0)
+WARN: Clearing out unresolved specs.
+Please report a bug if this causes problems.
+{:fitness=>{:overall=>2.0, :best=>3.0, :worst=>1.0},
+ :fitness_species=>{:best=>nil, :worst=>nil},
+ :best_critter=>
+  "## Phenotype Code gimel_resh_kej_180 for critter yi_yi_zeta_38\n  def stimulate(i1, i2)\n    @i1 = i1\n    @i2 = i2\n    @bias = bias\n    loop {\n      @out = out(-2.0678738506613294 * @i1, 2.2799575855851373 * @i2, -0.2342222942394282 * @bias)\n     @_outvec = [@out]\n     break unless block_given?\n     break unless yield @_outvec\n  }\n  @_outvec\n  end\n\n  def initialize_neurons\n    @out = 0\n  end\n",
+ :worst_critter=>
+  "## Phenotype Code alef_shin_mim_176 for critter samekh_wo_yu_28\n  def stimulate(i1, i2)\n    @i1 = i1\n    @i2 = i2\n    @bias = bias\n    loop {\n      @out = out(-0.7480642870727328 * @i1, -0.5144941299590908 * @i2, -1.2083986123717012 * @bias)\n     @_outvec = [@out]\n     break unless block_given?\n     break unless yield @_outvec\n  }\n  @_outvec\n  end\n\n  def initialize_neurons\n    @out = 0\n  end\n"}
+/home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rubyneat_dashboard-0.4.0alpha.0/lib/rubyneat_dashboard/rubyneat_dsl.rb:40: [BUG] Segmentation fault at 0x00000000000008
+ruby 2.1.2p95 (2014-05-08 revision 45877) [x86_64-linux]
+
+-- Control frame information -----------------------------------------------
+c:0021 p:---- s:0086 e:000085 CFUNC  :push
+c:0020 p:0027 s:0082 e:000081 BLOCK  /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rubyneat_dashboard-0.4.0alpha.0/lib/rubyneat_dashboard/rubyneat_ds [FINISH]
+c:0019 p:---- s:0078 e:000077 CFUNC  :call
+c:0018 p:0010 s:0074 e:000073 BLOCK  /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rubyneat-0.4.0alpha.0/lib/rubyneat/rubyneat.rb:230 [FINISH]
+c:0017 p:---- s:0071 e:000070 CFUNC  :map
+c:0016 p:0011 s:0068 e:000067 LAMBDA /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rubyneat-0.4.0alpha.0/lib/rubyneat/rubyneat.rb:230 [FINISH]
+c:0015 p:0167 s:0065 e:000064 BLOCK  /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rubyneat-0.4.0alpha.0/lib/rubyneat/rubyneat.rb:559 [FINISH]
+c:0014 p:---- s:0061 e:000060 CFUNC  :each
+c:0013 p:0022 s:0058 e:000057 METHOD /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rubyneat-0.4.0alpha.0/lib/rubyneat/rubyneat.rb:533
+c:0012 p:0031 s:0055 e:000054 METHOD /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rubyneat-0.4.0alpha.0/lib/rubyneat/dsl.rb:111
+c:0011 p:0109 s:0051 E:000708 TOP    /home/alveric/development/ruby_proj/rubyneat_examples/neater/xor_neat.rb:140 [FINISH]
+c:0010 p:---- s:0049 e:000048 CFUNC  :load
+c:0009 p:0025 s:0045 e:000044 BLOCK  /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rubyneat-0.4.0alpha.0/lib/rubyneat/cli/main.rb:58 [FINISH]
+c:0008 p:---- s:0042 e:000041 CFUNC  :each
+c:0007 p:0071 s:0039 e:000038 METHOD /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rubyneat-0.4.0alpha.0/lib/rubyneat/cli/main.rb:56
+c:0006 p:0066 s:0035 e:000034 METHOD /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/thor-0.19.1/lib/thor/command.rb:27
+c:0005 p:0051 s:0028 e:000027 METHOD /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/thor-0.19.1/lib/thor/invocation.rb:126
+c:0004 p:0270 s:0022 e:000021 METHOD /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/thor-0.19.1/lib/thor.rb:359
+c:0003 p:0062 s:0010 e:000009 METHOD /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/thor-0.19.1/lib/thor/base.rb:440
+c:0002 p:0051 s:0004 E:001578 EVAL   /home/alveric/development/ruby_proj/rubyneat_examples/bin/neat:5 [FINISH]
+c:0001 p:0000 s:0002 E:002578 TOP    [FINISH]
+
+-- Ruby level backtrace information ----------------------------------------
+/home/alveric/development/ruby_proj/rubyneat_examples/bin/neat:5:in `<main>'
+/home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/thor-0.19.1/lib/thor/base.rb:440:in `start'
+/home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/thor-0.19.1/lib/thor.rb:359:in `dispatch'
+/home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/thor-0.19.1/lib/thor/invocation.rb:126:in `invoke_command'
+/home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/thor-0.19.1/lib/thor/command.rb:27:in `run'
+/home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rubyneat-0.4.0alpha.0/lib/rubyneat/cli/main.rb:56:in `neater'
+/home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rubyneat-0.4.0alpha.0/lib/rubyneat/cli/main.rb:56:in `each'
+/home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rubyneat-0.4.0alpha.0/lib/rubyneat/cli/main.rb:58:in `block in neater'
+/home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rubyneat-0.4.0alpha.0/lib/rubyneat/cli/main.rb:58:in `load'
+/home/alveric/development/ruby_proj/rubyneat_examples/neater/xor_neat.rb:140:in `<top (required)>'
+/home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rubyneat-0.4.0alpha.0/lib/rubyneat/dsl.rb:111:in `run_engine'
+/home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rubyneat-0.4.0alpha.0/lib/rubyneat/rubyneat.rb:533:in `run'
+/home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rubyneat-0.4.0alpha.0/lib/rubyneat/rubyneat.rb:533:in `each'
+/home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rubyneat-0.4.0alpha.0/lib/rubyneat/rubyneat.rb:559:in `block in run'
+/home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rubyneat-0.4.0alpha.0/lib/rubyneat/rubyneat.rb:230:in `block in hook_setup'
+/home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rubyneat-0.4.0alpha.0/lib/rubyneat/rubyneat.rb:230:in `map'
+/home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rubyneat-0.4.0alpha.0/lib/rubyneat/rubyneat.rb:230:in `block (2 levels) in hook_setup'
+/home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rubyneat-0.4.0alpha.0/lib/rubyneat/rubyneat.rb:230:in `call'
+/home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rubyneat_dashboard-0.4.0alpha.0/lib/rubyneat_dashboard/rubyneat_dsl.rb:40:in `block in dashboard'
+/home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rubyneat_dashboard-0.4.0alpha.0/lib/rubyneat_dashboard/rubyneat_dsl.rb:40:in `push'
+
+-- C level backtrace information -------------------------------------------
+ruby(+0x186a5c) [0x7f603e96da5c]
+ruby(+0x1f8463) [0x7f603e9df463]
+ruby(rb_bug+0xb3) [0x7f603e9e0643]
+ruby(+0xfc74e) [0x7f603e8e374e]
+/lib/x86_64-linux-gnu/libpthread.so.0(+0x10340) [0x7f603e3b4340] ../nptl/sysdeps/pthread/funlockfile.c:29
+ruby(rb_ary_push+0x7) [0x7f603e990797]
+/home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/thread.so(+0x1752) [0x7f603ce54752] thread.c:212
+ruby(+0x170404) [0x7f603e957404]
+ruby(+0x17db3e) [0x7f603e964b3e]
+ruby(+0x174aa2) [0x7f603e95baa2]
+ruby(+0x17875c) [0x7f603e95f75c]
+ruby(+0x17c08f) [0x7f603e96308f]
+ruby(+0x17c0ca) [0x7f603e9630ca]
+ruby(+0x29c50) [0x7f603e810c50]
+ruby(+0x170404) [0x7f603e957404]
+ruby(+0x17db3e) [0x7f603e964b3e]
+ruby(+0x175726) [0x7f603e95c726]
+ruby(+0x17875c) [0x7f603e95f75c]
+ruby(rb_yield+0x26f) [0x7f603e96a61f]
+ruby(+0x1a9e2d) [0x7f603e990e2d]
+ruby(+0x170404) [0x7f603e957404]
+ruby(+0x17db3e) [0x7f603e964b3e]
+ruby(+0x175726) [0x7f603e95c726]
+ruby(+0x17875c) [0x7f603e95f75c]
+ruby(+0x17c08f) [0x7f603e96308f]
+ruby(+0x17c235) [0x7f603e963235]
+ruby(+0x17dbde) [0x7f603e964bde]
+ruby(+0x174de5) [0x7f603e95bde5]
+ruby(+0x17875c) [0x7f603e95f75c]
+ruby(rb_yield+0x26f) [0x7f603e96a61f]
+ruby(+0xbacde) [0x7f603e8a1cde]
+ruby(+0x170404) [0x7f603e957404]
+ruby(+0x17db3e) [0x7f603e964b3e]
+ruby(+0x175726) [0x7f603e95c726]
+ruby(+0x17875c) [0x7f603e95f75c]
+ruby(rb_iseq_eval+0x1a9) [0x7f603e96b589]
+ruby(+0x1fee70) [0x7f603e9e5e70]
+ruby(+0x1ff4c2) [0x7f603e9e64c2]
+ruby(+0x170404) [0x7f603e957404]
+ruby(+0x17db3e) [0x7f603e964b3e]
+ruby(+0x174de5) [0x7f603e95bde5]
+ruby(+0x17875c) [0x7f603e95f75c]
+ruby(rb_yield+0x26f) [0x7f603e96a61f]
+ruby(rb_ary_each+0x52) [0x7f603e989732]
+ruby(+0x170404) [0x7f603e957404]
+ruby(+0x17db3e) [0x7f603e964b3e]
+ruby(+0x175726) [0x7f603e95c726]
+ruby(+0x17875c) [0x7f603e95f75c]
+ruby(rb_iseq_eval_main+0x1f6) [0x7f603e96b7f6]
+ruby(+0x22aaa) [0x7f603e809aaa]
+ruby(ruby_run_node+0x2d) [0x7f603e80cfbd]
+ruby(+0x226bb) [0x7f603e8096bb]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f603d8bcec5] libc-start.c:287
+ruby(+0x226e9) [0x7f603e8096e9]
+
+-- Other runtime information -----------------------------------------------
+
+* Loaded script: /home/alveric/development/ruby_proj/rubyneat_examples/bin/neat
+
+* Loaded features:
+
+    0 enumerator.so
+    1 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/enc/encdb.so
+    2 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/enc/trans/transdb.so
+    3 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/rbconfig.rb
+    4 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/rubygems/compatibility.rb
+    5 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/rubygems/defaults.rb
+    6 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/rubygems/deprecate.rb
+    7 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/rubygems/errors.rb
+    8 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/rubygems/version.rb
+    9 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/rubygems/requirement.rb
+   10 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/rubygems/platform.rb
+   11 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/rubygems/basic_specification.rb
+   12 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/rubygems/stub_specification.rb
+   13 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/rubygems/util/stringio.rb
+   14 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/rubygems/specification.rb
+   15 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/rubygems/exceptions.rb
+   16 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/rubygems/core_ext/kernel_gem.rb
+   17 thread.rb
+   18 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/thread.so
+   19 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/monitor.rb
+   20 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb
+   21 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/rubygems.rb
+   22 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/rubygems/path_support.rb
+   23 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/rubygems/dependency.rb
+   24 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/set.rb
+   25 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/thor-0.19.1/lib/thor/command.rb
+   26 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/thor-0.19.1/lib/thor/core_ext/hash_with_indifferent_access.rb
+   27 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/thor-0.19.1/lib/thor/core_ext/ordered_hash.rb
+   28 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/thor-0.19.1/lib/thor/error.rb
+   29 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/thor-0.19.1/lib/thor/invocation.rb
+   30 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/thor-0.19.1/lib/thor/parser/argument.rb
+   31 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/thor-0.19.1/lib/thor/parser/arguments.rb
+   32 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/thor-0.19.1/lib/thor/parser/option.rb
+   33 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/thor-0.19.1/lib/thor/parser/options.rb
+   34 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/thor-0.19.1/lib/thor/parser.rb
+   35 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/thor-0.19.1/lib/thor/shell.rb
+   36 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/thor-0.19.1/lib/thor/line_editor/basic.rb
+   37 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/enc/euc_jp.so
+   38 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/enc/windows_31j.so
+   39 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rb-readline-0.5.1/lib/rbreadline/version.rb
+   40 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/etc.so
+   41 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rb-readline-0.5.1/lib/rbreadline.rb
+   42 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rb-readline-0.5.1/lib/readline.rb
+   43 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/thor-0.19.1/lib/thor/line_editor/readline.rb
+   44 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/thor-0.19.1/lib/thor/line_editor.rb
+   45 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/thor-0.19.1/lib/thor/util.rb
+   46 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/thor-0.19.1/lib/thor/base.rb
+   47 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/thor-0.19.1/lib/thor.rb
+   48 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/psych/exception.rb
+   49 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/psych/syntax_error.rb
+   50 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/psych.so
+   51 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/stringio.so
+   52 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/psych/omap.rb
+   53 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/psych/set.rb
+   54 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/psych/class_loader.rb
+   55 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/strscan.so
+   56 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/psych/scalar_scanner.rb
+   57 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/psych/nodes/node.rb
+   58 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/psych/nodes/stream.rb
+   59 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/psych/nodes/document.rb
+   60 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/psych/nodes/sequence.rb
+   61 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/psych/nodes/scalar.rb
+   62 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/psych/nodes/mapping.rb
+   63 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/psych/nodes/alias.rb
+   64 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/psych/nodes.rb
+   65 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/psych/streaming.rb
+   66 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/psych/visitors/visitor.rb
+   67 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/psych/visitors/to_ruby.rb
+   68 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/psych/visitors/emitter.rb
+   69 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/psych/handler.rb
+   70 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/psych/tree_builder.rb
+   71 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/psych/visitors/yaml_tree.rb
+   72 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/psych/json/ruby_events.rb
+   73 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/psych/visitors/json_tree.rb
+   74 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/psych/visitors/depth_first.rb
+   75 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/psych/visitors.rb
+   76 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/psych/parser.rb
+   77 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/psych/coder.rb
+   78 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/psych/core_ext.rb
+   79 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/date_core.so
+   80 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/date/format.rb
+   81 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/date.rb
+   82 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/psych/deprecated.rb
+   83 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/psych/stream.rb
+   84 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/psych/json/yaml_events.rb
+   85 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/psych/json/tree_builder.rb
+   86 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/psych/json/stream.rb
+   87 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/psych/handlers/document_stream.rb
+   88 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/psych.rb
+   89 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/yaml.rb
+   90 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/semver-1.0.1/lib/semver.rb
+   91 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/ostruct.rb
+   92 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/thor-0.19.1/lib/thor/group.rb
+   93 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/fileutils.rb
+   94 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/uri/common.rb
+   95 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/uri/generic.rb
+   96 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/uri/ftp.rb
+   97 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/uri/http.rb
+   98 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/uri/https.rb
+   99 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/uri/ldap.rb
+  100 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/uri/ldaps.rb
+  101 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/uri/mailto.rb
+  102 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/uri.rb
+  103 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/thor-0.19.1/lib/thor/core_ext/io_binary_read.rb
+  104 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/thor-0.19.1/lib/thor/actions/empty_directory.rb
+  105 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/thor-0.19.1/lib/thor/actions/create_file.rb
+  106 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/thor-0.19.1/lib/thor/actions/create_link.rb
+  107 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/thor-0.19.1/lib/thor/actions/directory.rb
+  108 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/cgi/util.rb
+  109 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/erb.rb
+  110 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/time.rb
+  111 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/open-uri.rb
+  112 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/thor-0.19.1/lib/thor/actions/file_manipulation.rb
+  113 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/thor-0.19.1/lib/thor/actions/inject_into_file.rb
+  114 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/thor-0.19.1/lib/thor/actions.rb
+  115 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rubyneat-0.4.0alpha.0/lib/rubyneat/cli/generate.rb
+  116 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/e2mmap.rb
+  117 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/irb/init.rb
+  118 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/irb/workspace.rb
+  119 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/irb/inspector.rb
+  120 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/irb/context.rb
+  121 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/irb/extend-command.rb
+  122 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/irb/output-method.rb
+  123 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/irb/notifier.rb
+  124 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/irb/slex.rb
+  125 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/irb/ruby-token.rb
+  126 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/irb/ruby-lex.rb
+  127 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/irb/src_encoding.rb
+  128 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/irb/magic-file.rb
+  129 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/irb/input-method.rb
+  130 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/irb/locale.rb
+  131 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/irb.rb
+  132 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/irb/completion.rb
+  133 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rubyneat-0.4.0alpha.0/lib/rubyneat/cli/console.rb
+  134 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rubyneat-0.4.0alpha.0/lib/rubyneat/cli/main.rb
+  135 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/math_extension/chebyshev_series.rb
+  136 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/math_extension/erfc.rb
+  137 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/math_extension/exponential_integral.rb
+  138 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/math_extension/gammastar.rb
+  139 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/math_extension/gsl_utilities.rb
+  140 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/math_extension/incomplete_gamma.rb
+  141 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/math_extension/incomplete_beta.rb
+  142 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/math_extension/log_utilities.rb
+  143 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/singleton.rb
+  144 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/forwardable.rb
+  145 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/prime.rb
+  146 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/extensions/x86_64-linux/2.1.0-static/bigdecimal-1.2.5/bigdecimal.so
+  147 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/extensions/x86_64-linux/2.1.0-static/bigdecimal-1.2.5/bigdecimal/math.rb
+  148 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/math_extension.rb
+  149 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/normal/ruby.rb
+  150 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/normal/gsl.rb
+  151 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/normal/statistics2.rb
+  152 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/normal/java.rb
+  153 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/statistics2-0.54/lib/statistics2/version.rb
+  154 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/statistics2-0.54/ext/statistics2.so
+  155 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/statistics2-0.54/lib/statistics2.rb
+  156 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/normal.rb
+  157 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/chisquare/ruby.rb
+  158 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/chisquare/gsl.rb
+  159 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/chisquare/statistics2.rb
+  160 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/chisquare/java.rb
+  161 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/chisquare.rb
+  162 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/gamma/ruby.rb
+  163 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/gamma/gsl.rb
+  164 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/gamma/java.rb
+  165 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/gamma.rb
+  166 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/beta/ruby.rb
+  167 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/beta/gsl.rb
+  168 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/beta/java.rb
+  169 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/beta.rb
+  170 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/t/ruby.rb
+  171 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/t/gsl.rb
+  172 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/t/java.rb
+  173 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/t.rb
+  174 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/f/ruby.rb
+  175 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/f/gsl.rb
+  176 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/f/statistics2.rb
+  177 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/f/java.rb
+  178 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/f.rb
+  179 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/bivariatenormal/ruby.rb
+  180 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/bivariatenormal/gsl.rb
+  181 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/bivariatenormal/java.rb
+  182 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/bivariatenormal.rb
+  183 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/binomial/ruby.rb
+  184 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/binomial/gsl.rb
+  185 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/binomial/java.rb
+  186 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/binomial.rb
+  187 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/hypergeometric/ruby.rb
+  188 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/hypergeometric/gsl.rb
+  189 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/hypergeometric/java.rb
+  190 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/hypergeometric.rb
+  191 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/exponential/ruby.rb
+  192 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/exponential/gsl.rb
+  193 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/exponential.rb
+  194 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/poisson/ruby.rb
+  195 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/poisson/gsl.rb
+  196 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/poisson/java.rb
+  197 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/poisson.rb
+  198 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/logistic/ruby.rb
+  199 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/logistic.rb
+  200 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/lognormal/gsl.rb
+  201 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/lognormal/ruby.rb
+  202 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution/lognormal.rb
+  203 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/distribution-0.7.0/lib/distribution.rb
+  204 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/logger.rb
+  205 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/awesome_print-1.2.0/lib/awesome_print/core_ext/array.rb
+  206 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/awesome_print-1.2.0/lib/awesome_print/core_ext/string.rb
+  207 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/awesome_print-1.2.0/lib/awesome_print/core_ext/method.rb
+  208 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/awesome_print-1.2.0/lib/awesome_print/core_ext/object.rb
+  209 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/awesome_print-1.2.0/lib/awesome_print/core_ext/class.rb
+  210 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/awesome_print-1.2.0/lib/awesome_print/core_ext/kernel.rb
+  211 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/awesome_print-1.2.0/lib/awesome_print/inspector.rb
+  212 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/shellwords.rb
+  213 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/awesome_print-1.2.0/lib/awesome_print/formatter.rb
+  214 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/awesome_print-1.2.0/lib/awesome_print/version.rb
+  215 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/awesome_print-1.2.0/lib/awesome_print/core_ext/logger.rb
+  216 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/awesome_print-1.2.0/lib/awesome_print.rb
+  217 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/deep_dive-0.1.0/lib/deep_dive/deep_dive.rb
+  218 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/deep_dive-0.1.0/lib/deep_dive.rb
+  219 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rubyneat-0.4.0alpha.0/lib/rubyneat/critter.rb
+  220 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rubyneat-0.4.0alpha.0/lib/rubyneat/graph.rb
+  221 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rubyneat-0.4.0alpha.0/lib/rubyneat/neuron.rb
+  222 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rubyneat-0.4.0alpha.0/lib/rubyneat/population.rb
+  223 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rubyneat-0.4.0alpha.0/lib/rubyneat/evolver.rb
+  224 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/prettyprint.rb
+  225 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/pp.rb
+  226 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rubyneat-0.4.0alpha.0/lib/rubyneat/expressor.rb
+  227 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rubyneat-0.4.0alpha.0/lib/rubyneat/evaluator.rb
+  228 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rubyneat-0.4.0alpha.0/lib/rubyneat/rubyneat.rb
+  229 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rubyneat-0.4.0alpha.0/lib/rubyneat/default_neat.rb
+  230 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rubyneat-0.4.0alpha.0/lib/rubyneat/dsl.rb
+  231 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rubyneat-0.4.0alpha.0/lib/rubyneat.rb
+  232 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rubyneat-0.4.0alpha.0/lib/rubyneat/cli.rb
+  233 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/pathname.so
+  234 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/pathname.rb
+  235 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bundler-1.6.3/lib/bundler/constants.rb
+  236 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/io/console.so
+  237 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/rubygems/user_interaction.rb
+  238 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/rubygems/config_file.rb
+  239 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bundler-1.6.3/lib/bundler/rubygems_integration.rb
+  240 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bundler-1.6.3/lib/bundler/current_ruby.rb
+  241 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bundler-1.6.3/lib/bundler/shared_helpers.rb
+  242 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bundler-1.6.3/lib/bundler/gem_path_manipulation.rb
+  243 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bundler-1.6.3/lib/bundler/gem_helpers.rb
+  244 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bundler-1.6.3/lib/bundler/match_platform.rb
+  245 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bundler-1.6.3/lib/bundler/rubygems_ext.rb
+  246 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bundler-1.6.3/lib/bundler/version.rb
+  247 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bundler-1.6.3/lib/bundler.rb
+  248 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bundler-1.6.3/lib/bundler/settings.rb
+  249 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/digest.so
+  250 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/digest.rb
+  251 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/digest/sha1.so
+  252 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bundler-1.6.3/lib/bundler/definition.rb
+  253 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bundler-1.6.3/lib/bundler/dependency.rb
+  254 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bundler-1.6.3/lib/bundler/ruby_dsl.rb
+  255 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bundler-1.6.3/lib/bundler/dsl.rb
+  256 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bundler-1.6.3/lib/bundler/source.rb
+  257 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/socket.so
+  258 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/socket.rb
+  259 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/timeout.rb
+  260 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/net/protocol.rb
+  261 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/zlib.so
+  262 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/net/http/exceptions.rb
+  263 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/net/http/header.rb
+  264 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/net/http/generic_request.rb
+  265 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/net/http/request.rb
+  266 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/net/http/requests.rb
+  267 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/net/http/response.rb
+  268 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/net/http/responses.rb
+  269 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/net/http/proxy_delta.rb
+  270 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/net/http/backward.rb
+  271 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/net/http.rb
+  272 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/rubygems/request.rb
+  273 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/cgi/core.rb
+  274 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/cgi/cookie.rb
+  275 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/cgi.rb
+  276 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/rubygems/uri_formatter.rb
+  277 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/fcntl.so
+  278 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/openssl.so
+  279 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/openssl/bn.rb
+  280 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/openssl/cipher.rb
+  281 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/openssl/config.rb
+  282 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/openssl/digest.rb
+  283 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/openssl/x509.rb
+  284 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/openssl/buffering.rb
+  285 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/openssl/ssl.rb
+  286 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/openssl.rb
+  287 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/securerandom.rb
+  288 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/resolv.rb
+  289 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/rubygems/remote_fetcher.rb
+  290 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/rubygems/text.rb
+  291 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/rubygems/name_tuple.rb
+  292 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/rubygems/spec_fetcher.rb
+  293 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bundler-1.6.3/lib/bundler/source/rubygems.rb
+  294 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bundler-1.6.3/lib/bundler/source/path.rb
+  295 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bundler-1.6.3/lib/bundler/source/git.rb
+  296 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bundler-1.6.3/lib/bundler/lockfile_parser.rb
+  297 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bundler-1.6.3/lib/bundler/lazy_specification.rb
+  298 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/tsort.rb
+  299 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bundler-1.6.3/lib/bundler/spec_set.rb
+  300 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bundler-1.6.3/lib/bundler/environment.rb
+  301 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bundler-1.6.3/lib/bundler/runtime.rb
+  302 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bundler-1.6.3/lib/bundler/index.rb
+  303 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bundler-1.6.3/lib/bundler/remote_specification.rb
+  304 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bundler-1.6.3/lib/bundler/endpoint_specification.rb
+  305 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bundler-1.6.3/lib/bundler/dep_proxy.rb
+  306 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bundler-1.6.3/lib/bundler/setup.rb
+  307 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/delegate.rb
+  308 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/tmpdir.rb
+  309 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/tempfile.rb
+  310 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rack-1.5.2/lib/rack/multipart.rb
+  311 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rack-1.5.2/lib/rack/utils.rb
+  312 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rack-1.5.2/lib/rack.rb
+  313 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/tilt-1.4.1/lib/tilt/template.rb
+  314 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/tilt-1.4.1/lib/tilt/string.rb
+  315 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/tilt-1.4.1/lib/tilt/erb.rb
+  316 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/tilt-1.4.1/lib/tilt/etanni.rb
+  317 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/tilt-1.4.1/lib/tilt/haml.rb
+  318 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/tilt-1.4.1/lib/tilt/css.rb
+  319 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/tilt-1.4.1/lib/tilt/csv.rb
+  320 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/tilt-1.4.1/lib/tilt/coffee.rb
+  321 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/tilt-1.4.1/lib/tilt/nokogiri.rb
+  322 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/tilt-1.4.1/lib/tilt/builder.rb
+  323 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/tilt-1.4.1/lib/tilt/markaby.rb
+  324 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/tilt-1.4.1/lib/tilt/liquid.rb
+  325 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/tilt-1.4.1/lib/tilt/radius.rb
+  326 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/tilt-1.4.1/lib/tilt/markdown.rb
+  327 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/tilt-1.4.1/lib/tilt/textile.rb
+  328 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/tilt-1.4.1/lib/tilt/rdoc.rb
+  329 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/tilt-1.4.1/lib/tilt/wiki.rb
+  330 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/tilt-1.4.1/lib/tilt/yajl.rb
+  331 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/tilt-1.4.1/lib/tilt/asciidoc.rb
+  332 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/tilt-1.4.1/lib/tilt/plain.rb
+  333 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/tilt-1.4.1/lib/tilt.rb
+  334 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rack-protection-1.5.3/lib/rack/protection/version.rb
+  335 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rack-protection-1.5.3/lib/rack/protection.rb
+  336 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rack-1.5.2/lib/rack/request.rb
+  337 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rack-1.5.2/lib/rack/showexceptions.rb
+  338 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sinatra-1.4.5/lib/sinatra/show_exceptions.rb
+  339 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sinatra-1.4.5/lib/sinatra/version.rb
+  340 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rack-1.5.2/lib/rack/response.rb
+  341 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rack-1.5.2/lib/rack/body_proxy.rb
+  342 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rack-1.5.2/lib/rack/commonlogger.rb
+  343 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sinatra-1.4.5/lib/sinatra/base.rb
+  344 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rack-test-0.6.2/lib/rack/mock_session.rb
+  345 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rack-test-0.6.2/lib/rack/test/cookie_jar.rb
+  346 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rack-test-0.6.2/lib/rack/test/mock_digest_request.rb
+  347 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rack-test-0.6.2/lib/rack/test/utils.rb
+  348 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rack-test-0.6.2/lib/rack/test/methods.rb
+  349 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rack-test-0.6.2/lib/rack/test/uploaded_file.rb
+  350 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rack-test-0.6.2/lib/rack/test.rb
+  351 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rack-1.5.2/lib/rack/builder.rb
+  352 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sinatra-1.4.5/lib/sinatra/main.rb
+  353 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sinatra-1.4.5/lib/sinatra.rb
+  354 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sinatra-assetpack-0.3.3/lib/sinatra/assetpack/class_methods.rb
+  355 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sinatra-assetpack-0.3.3/lib/sinatra/assetpack/version.rb
+  356 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sinatra-assetpack-0.3.3/lib/sinatra/assetpack/helpers.rb
+  357 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sinatra-assetpack-0.3.3/lib/sinatra/assetpack.rb
+  358 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/tools.rb
+  359 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/version.rb
+  360 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/argf/each_byte.rb
+  361 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/argf/bytes.rb
+  362 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/argf/each_char.rb
+  363 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/argf/chars.rb
+  364 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/argf/each.rb
+  365 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/argf/each_line.rb
+  366 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/argf/getbyte.rb
+  367 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/argf/lines.rb
+  368 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/argf/readbyte.rb
+  369 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/argf.rb
+  370 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/array/collect.rb
+  371 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/array/combination.rb
+  372 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/array/cycle.rb
+  373 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/array/delete_if.rb
+  374 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/array/each.rb
+  375 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/array/each_index.rb
+  376 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/array/index.rb
+  377 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/array/find_index.rb
+  378 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/array/flatten.rb
+  379 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/array/map.rb
+  380 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/array/permutation.rb
+  381 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/array/pop.rb
+  382 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/array/product.rb
+  383 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/array/reject.rb
+  384 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/array/reverse_each.rb
+  385 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/array/rindex.rb
+  386 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/array/select.rb
+  387 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/array/shift.rb
+  388 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/array/shuffle.rb
+  389 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/array.rb
+  390 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/binding/eval.rb
+  391 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/binding.rb
+  392 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/dir/each.rb
+  393 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/dir/foreach.rb
+  394 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/dir.rb
+  395 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/enumerable/count.rb
+  396 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/enumerable/cycle.rb
+  397 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/enumerable/detect.rb
+  398 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/enumerable/drop.rb
+  399 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/enumerable/drop_while.rb
+  400 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/enumerable/each_cons.rb
+  401 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/enumerable/each_slice.rb
+  402 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/enumerable/each_with_index.rb
+  403 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/enumerable/entries.rb
+  404 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/enumerable/find.rb
+  405 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/enumerable/find_all.rb
+  406 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/enumerable/find_index.rb
+  407 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/enumerable/first.rb
+  408 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/enumerable/group_by.rb
+  409 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/enumerable/inject.rb
+  410 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/enumerable/max_by.rb
+  411 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/enumerable/min_by.rb
+  412 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/enumerable/minmax.rb
+  413 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/enumerable/minmax_by.rb
+  414 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/enumerable/none.rb
+  415 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/enumerable/one.rb
+  416 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/enumerable/partition.rb
+  417 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/enumerable/reduce.rb
+  418 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/enumerable/reject.rb
+  419 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/enumerable/reverse_each.rb
+  420 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/enumerable/select.rb
+  421 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/enumerable/sort_by.rb
+  422 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/enumerable/take.rb
+  423 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/enumerable/take_while.rb
+  424 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/enumerable/to_a.rb
+  425 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/enumerable.rb
+  426 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/enumerator/each.rb
+  427 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/enumerator/next.rb
+  428 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/enumerator/rewind.rb
+  429 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/enumerator/with_index.rb
+  430 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/enumerator.rb
+  431 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/env/delete_if.rb
+  432 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/env/each.rb
+  433 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/env/each_key.rb
+  434 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/env/each_pair.rb
+  435 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/env/each_value.rb
+  436 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/env/reject.rb
+  437 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/env/select.rb
+  438 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/env.rb
+  439 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/fixnum/div.rb
+  440 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/fixnum/fdiv.rb
+  441 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/fixnum.rb
+  442 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/float/fdiv.rb
+  443 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/float.rb
+  444 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/gc/stress.rb
+  445 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/gc.rb
+  446 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/hash/constructor.rb
+  447 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/hash/delete_if.rb
+  448 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/hash/each.rb
+  449 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/hash/each_key.rb
+  450 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/hash/each_pair.rb
+  451 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/hash/each_value.rb
+  452 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/hash/hash.rb
+  453 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/hash/eql.rb
+  454 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/hash/reject.rb
+  455 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/hash/select.rb
+  456 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/hash.rb
+  457 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/integer/downto.rb
+  458 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/integer/even.rb
+  459 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/integer/odd.rb
+  460 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/integer/ord.rb
+  461 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/integer/pred.rb
+  462 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/integer/times.rb
+  463 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/integer/upto.rb
+  464 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/integer.rb
+  465 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/io/each_byte.rb
+  466 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/io/bytes.rb
+  467 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/io/each_char.rb
+  468 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/io/chars.rb
+  469 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/io/each.rb
+  470 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/io/each_line.rb
+  471 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/io/foreach.rb
+  472 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/io/getbyte.rb
+  473 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/io/lines.rb
+  474 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/io/readbyte.rb
+  475 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/io.rb
+  476 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/kernel/__method__.rb
+  477 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/kernel/instance_exec.rb
+  478 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/kernel/tap.rb
+  479 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/kernel.rb
+  480 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/method/name.rb
+  481 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/method.rb
+  482 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/module/module_exec.rb
+  483 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/module/class_exec.rb
+  484 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/module.rb
+  485 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/numeric/step.rb
+  486 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/numeric.rb
+  487 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/object_space/each_object.rb
+  488 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/object_space.rb
+  489 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/process/exec.rb
+  490 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/process.rb
+  491 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/range/each.rb
+  492 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/range/step.rb
+  493 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/range.rb
+  494 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/regexp/union.rb
+  495 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/regexp.rb
+  496 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/stdlib/tmpdir.rb
+  497 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/stdlib.rb
+  498 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/stop_iteration.rb
+  499 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/string/each_byte.rb
+  500 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/string/bytes.rb
+  501 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/string/bytesize.rb
+  502 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/string/each.rb
+  503 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/string/each_char.rb
+  504 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/string/each_line.rb
+  505 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/string/end_with.rb
+  506 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/string/lines.rb
+  507 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/string/partition.rb
+  508 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/string/rpartition.rb
+  509 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/string/start_with.rb
+  510 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/string/upto.rb
+  511 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/string.rb
+  512 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/struct/each.rb
+  513 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/struct/each_pair.rb
+  514 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/struct.rb
+  515 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/symbol/to_proc.rb
+  516 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7/symbol.rb
+  517 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.7.rb
+  518 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.8.rb
+  519 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/array/sample.rb
+  520 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/array/try_convert.rb
+  521 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/array.rb
+  522 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/dir/to_path.rb
+  523 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/dir.rb
+  524 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/enumerable/each_with_index.rb
+  525 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/enumerable/each_with_object.rb
+  526 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/enumerable.rb
+  527 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/enumerator/new.rb
+  528 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/enumerator/with_object.rb
+  529 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/enumerator.rb
+  530 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/env/key.rb
+  531 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/env.rb
+  532 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/file/atime.rb
+  533 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/file/basename.rb
+  534 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/file/binary.rb
+  535 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/file/blockdev.rb
+  536 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/file/chardev.rb
+  537 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/file/chmod.rb
+  538 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/file/chown.rb
+  539 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/file/ctime.rb
+  540 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/file/delete.rb
+  541 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/file/directory.rb
+  542 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/file/dirname.rb
+  543 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/file/executable.rb
+  544 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/file/executable_real.rb
+  545 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/file/exist.rb
+  546 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/file/exists.rb
+  547 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/file/expand_path.rb
+  548 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/file/extname.rb
+  549 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/file/file.rb
+  550 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/file/ftype.rb
+  551 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/file/grpowned.rb
+  552 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/file/join.rb
+  553 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/file/lchmod.rb
+  554 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/file/lchown.rb
+  555 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/file/link.rb
+  556 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/file/lstat.rb
+  557 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/file/mtime.rb
+  558 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/file/new.rb
+  559 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/file/open.rb
+  560 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/file/owned.rb
+  561 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/file/pipe.rb
+  562 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/file/readable.rb
+  563 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/file/readable_real.rb
+  564 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/file/readlink.rb
+  565 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/file/rename.rb
+  566 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/file/setgid.rb
+  567 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/file/setuid.rb
+  568 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/file/size.rb
+  569 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/file/socket.rb
+  570 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/file/split.rb
+  571 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/file/stat.rb
+  572 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/file/sticky.rb
+  573 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/file/symlink.rb
+  574 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/file/to_path.rb
+  575 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/file/truncate.rb
+  576 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/file/unlink.rb
+  577 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/file/writable.rb
+  578 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/file/writable_real.rb
+  579 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/file/zero.rb
+  580 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/file.rb
+  581 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/float/round.rb
+  582 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/float.rb
+  583 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/hash/assoc.rb
+  584 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/hash/default_proc.rb
+  585 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/hash/key.rb
+  586 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/hash/rassoc.rb
+  587 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/hash/try_convert.rb
+  588 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/hash.rb
+  589 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/integer/magnitude.rb
+  590 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/integer/round.rb
+  591 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/integer.rb
+  592 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/io/binread.rb
+  593 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/io/open.rb
+  594 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/io/try_convert.rb
+  595 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/io/ungetbyte.rb
+  596 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/io.rb
+  597 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/kernel/__callee__.rb
+  598 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/kernel/define_singleton_method.rb
+  599 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/kernel/public_method.rb
+  600 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/kernel/public_send.rb
+  601 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/kernel/require_relative.rb
+  602 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/kernel.rb
+  603 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/math/log.rb
+  604 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/math/log2.rb
+  605 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/math.rb
+  606 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/numeric/round.rb
+  607 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/numeric.rb
+  608 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/proc/case_compare.rb
+  609 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/proc/curry.rb
+  610 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/proc/lambda.rb
+  611 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/proc/yield.rb
+  612 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/proc.rb
+  613 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/range/cover.rb
+  614 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/range.rb
+  615 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/regexp/try_convert.rb
+  616 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/regexp.rb
+  617 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/stdlib/prime.rb
+  618 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/stdlib.rb
+  619 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/string/ascii_only.rb
+  620 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/string/chr.rb
+  621 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/string/clear.rb
+  622 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/string/codepoints.rb
+  623 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/string/each_codepoint.rb
+  624 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/string/getbyte.rb
+  625 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/string/ord.rb
+  626 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/string/setbyte.rb
+  627 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/string/try_convert.rb
+  628 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/string.rb
+  629 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/symbol/capitalize.rb
+  630 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/symbol/casecmp.rb
+  631 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/symbol/comparable.rb
+  632 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/symbol/comparison.rb
+  633 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/symbol/downcase.rb
+  634 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/symbol/element_reference.rb
+  635 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/symbol/empty.rb
+  636 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/symbol/length.rb
+  637 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/symbol/match.rb
+  638 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/symbol/succ.rb
+  639 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/symbol/next.rb
+  640 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/symbol/size.rb
+  641 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/symbol/swapcase.rb
+  642 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/symbol/upcase.rb
+  643 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1/symbol.rb
+  644 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.1.rb
+  645 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.2/array/keep_if.rb
+  646 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.2/array/product.rb
+  647 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.2/array/repeated_combination.rb
+  648 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.2/array/repeated_permutation.rb
+  649 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.2/array/rotate.rb
+  650 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.2/array/select.rb
+  651 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.2/array/sort_by.rb
+  652 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.2/array/uniq.rb
+  653 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.2/array.rb
+  654 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.2/complex/to_r.rb
+  655 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.2/complex.rb
+  656 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.2/dir/home.rb
+  657 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.2/dir.rb
+  658 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.2/enumerable/chunk.rb
+  659 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.2/enumerable/flat_map.rb
+  660 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.2/enumerable/collect_concat.rb
+  661 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.2/enumerable/each_entry.rb
+  662 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.2/enumerable/slice_before.rb
+  663 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.2/enumerable.rb
+  664 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.2/float/infinity.rb
+  665 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.2/float/nan.rb
+  666 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.2/float.rb
+  667 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.2/hash/keep_if.rb
+  668 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.2/hash/select.rb
+  669 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.2/hash.rb
+  670 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.2/kernel/singleton_class.rb
+  671 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.2/kernel.rb
+  672 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.2/random.rb
+  673 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.2/stdlib/set.rb
+  674 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.2/stdlib.rb
+  675 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.2.rb
+  676 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.3/file/null.rb
+  677 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.3/file.rb
+  678 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.3/io/advise.rb
+  679 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.3/io/binwrite.rb
+  680 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.3/io/write.rb
+  681 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.3/io.rb
+  682 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.3/string/byteslice.rb
+  683 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.3/string/prepend.rb
+  684 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.3/string.rb
+  685 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.3.rb
+  686 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/1.9.rb
+  687 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/2.0.0/array/bsearch.rb
+  688 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/2.0.0/array.rb
+  689 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/2.0.0/enumerable/lazy.rb
+  690 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/2.0.0/enumerable.rb
+  691 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/2.0.0/enumerator/lazy.rb
+  692 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/2.0.0/enumerator.rb
+  693 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/2.0.0/env/to_h.rb
+  694 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/2.0.0/env.rb
+  695 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/2.0.0/hash/default_proc.rb
+  696 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/2.0.0/hash/to_h.rb
+  697 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/2.0.0/hash.rb
+  698 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/2.0.0/nil/to_h.rb
+  699 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/2.0.0/nil.rb
+  700 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/2.0.0/range/bsearch.rb
+  701 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/2.0.0/range/size.rb
+  702 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/2.0.0/range.rb
+  703 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/2.0.0/stdlib/ostruct.rb
+  704 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/2.0.0/stdlib.rb
+  705 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/2.0.0/struct/to_h.rb
+  706 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/2.0.0/struct.rb
+  707 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/2.0.0.rb
+  708 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/2.0.rb
+  709 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/2.1.0/enumerable/to_h.rb
+  710 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/2.1.0/array/to_h.rb
+  711 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/2.1.0/array.rb
+  712 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/2.1.0/bignum/bit_length.rb
+  713 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/2.1.0/bignum.rb
+  714 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/2.1.0/enumerable.rb
+  715 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/2.1.0/fixnum/bit_length.rb
+  716 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/2.1.0/fixnum.rb
+  717 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/2.1.0/module/include.rb
+  718 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/2.1.0/module.rb
+  719 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/2.1.0.rb
+  720 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/2.1.rb
+  721 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/rails/array.rb
+  722 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/rails/enumerable.rb
+  723 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/rails/hash.rb
+  724 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/rails/kernel.rb
+  725 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/rails/module.rb
+  726 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/rails/string.rb
+  727 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports/rails.rb
+  728 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/backports-3.6.0/lib/backports.rb
+  729 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sinatra-contrib-1.4.2/lib/sinatra/streaming.rb
+  730 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/execjs-2.2.1/lib/execjs/version.rb
+  731 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/execjs-2.2.1/lib/execjs/module.rb
+  732 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/execjs-2.2.1/lib/execjs/encoding.rb
+  733 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/execjs-2.2.1/lib/execjs/runtime.rb
+  734 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/execjs-2.2.1/lib/execjs/disabled_runtime.rb
+  735 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/execjs-2.2.1/lib/execjs/external_runtime.rb
+  736 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/execjs-2.2.1/lib/execjs/johnson_runtime.rb
+  737 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/execjs-2.2.1/lib/execjs/mustang_runtime.rb
+  738 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/execjs-2.2.1/lib/execjs/ruby_racer_runtime.rb
+  739 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/execjs-2.2.1/lib/execjs/ruby_rhino_runtime.rb
+  740 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/execjs-2.2.1/lib/execjs/runtimes.rb
+  741 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/json/version.rb
+  742 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/json/generic_object.rb
+  743 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/json/common.rb
+  744 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/enc/utf_16be.so
+  745 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/enc/utf_16le.so
+  746 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/enc/utf_32be.so
+  747 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/enc/utf_32le.so
+  748 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/json/ext/parser.so
+  749 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/json/ext/generator.so
+  750 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/json/ext.rb
+  751 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/json.rb
+  752 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/execjs-2.2.1/lib/execjs.rb
+  753 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/coffee-script-source-1.7.1/lib/coffee_script/source.rb
+  754 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/coffee-script-2.3.0/lib/coffee_script.rb
+  755 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/barista-1.3.0/lib/barista/extensions.rb
+  756 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/digest/sha2.so
+  757 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/digest/sha2.rb
+  758 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/barista-1.3.0/lib/barista/compiler.rb
+  759 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/barista-1.3.0/lib/barista/framework.rb
+  760 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/barista-1.3.0/lib/barista/integration.rb
+  761 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/barista-1.3.0/lib/barista.rb
+  762 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/root.rb
+  763 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/util/subset_map.rb
+  764 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/util/multibyte_string_scanner.rb
+  765 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/util.rb
+  766 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/version.rb
+  767 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/logger/log_level.rb
+  768 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/logger/base.rb
+  769 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/logger.rb
+  770 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/cache_stores/base.rb
+  771 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/cache_stores/filesystem.rb
+  772 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/cache_stores/memory.rb
+  773 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/cache_stores/chain.rb
+  774 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/cache_stores.rb
+  775 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/node.rb
+  776 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/root_node.rb
+  777 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/rule_node.rb
+  778 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/comment_node.rb
+  779 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/prop_node.rb
+  780 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/directive_node.rb
+  781 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/media_node.rb
+  782 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/supports_node.rb
+  783 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/css_import_node.rb
+  784 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/variable_node.rb
+  785 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/mixin_def_node.rb
+  786 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/mixin_node.rb
+  787 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/trace_node.rb
+  788 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/content_node.rb
+  789 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/function_node.rb
+  790 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/return_node.rb
+  791 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/extend_node.rb
+  792 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/if_node.rb
+  793 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/while_node.rb
+  794 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/for_node.rb
+  795 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/each_node.rb
+  796 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/debug_node.rb
+  797 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/warn_node.rb
+  798 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/import_node.rb
+  799 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/charset_node.rb
+  800 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb
+  801 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb
+  802 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/visitors/cssize.rb
+  803 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/visitors/extend.rb
+  804 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/visitors/convert.rb
+  805 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/visitors/to_css.rb
+  806 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/visitors/deep_copy.rb
+  807 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/visitors/set_options.rb
+  808 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/tree/visitors/check_nesting.rb
+  809 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/selector/simple.rb
+  810 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/selector/abstract_sequence.rb
+  811 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/selector/comma_sequence.rb
+  812 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/selector/sequence.rb
+  813 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/selector/simple_sequence.rb
+  814 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/selector.rb
+  815 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/environment.rb
+  816 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/script/node.rb
+  817 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/script/variable.rb
+  818 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/script/functions.rb
+  819 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/script/funcall.rb
+  820 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/script/number.rb
+  821 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/script/color.rb
+  822 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/script/bool.rb
+  823 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/script/null.rb
+  824 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/script/list.rb
+  825 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/script/arg_list.rb
+  826 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/script/literal.rb
+  827 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/script/string.rb
+  828 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/script/unary_operation.rb
+  829 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/script/interpolation.rb
+  830 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/script/string_interpolation.rb
+  831 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/script/operation.rb
+  832 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/scss/rx.rb
+  833 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/script/lexer.rb
+  834 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/script/parser.rb
+  835 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/script.rb
+  836 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/scss/script_lexer.rb
+  837 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/scss/script_parser.rb
+  838 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/scss/parser.rb
+  839 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/script/css_lexer.rb
+  840 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/script/css_parser.rb
+  841 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/scss/static_parser.rb
+  842 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/scss/css_parser.rb
+  843 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/scss.rb
+  844 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/error.rb
+  845 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/importers/base.rb
+  846 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/importers/filesystem.rb
+  847 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/importers.rb
+  848 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/shared.rb
+  849 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/media.rb
+  850 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/supports.rb
+  851 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/engine.rb
+  852 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/railtie.rb
+  853 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass.rb
+  854 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/haml-4.0.5/lib/haml/version.rb
+  855 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/haml-4.0.5/lib/haml/util.rb
+  856 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/haml-4.0.5/lib/haml/parser.rb
+  857 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/haml-4.0.5/lib/haml/compiler.rb
+  858 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/haml-4.0.5/lib/haml/options.rb
+  859 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/haml-4.0.5/lib/haml/helpers.rb
+  860 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/haml-4.0.5/lib/haml/buffer.rb
+  861 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/haml-4.0.5/lib/haml/filters.rb
+  862 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/haml-4.0.5/lib/haml/error.rb
+  863 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/haml-4.0.5/lib/haml/engine.rb
+  864 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/haml-4.0.5/lib/haml.rb
+  865 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/extensions/x86_64-linux/2.1.0-static/eventmachine-1.0.3/rubyeventmachine.so
+  866 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/eventmachine-1.0.3/lib/em/version.rb
+  867 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/eventmachine-1.0.3/lib/em/pool.rb
+  868 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/eventmachine-1.0.3/lib/em/deferrable.rb
+  869 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/eventmachine-1.0.3/lib/em/future.rb
+  870 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/eventmachine-1.0.3/lib/em/streamer.rb
+  871 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/eventmachine-1.0.3/lib/em/spawnable.rb
+  872 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/eventmachine-1.0.3/lib/em/processes.rb
+  873 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/eventmachine-1.0.3/lib/em/iterator.rb
+  874 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/eventmachine-1.0.3/lib/em/buftok.rb
+  875 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/eventmachine-1.0.3/lib/em/timers.rb
+  876 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/eventmachine-1.0.3/lib/em/protocols.rb
+  877 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/eventmachine-1.0.3/lib/em/connection.rb
+  878 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/eventmachine-1.0.3/lib/em/callback.rb
+  879 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/eventmachine-1.0.3/lib/em/queue.rb
+  880 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/eventmachine-1.0.3/lib/em/channel.rb
+  881 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/eventmachine-1.0.3/lib/em/file_watch.rb
+  882 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/eventmachine-1.0.3/lib/em/process_watch.rb
+  883 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/eventmachine-1.0.3/lib/em/tick_loop.rb
+  884 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/eventmachine-1.0.3/lib/em/resolver.rb
+  885 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/eventmachine-1.0.3/lib/em/completion.rb
+  886 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/eventmachine-1.0.3/lib/em/threaded_resource.rb
+  887 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/eventmachine-1.0.3/lib/eventmachine.rb
+  888 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sinatra-assetpack-0.3.3/lib/sinatra/assetpack/builder.rb
+  889 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sinatra-assetpack-0.3.3/lib/sinatra/assetpack/configurator.rb
+  890 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sinatra-assetpack-0.3.3/lib/sinatra/assetpack/options.rb
+  891 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rubyneat_dashboard-0.4.0alpha.0/lib/rubyneat_dashboard/bower_dsl.rb
+  892 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rubyneat_dashboard-0.4.0alpha.0/lib/rubyneat_dashboard/overview_rest.rb
+  893 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rubyneat_dashboard-0.4.0alpha.0/lib/rubyneat_dashboard/rubyneat_dsl.rb
+  894 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/json-stream-0.2.1/lib/json/stream/buffer.rb
+  895 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/json-stream-0.2.1/lib/json/stream/builder.rb
+  896 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/json-stream-0.2.1/lib/json/stream/parser.rb
+  897 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/json-stream-0.2.1/lib/json/stream/version.rb
+  898 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/json-stream-0.2.1/lib/json/stream.rb
+  899 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rubyneat_dashboard-0.4.0alpha.0/lib/rubyneat_dashboard/stream_helpers.rb
+  900 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rubyneat_dashboard-0.4.0alpha.0/lib/rubyneat_dashboard/main.rb
+  901 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/barista-1.3.0/lib/barista/integration/sinatra.rb
+  902 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/barista-1.3.0/lib/barista/filter.rb
+  903 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/barista-1.3.0/lib/barista/server.rb
+  904 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/barista-1.3.0/lib/barista/haml_filter.rb
+  905 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/barista-1.3.0/lib/barista/hooks.rb
+  906 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sinatra-assetpack-0.3.3/lib/sinatra/assetpack/html_helpers.rb
+  907 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sinatra-assetpack-0.3.3/lib/sinatra/assetpack/buster_helpers.rb
+  908 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sinatra-assetpack-0.3.3/lib/sinatra/assetpack/package.rb
+  909 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rubyneat_dashboard-0.4.0alpha.0/lib/rubyneat_dashboard.rb
+  910 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/extensions/x86_64-linux/2.1.0-static/debase-0.0.9/debase_internals.so
+  911 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/debase-0.0.9/lib/debase/version.rb
+  912 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/debase-0.0.9/lib/debase/context.rb
+  913 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/debase-0.0.9/lib/debase.rb
+  914 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/aquarium-0.5.1/lib/aquarium/utils/html_escaper.rb
+  915 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/aquarium-0.5.1/lib/aquarium/utils/array_utils.rb
+  916 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/aquarium-0.5.1/lib/aquarium/utils/hash_utils.rb
+  917 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/aquarium-0.5.1/lib/aquarium/utils/set_utils.rb
+  918 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/aquarium-0.5.1/lib/aquarium/utils/type_utils.rb
+  919 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/aquarium-0.5.1/lib/aquarium/utils/logic_error.rb
+  920 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/aquarium-0.5.1/lib/aquarium/utils/method_utils.rb
+  921 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/aquarium-0.5.1/lib/aquarium/utils/name_utils.rb
+  922 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/aquarium-0.5.1/lib/aquarium/utils/default_logger.rb
+  923 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/aquarium-0.5.1/lib/aquarium/utils/options_utils.rb
+  924 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/aquarium-0.5.1/lib/aquarium/utils/invalid_options.rb
+  925 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/aquarium-0.5.1/lib/aquarium/utils/nil_object.rb
+  926 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/aquarium-0.5.1/lib/aquarium/utils.rb
+  927 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/aquarium-0.5.1/lib/aquarium/extensions/hash.rb
+  928 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/aquarium-0.5.1/lib/aquarium/extensions/regexp.rb
+  929 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/aquarium-0.5.1/lib/aquarium/extensions/set.rb
+  930 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/aquarium-0.5.1/lib/aquarium/extensions/string.rb
+  931 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/aquarium-0.5.1/lib/aquarium/extensions.rb
+  932 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/aquarium-0.5.1/lib/aquarium/finders/finder_result.rb
+  933 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/aquarium-0.5.1/lib/aquarium/finders/type_finder.rb
+  934 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/aquarium-0.5.1/lib/aquarium/finders/method_finder.rb
+  935 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/aquarium-0.5.1/lib/aquarium/finders/pointcut_finder.rb
+  936 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/aquarium-0.5.1/lib/aquarium/finders.rb
+  937 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/aquarium-0.5.1/lib/aquarium/aspects/advice.rb
+  938 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/aquarium-0.5.1/lib/aquarium/aspects/exclusion_handler.rb
+  939 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/aquarium-0.5.1/lib/aquarium/aspects/join_point.rb
+  940 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/aquarium-0.5.1/lib/aquarium/aspects/default_objects_handler.rb
+  941 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/aquarium-0.5.1/lib/aquarium/aspects/pointcut.rb
+  942 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/aquarium-0.5.1/lib/aquarium/aspects/pointcut_composition.rb
+  943 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/aquarium-0.5.1/lib/aquarium/aspects/aspect.rb
+  944 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/aquarium-0.5.1/lib/aquarium/dsl/aspect_dsl.rb
+  945 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/aquarium-0.5.1/lib/aquarium/dsl.rb
+  946 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/aquarium-0.5.1/lib/aquarium/aspects.rb
+  947 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/aquarium-0.5.1/lib/aquarium/version.rb
+  948 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/aquarium-0.5.1/lib/aquarium.rb
+  949 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bond-0.5.1/lib/bond/m.rb
+  950 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bond-0.5.1/lib/bond/version.rb
+  951 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bond-0.5.1/lib/bond/readline.rb
+  952 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bond-0.5.1/lib/bond/readlines/rawline.rb
+  953 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bond-0.5.1/lib/bond/readlines/ruby.rb
+  954 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bond-0.5.1/lib/bond/readlines/jruby.rb
+  955 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bond-0.5.1/lib/bond/agent.rb
+  956 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bond-0.5.1/lib/bond/search.rb
+  957 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bond-0.5.1/lib/bond/input.rb
+  958 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bond-0.5.1/lib/bond/rc.rb
+  959 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bond-0.5.1/lib/bond/mission.rb
+  960 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bond-0.5.1/lib/bond/missions/default_mission.rb
+  961 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bond-0.5.1/lib/bond/missions/method_mission.rb
+  962 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bond-0.5.1/lib/bond/missions/object_mission.rb
+  963 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bond-0.5.1/lib/bond/missions/anywhere_mission.rb
+  964 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bond-0.5.1/lib/bond/missions/operator_method_mission.rb
+  965 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bond-0.5.1/lib/bond.rb
+  966 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rb-readline-0.5.1/lib/rb-readline.rb
+  967 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rspec-core-2.99.1/lib/rspec/core/caller_filter.rb
+  968 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rspec-core-2.99.1/lib/rspec/core/filter_manager.rb
+  969 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rspec-core-2.99.1/lib/rspec/core/dsl.rb
+  970 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rspec-core-2.99.1/lib/rspec/core/extensions/kernel.rb
+  971 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rspec-core-2.99.1/lib/rspec/core/extensions/instance_eval_with_args.rb
+  972 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rspec-core-2.99.1/lib/rspec/core/extensions/module_eval_with_args.rb
+  973 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rspec-core-2.99.1/lib/rspec/core/extensions/ordered.rb
+  974 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rspec-core-2.99.1/lib/rspec/core/deprecation.rb
+  975 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rspec-core-2.99.1/lib/rspec/core/backward_compatibility.rb
+  976 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rspec-core-2.99.1/lib/rspec/core/reporter.rb
+  977 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rspec-core-2.99.1/lib/rspec/core/metadata_hash_builder.rb
+  978 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rspec-core-2.99.1/lib/rspec/core/hooks.rb
+  979 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rspec-core-2.99.1/lib/rspec/core/memoized_helpers.rb
+  980 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rspec-core-2.99.1/lib/rspec/core/metadata.rb
+  981 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rspec-core-2.99.1/lib/rspec/core/pending.rb
+  982 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rspec-core-2.99.1/lib/rspec/core/formatters.rb
+  983 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rspec-core-2.99.1/lib/rspec/core/world.rb
+  984 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rspec-core-2.99.1/lib/rspec/core/backtrace_cleaner.rb
+  985 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rspec-core-2.99.1/lib/rspec/core/ruby_project.rb
+  986 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rspec-core-2.99.1/lib/rspec/core/deprecated_mutable_array_proxy.rb
+  987 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rspec-core-2.99.1/lib/rspec/core/formatters/helpers.rb
+  988 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rspec-core-2.99.1/lib/rspec/core/formatters/deprecation_formatter.rb
+  989 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rspec-core-2.99.1/lib/rspec/core/configuration.rb
+  990 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rspec-core-2.99.1/lib/rspec/core/project_initializer.rb
+  991 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/optparse.rb
+  992 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rspec-core-2.99.1/lib/rspec/core/option_parser.rb
+  993 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rspec-core-2.99.1/lib/rspec/core/configuration_options.rb
+  994 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rspec-core-2.99.1/lib/rspec/core/command_line.rb
+  995 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rspec-core-2.99.1/lib/rspec/core/runner.rb
+  996 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rspec-core-2.99.1/lib/rspec/core/example.rb
+  997 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rspec-core-2.99.1/lib/rspec/core/shared_example_group/collection.rb
+  998 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rspec-core-2.99.1/lib/rspec/core/shared_example_group.rb
+  999 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rspec-core-2.99.1/lib/rspec/core/example_group.rb
+ 1000 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rspec-core-2.99.1/lib/rspec/core/version.rb
+ 1001 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rspec-core-2.99.1/lib/rspec/core.rb
+ 1002 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rspec-2.99.0/lib/rspec/version.rb
+ 1003 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rspec-2.99.0/lib/rspec.rb
+ 1004 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/yard-0.8.7.4/lib/yard/version.rb
+ 1005 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/yard-0.8.7.4/lib/yard/core_ext/module.rb
+ 1006 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/yard-0.8.7.4/lib/yard/core_ext/file.rb
+ 1007 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/yard-0.8.7.4/lib/yard/core_ext/string.rb
+ 1008 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/yard-0.8.7.4/lib/yard/core_ext/symbol_hash.rb
+ 1009 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/yard-0.8.7.4/lib/yard/core_ext/array.rb
+ 1010 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/yard-0.8.7.4/lib/yard/core_ext/hash.rb
+ 1011 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/yard-0.8.7.4/lib/yard/core_ext/insertion.rb
+ 1012 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/yard-0.8.7.4/lib/yard/rubygems/backports/gem.rb
+ 1013 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/yard-0.8.7.4/lib/yard/rubygems/backports/source_index.rb
+ 1014 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/yard-0.8.7.4/lib/yard/rubygems/backports.rb
+ 1015 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/yard-0.8.7.4/lib/yard/server.rb
+ 1016 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/yard-0.8.7.4/lib/yard/autoload.rb
+ 1017 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/yard-0.8.7.4/lib/yard/globals.rb
+ 1018 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/yard-0.8.7.4/lib/yard/config.rb
+ 1019 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/yard-0.8.7.4/lib/yard/options.rb
+ 1020 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/yard-0.8.7.4/lib/yard/templates/template_options.rb
+ 1021 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/yard-0.8.7.4/lib/yard/cli/command.rb
+ 1022 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/yard-0.8.7.4/lib/yard/cli/yardopts_command.rb
+ 1023 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/yard-0.8.7.4/lib/yard/cli/yardoc.rb
+ 1024 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/yard-0.8.7.4/lib/yard.rb
+ 1025 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-2.6.1/lib/guard/commander.rb
+ 1026 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-2.6.1/lib/guard/deprecated_methods.rb
+ 1027 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/lumberjack-1.0.9/lib/lumberjack.rb
+ 1028 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-2.6.1/lib/guard/options.rb
+ 1029 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-2.6.1/lib/guard/ui/colors.rb
+ 1030 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-2.6.1/lib/guard/ui.rb
+ 1031 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-2.6.1/lib/guard/deprecator.rb
+ 1032 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-2.6.1/lib/guard/guardfile/evaluator.rb
+ 1033 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-2.6.1/lib/guard/guardfile/generator.rb
+ 1034 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-2.6.1/lib/guard/guardfile.rb
+ 1035 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/input_lock.rb
+ 1036 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/exceptions.rb
+ 1037 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/helpers/base_helpers.rb
+ 1038 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/hooks.rb
+ 1039 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/method_source-0.8.2/lib/method_source/version.rb
+ 1040 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/method_source-0.8.2/lib/method_source/source_location.rb
+ 1041 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/method_source-0.8.2/lib/method_source/code_helpers.rb
+ 1042 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/method_source-0.8.2/lib/method_source.rb
+ 1043 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/coderay-1.1.0/lib/coderay/version.rb
+ 1044 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/coderay-1.1.0/lib/coderay.rb
+ 1045 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/slop-3.6.0/lib/slop/option.rb
+ 1046 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/slop-3.6.0/lib/slop/commands.rb
+ 1047 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/slop-3.6.0/lib/slop.rb
+ 1048 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/version.rb
+ 1049 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/repl.rb
+ 1050 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/rbx_path.rb
+ 1051 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/code/loc.rb
+ 1052 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/code/code_range.rb
+ 1053 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/code/code_file.rb
+ 1054 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/code.rb
+ 1055 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/history_array.rb
+ 1056 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/helpers/options_helpers.rb
+ 1057 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/helpers/command_helpers.rb
+ 1058 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/helpers/text.rb
+ 1059 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/helpers/table.rb
+ 1060 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/helpers.rb
+ 1061 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/code_object.rb
+ 1062 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/helpers/documentation_helpers.rb
+ 1063 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/method/weird_method_locator.rb
+ 1064 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/method/disowned.rb
+ 1065 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/method/patcher.rb
+ 1066 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/method.rb
+ 1067 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/module_candidate.rb
+ 1068 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/wrapped_module.rb
+ 1069 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/history.rb
+ 1070 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/command.rb
+ 1071 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/command_set.rb
+ 1072 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/change_prompt.rb
+ 1073 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/show_info.rb
+ 1074 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/whereami.rb
+ 1075 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/bang_pry.rb
+ 1076 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/change_inspector.rb
+ 1077 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/ri.rb
+ 1078 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/install_command.rb
+ 1079 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/fix_indent.rb
+ 1080 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/disabled_commands.rb
+ 1081 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/raise_up.rb
+ 1082 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/bang.rb
+ 1083 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/shell_command.rb
+ 1084 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/list_prompts.rb
+ 1085 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/jump_to.rb
+ 1086 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/watch_expression/expression.rb
+ 1087 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/watch_expression.rb
+ 1088 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/switch_to.rb
+ 1089 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/amend_line.rb
+ 1090 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/code_collector.rb
+ 1091 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/save_file.rb
+ 1092 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/exit.rb
+ 1093 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/list_inspectors.rb
+ 1094 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/show_input.rb
+ 1095 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/show_doc.rb
+ 1096 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/play.rb
+ 1097 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/toggle_color.rb
+ 1098 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/stat.rb
+ 1099 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/shell_mode.rb
+ 1100 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/import_set.rb
+ 1101 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/reset.rb
+ 1102 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/reload_code.rb
+ 1103 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/gem_cd.rb
+ 1104 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/exit_program.rb
+ 1105 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/gem_install.rb
+ 1106 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/wtf.rb
+ 1107 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/find_method.rb
+ 1108 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/cat/abstract_formatter.rb
+ 1109 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/cat/input_expression_formatter.rb
+ 1110 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/cat/exception_formatter.rb
+ 1111 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/cat/file_formatter.rb
+ 1112 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/cat.rb
+ 1113 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/gem_list.rb
+ 1114 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/exit_all.rb
+ 1115 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/disable_pry.rb
+ 1116 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/gist.rb
+ 1117 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/ls/grep.rb
+ 1118 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/ls/formatter.rb
+ 1119 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/ls/globals.rb
+ 1120 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/ls/interrogatable.rb
+ 1121 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/ls/constants.rb
+ 1122 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/ls/jruby_hacks.rb
+ 1123 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/ls/methods_helper.rb
+ 1124 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/ls/methods.rb
+ 1125 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/ls/self_methods.rb
+ 1126 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/ls/instance_vars.rb
+ 1127 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/ls/local_names.rb
+ 1128 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/ls/local_vars.rb
+ 1129 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/ls/ls_entity.rb
+ 1130 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/ls.rb
+ 1131 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/help.rb
+ 1132 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/edit/exception_patcher.rb
+ 1133 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/edit/file_and_line_locator.rb
+ 1134 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/edit.rb
+ 1135 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/pry_version.rb
+ 1136 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/nesting.rb
+ 1137 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/easter_eggs.rb
+ 1138 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/cd.rb
+ 1139 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/pry_backtrace.rb
+ 1140 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/hist.rb
+ 1141 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/gem_open.rb
+ 1142 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/simple_prompt.rb
+ 1143 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands/show_source.rb
+ 1144 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/commands.rb
+ 1145 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/plugins.rb
+ 1146 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/core_extensions.rb
+ 1147 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/config/behavior.rb
+ 1148 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/config/default.rb
+ 1149 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/config/convenience.rb
+ 1150 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/config.rb
+ 1151 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/pry_class.rb
+ 1152 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/pry_instance.rb
+ 1153 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/cli.rb
+ 1154 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/coderay-1.1.0/lib/coderay/helpers/plugin.rb
+ 1155 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/coderay-1.1.0/lib/coderay/encoder.rb
+ 1156 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/coderay-1.1.0/lib/coderay/encoders/_map.rb
+ 1157 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/coderay-1.1.0/lib/coderay/encoders/terminal.rb
+ 1158 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/color_printer.rb
+ 1159 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/terminal.rb
+ 1160 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/pager.rb
+ 1161 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/editor.rb
+ 1162 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/rubygem.rb
+ 1163 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/indent.rb
+ 1164 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/last_exception.rb
+ 1165 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/prompt.rb
+ 1166 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/inspector.rb
+ 1167 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/object_path.rb
+ 1168 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry/output.rb
+ 1169 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/pry-0.10.0/lib/pry.rb
+ 1170 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-2.6.1/lib/guard/commands/all.rb
+ 1171 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-2.6.1/lib/guard/commands/change.rb
+ 1172 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-2.6.1/lib/guard/notifiers/base.rb
+ 1173 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-2.6.1/lib/guard/notifiers/emacs.rb
+ 1174 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-2.6.1/lib/guard/notifiers/file_notifier.rb
+ 1175 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-2.6.1/lib/guard/notifiers/gntp.rb
+ 1176 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-2.6.1/lib/guard/notifiers/growl_notify.rb
+ 1177 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-2.6.1/lib/guard/notifiers/growl.rb
+ 1178 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-2.6.1/lib/guard/notifiers/libnotify.rb
+ 1179 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-2.6.1/lib/guard/notifiers/notifysend.rb
+ 1180 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-2.6.1/lib/guard/notifiers/rb_notifu.rb
+ 1181 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-2.6.1/lib/guard/notifiers/terminal_notifier.rb
+ 1182 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-2.6.1/lib/guard/notifiers/terminal_title.rb
+ 1183 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-2.6.1/lib/guard/notifiers/tmux.rb
+ 1184 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-2.6.1/lib/guard/notifier.rb
+ 1185 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-2.6.1/lib/guard/commands/notification.rb
+ 1186 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-2.6.1/lib/guard/commands/pause.rb
+ 1187 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-2.6.1/lib/guard/commands/reload.rb
+ 1188 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-2.6.1/lib/guard/commands/scope.rb
+ 1189 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/formatador-0.2.5/lib/formatador/table.rb
+ 1190 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/formatador-0.2.5/lib/formatador/progressbar.rb
+ 1191 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/formatador-0.2.5/lib/formatador.rb
+ 1192 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-2.6.1/lib/guard/dsl_describer.rb
+ 1193 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-2.6.1/lib/guard/commands/show.rb
+ 1194 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-2.6.1/lib/guard/interactor.rb
+ 1195 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-2.6.1/lib/guard/watcher.rb
+ 1196 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-2.6.1/lib/guard/dsl.rb
+ 1197 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-2.6.1/lib/guard/group.rb
+ 1198 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-2.6.1/lib/guard/plugin_util.rb
+ 1199 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-2.6.1/lib/guard/runner.rb
+ 1200 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/celluloid-0.15.2/lib/celluloid/calls.rb
+ 1201 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/celluloid-0.15.2/lib/celluloid/call_chain.rb
+ 1202 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/celluloid-0.15.2/lib/celluloid/condition.rb
+ 1203 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/fiber.so
+ 1204 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/celluloid-0.15.2/lib/celluloid/fiber.rb
+ 1205 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/celluloid-0.15.2/lib/celluloid/thread.rb
+ 1206 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/celluloid-0.15.2/lib/celluloid/core_ext.rb
+ 1207 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/celluloid-0.15.2/lib/celluloid/cpu_counter.rb
+ 1208 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/celluloid-0.15.2/lib/celluloid/fsm.rb
+ 1209 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/celluloid-0.15.2/lib/celluloid/internal_pool.rb
+ 1210 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/celluloid-0.15.2/lib/celluloid/links.rb
+ 1211 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/celluloid-0.15.2/lib/celluloid/logger.rb
+ 1212 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/celluloid-0.15.2/lib/celluloid/mailbox.rb
+ 1213 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/celluloid-0.15.2/lib/celluloid/evented_mailbox.rb
+ 1214 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/celluloid-0.15.2/lib/celluloid/method.rb
+ 1215 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/celluloid-0.15.2/lib/celluloid/properties.rb
+ 1216 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/timers-1.1.0/lib/timers/version.rb
+ 1217 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/timers-1.1.0/lib/timers.rb
+ 1218 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/celluloid-0.15.2/lib/celluloid/receivers.rb
+ 1219 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/celluloid-0.15.2/lib/celluloid/registry.rb
+ 1220 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/celluloid-0.15.2/lib/celluloid/responses.rb
+ 1221 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/celluloid-0.15.2/lib/celluloid/signals.rb
+ 1222 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/celluloid-0.15.2/lib/celluloid/stack_dump.rb
+ 1223 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/celluloid-0.15.2/lib/celluloid/system_events.rb
+ 1224 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/celluloid-0.15.2/lib/celluloid/tasks/task_fiber.rb
+ 1225 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/celluloid-0.15.2/lib/celluloid/tasks/task_thread.rb
+ 1226 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/celluloid-0.15.2/lib/celluloid/tasks.rb
+ 1227 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/celluloid-0.15.2/lib/celluloid/task_set.rb
+ 1228 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/celluloid-0.15.2/lib/celluloid/thread_handle.rb
+ 1229 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/celluloid-0.15.2/lib/celluloid/uuid.rb
+ 1230 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/celluloid-0.15.2/lib/celluloid/proxies/abstract_proxy.rb
+ 1231 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/celluloid-0.15.2/lib/celluloid/proxies/sync_proxy.rb
+ 1232 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/celluloid-0.15.2/lib/celluloid/proxies/actor_proxy.rb
+ 1233 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/celluloid-0.15.2/lib/celluloid/proxies/async_proxy.rb
+ 1234 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/celluloid-0.15.2/lib/celluloid/proxies/future_proxy.rb
+ 1235 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/celluloid-0.15.2/lib/celluloid/proxies/block_proxy.rb
+ 1236 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/celluloid-0.15.2/lib/celluloid/actor.rb
+ 1237 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/celluloid-0.15.2/lib/celluloid/future.rb
+ 1238 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/celluloid-0.15.2/lib/celluloid/pool_manager.rb
+ 1239 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/celluloid-0.15.2/lib/celluloid/supervision_group.rb
+ 1240 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/celluloid-0.15.2/lib/celluloid/supervisor.rb
+ 1241 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/celluloid-0.15.2/lib/celluloid/notifications.rb
+ 1242 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/celluloid-0.15.2/lib/celluloid/logging/log_event.rb
+ 1243 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/celluloid-0.15.2/lib/celluloid/logging/incident.rb
+ 1244 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/celluloid-0.15.2/lib/celluloid/logging/ring_buffer.rb
+ 1245 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/celluloid-0.15.2/lib/celluloid/logging/incident_logger.rb
+ 1246 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/celluloid-0.15.2/lib/celluloid/logging/incident_reporter.rb
+ 1247 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/celluloid-0.15.2/lib/celluloid/logging.rb
+ 1248 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/celluloid-0.15.2/lib/celluloid/legacy.rb
+ 1249 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/celluloid-0.15.2/lib/celluloid.rb
+ 1250 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/listen-2.7.9/lib/listen/options.rb
+ 1251 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/listen-2.7.9/lib/listen/adapter/base.rb
+ 1252 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/listen-2.7.9/lib/listen/adapter/bsd.rb
+ 1253 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/listen-2.7.9/lib/listen/adapter/darwin.rb
+ 1254 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/listen-2.7.9/lib/listen/adapter/linux.rb
+ 1255 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/listen-2.7.9/lib/listen/adapter/polling.rb
+ 1256 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/listen-2.7.9/lib/listen/adapter/windows.rb
+ 1257 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/listen-2.7.9/lib/listen/adapter.rb
+ 1258 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/listen-2.7.9/lib/listen/file.rb
+ 1259 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/listen-2.7.9/lib/listen/directory.rb
+ 1260 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/listen-2.7.9/lib/listen/change.rb
+ 1261 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/listen-2.7.9/lib/listen/record.rb
+ 1262 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/listen-2.7.9/lib/listen/silencer.rb
+ 1263 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/listen-2.7.9/lib/listen/queue_optimizer.rb
+ 1264 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/English.rb
+ 1265 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/listen-2.7.9/lib/listen/listener.rb
+ 1266 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/listen-2.7.9/lib/listen.rb
+ 1267 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-2.6.1/lib/guard/setuper.rb
+ 1268 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-2.6.1/lib/guard.rb
+ 1269 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-2.6.1/lib/guard/plugin/hooker.rb
+ 1270 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-2.6.1/lib/guard/plugin/base.rb
+ 1271 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-2.6.1/lib/guard/plugin.rb
+ 1272 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-rspec-4.2.10/lib/guard/rspec/options.rb
+ 1273 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-rspec-4.2.10/lib/guard/rspec/deprecator.rb
+ 1274 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-rspec-4.2.10/lib/guard/rspec/inspectors/base_inspector.rb
+ 1275 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-rspec-4.2.10/lib/guard/rspec/inspectors/simple_inspector.rb
+ 1276 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-rspec-4.2.10/lib/guard/rspec/inspectors/keeping_inspector.rb
+ 1277 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-rspec-4.2.10/lib/guard/rspec/inspectors/focused_inspector.rb
+ 1278 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-rspec-4.2.10/lib/guard/rspec/inspectors/factory.rb
+ 1279 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-rspec-4.2.10/lib/guard/rspec/command.rb
+ 1280 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rspec-core-2.99.1/lib/rspec/core/formatters/base_formatter.rb
+ 1281 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-rspec-4.2.10/lib/guard/rspec/formatter.rb
+ 1282 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-rspec-4.2.10/lib/guard/rspec/notifier.rb
+ 1283 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-rspec-4.2.10/lib/guard/rspec/runner.rb
+ 1284 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/guard-rspec-4.2.10/lib/guard/rspec.rb
+ 1285 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/docile-1.1.5/lib/docile/version.rb
+ 1286 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/docile-1.1.5/lib/docile/execution.rb
+ 1287 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/docile-1.1.5/lib/docile/fallback_context_proxy.rb
+ 1288 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/docile-1.1.5/lib/docile/chaining_fallback_context_proxy.rb
+ 1289 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/docile-1.1.5/lib/docile.rb
+ 1290 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/simplecov-0.9.0/lib/simplecov/formatter/multi_formatter.rb
+ 1291 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/simplecov-0.9.0/lib/simplecov/configuration.rb
+ 1292 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/simplecov-0.9.0/lib/simplecov/exit_codes.rb
+ 1293 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/multi_json-1.10.1/lib/multi_json/options.rb
+ 1294 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/multi_json-1.10.1/lib/multi_json/version.rb
+ 1295 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/multi_json-1.10.1/lib/multi_json/adapter_error.rb
+ 1296 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/multi_json-1.10.1/lib/multi_json/parse_error.rb
+ 1297 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/multi_json-1.10.1/lib/multi_json.rb
+ 1298 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/simplecov-0.9.0/lib/simplecov/json.rb
+ 1299 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/simplecov-0.9.0/lib/simplecov/profiles.rb
+ 1300 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/simplecov-0.9.0/lib/simplecov/source_file.rb
+ 1301 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/simplecov-0.9.0/lib/simplecov/file_list.rb
+ 1302 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/simplecov-0.9.0/lib/simplecov/result.rb
+ 1303 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/simplecov-0.9.0/lib/simplecov/filter.rb
+ 1304 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/simplecov-0.9.0/lib/simplecov/formatter/simple_formatter.rb
+ 1305 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/simplecov-0.9.0/lib/simplecov/formatter.rb
+ 1306 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/simplecov-0.9.0/lib/simplecov/last_run.rb
+ 1307 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/simplecov-0.9.0/lib/simplecov/merge_helpers.rb
+ 1308 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/simplecov-0.9.0/lib/simplecov/result_merger.rb
+ 1309 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/simplecov-0.9.0/lib/simplecov/command_guesser.rb
+ 1310 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/simplecov-0.9.0/lib/simplecov/version.rb
+ 1311 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/simplecov-html-0.8.0/lib/simplecov-html/version.rb
+ 1312 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/simplecov-html-0.8.0/lib/simplecov-html.rb
+ 1313 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/coverage.so
+ 1314 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/simplecov-0.9.0/lib/simplecov/jruby_fix.rb
+ 1315 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/simplecov-0.9.0/lib/simplecov/defaults.rb
+ 1316 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/simplecov-0.9.0/lib/simplecov.rb
+ 1317 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/thin-1.6.2/lib/thin/version.rb
+ 1318 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/thin-1.6.2/lib/thin/statuses.rb
+ 1319 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/thin-1.6.2/lib/rack/adapter/loader.rb
+ 1320 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/extensions/x86_64-linux/2.1.0-static/thin-1.6.2/thin_parser.so
+ 1321 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/thin-1.6.2/lib/thin.rb
+ 1322 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/dependencies.rb
+ 1323 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/util.rb
+ 1324 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/browser_support.rb
+ 1325 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/sass_extensions/functions/selectors.rb
+ 1326 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/sass_extensions/functions/enumerate.rb
+ 1327 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/sass_extensions/functions/urls.rb
+ 1328 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/sass_extensions/functions/display.rb
+ 1329 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/sass_extensions/functions/inline_image.rb
+ 1330 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/sass_extensions/functions/image_size.rb
+ 1331 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/sass_extensions/functions/constants.rb
+ 1332 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/sass_extensions/functions/gradient_support.rb
+ 1333 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/sass_extensions/functions/font_files.rb
+ 1334 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/sass_extensions/functions/lists.rb
+ 1335 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/sass_extensions/functions/colors.rb
+ 1336 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/sass_extensions/functions/math.rb
+ 1337 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/sass_extensions/functions/sprites.rb
+ 1338 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/sass_extensions/functions/env.rb
+ 1339 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/sass_extensions/functions/cross_browser_support.rb
+ 1340 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/sass_extensions/functions.rb
+ 1341 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/sass_extensions/monkey_patches/traversal.rb
+ 1342 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/sass_extensions/monkey_patches/browser_support.rb
+ 1343 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/sass_extensions/monkey_patches.rb
+ 1344 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/digest/md5.so
+ 1345 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/sprite_importer/binding.rb
+ 1346 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/sprite_importer.rb
+ 1347 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/sass_extensions/sprites/image_row.rb
+ 1348 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/sass_extensions/sprites/row_fitter.rb
+ 1349 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/sass_extensions/sprites/image.rb
+ 1350 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/sass_extensions/sprites/layout_methods.rb
+ 1351 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/sass_extensions/sprites/sprite_methods.rb
+ 1352 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/sass_extensions/sprites/image_methods.rb
+ 1353 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/sass_extensions/sprites/sprite_map.rb
+ 1354 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/chunky_png-1.3.1/lib/chunky_png/version.rb
+ 1355 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/chunky_png-1.3.1/lib/chunky_png/compatibility.rb
+ 1356 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/chunky_png-1.3.1/lib/chunky_png/datastream.rb
+ 1357 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/chunky_png-1.3.1/lib/chunky_png/chunk.rb
+ 1358 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/chunky_png-1.3.1/lib/chunky_png/palette.rb
+ 1359 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/chunky_png-1.3.1/lib/chunky_png/color.rb
+ 1360 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/chunky_png-1.3.1/lib/chunky_png/point.rb
+ 1361 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/chunky_png-1.3.1/lib/chunky_png/vector.rb
+ 1362 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/chunky_png-1.3.1/lib/chunky_png/dimension.rb
+ 1363 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/chunky_png-1.3.1/lib/chunky_png/canvas/png_encoding.rb
+ 1364 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/chunky_png-1.3.1/lib/chunky_png/canvas/png_decoding.rb
+ 1365 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/chunky_png-1.3.1/lib/chunky_png/canvas/adam7_interlacing.rb
+ 1366 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/chunky_png-1.3.1/lib/chunky_png/canvas/stream_exporting.rb
+ 1367 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/chunky_png-1.3.1/lib/chunky_png/canvas/stream_importing.rb
+ 1368 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/chunky_png-1.3.1/lib/chunky_png/canvas/data_url_exporting.rb
+ 1369 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/chunky_png-1.3.1/lib/chunky_png/canvas/data_url_importing.rb
+ 1370 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/chunky_png-1.3.1/lib/chunky_png/canvas/operations.rb
+ 1371 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/chunky_png-1.3.1/lib/chunky_png/canvas/drawing.rb
+ 1372 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/chunky_png-1.3.1/lib/chunky_png/canvas/resampling.rb
+ 1373 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/chunky_png-1.3.1/lib/chunky_png/canvas/masking.rb
+ 1374 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/chunky_png-1.3.1/lib/chunky_png/canvas.rb
+ 1375 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/chunky_png-1.3.1/lib/chunky_png/image.rb
+ 1376 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/chunky_png-1.3.1/lib/chunky_png.rb
+ 1377 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/sass_extensions/sprites/engines/chunky_png_engine.rb
+ 1378 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/sass_extensions/sprites/engines.rb
+ 1379 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/sass_extensions/sprites.rb
+ 1380 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/sass_extensions.rb
+ 1381 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/version.rb
+ 1382 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/errors.rb
+ 1383 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/quick_cache.rb
+ 1384 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/logger.rb
+ 1385 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/callbacks.rb
+ 1386 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/configuration/adapters.rb
+ 1387 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/configuration/comments.rb
+ 1388 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/configuration/defaults.rb
+ 1389 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/configuration/helpers.rb
+ 1390 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/configuration/inheritance.rb
+ 1391 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/configuration/serialization.rb
+ 1392 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/configuration/paths.rb
+ 1393 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/configuration/data.rb
+ 1394 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/configuration/file_data.rb
+ 1395 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/configuration.rb
+ 1396 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/frameworks.rb
+ 1397 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/app_integration/stand_alone/configuration_defaults.rb
+ 1398 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/app_integration/stand_alone/installer.rb
+ 1399 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/app_integration/stand_alone.rb
+ 1400 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/app_integration.rb
+ 1401 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/actions.rb
+ 1402 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/compiler.rb
+ 1403 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass/app_integration/rails.rb
+ 1404 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/compass-0.12.7/lib/compass.rb
+ 1405 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sinatra-contrib-1.4.2/lib/sinatra/contrib/version.rb
+ 1406 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sinatra-contrib-1.4.2/lib/sinatra/contrib/setup.rb
+ 1407 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sinatra-contrib-1.4.2/lib/sinatra/engine_tracking.rb
+ 1408 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sinatra-contrib-1.4.2/lib/sinatra/capture.rb
+ 1409 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sinatra-contrib-1.4.2/lib/sinatra/content_for.rb
+ 1410 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sinatra-contrib-1.4.2/lib/sinatra/cookies.rb
+ 1411 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sinatra-contrib-1.4.2/lib/sinatra/json.rb
+ 1412 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sinatra-contrib-1.4.2/lib/sinatra/link_header.rb
+ 1413 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sinatra-contrib-1.4.2/lib/sinatra/config_file.rb
+ 1414 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sinatra-contrib-1.4.2/lib/sinatra/multi_route.rb
+ 1415 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sinatra-contrib-1.4.2/lib/sinatra/decompile.rb
+ 1416 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sinatra-contrib-1.4.2/lib/sinatra/namespace.rb
+ 1417 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rack-1.5.2/lib/rack/mime.rb
+ 1418 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sinatra-contrib-1.4.2/lib/sinatra/respond_with.rb
+ 1419 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/sinatra-contrib-1.4.2/lib/sinatra/contrib.rb
+ 1420 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rdoc-3.12.2/lib/rdoc.rb
+ 1421 /home/alveric/development/ruby_proj/rubyneat_examples/config/boot.rb
+ 1422 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/thor-0.19.1/lib/thor/shell/basic.rb
+ 1423 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/thor-0.19.1/lib/thor/shell/color.rb
+ 1424 /home/alveric/development/ruby_proj/rubyneat_examples/lib/xor.rb
+ 1425 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rack-1.5.2/lib/rack/handler.rb
+ 1426 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rack-1.5.2/lib/rack/content_length.rb
+ 1427 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rack-1.5.2/lib/rack/chunked.rb
+ 1428 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rack-1.5.2/lib/rack/handler/thin.rb
+ 1429 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/thin-1.6.2/lib/thin/logging.rb
+ 1430 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/optparse/time.rb
+ 1431 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/daemons-1.1.9/lib/daemons/pid.rb
+ 1432 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/daemons-1.1.9/lib/daemons/pidfile.rb
+ 1433 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/daemons-1.1.9/lib/daemons/cmdline.rb
+ 1434 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/daemons-1.1.9/lib/daemons/exceptions.rb
+ 1435 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/daemons-1.1.9/lib/daemons/daemonize.rb
+ 1436 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/daemons-1.1.9/lib/daemons/monitor.rb
+ 1437 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/daemons-1.1.9/lib/daemons/pidmem.rb
+ 1438 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/daemons-1.1.9/lib/daemons/etc_extension.rb
+ 1439 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/daemons-1.1.9/lib/daemons/change_privilege.rb
+ 1440 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/daemons-1.1.9/lib/daemons/application.rb
+ 1441 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/daemons-1.1.9/lib/daemons/application_group.rb
+ 1442 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/daemons-1.1.9/lib/daemons/controller.rb
+ 1443 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/daemons-1.1.9/lib/daemons.rb
+ 1444 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/thin-1.6.2/lib/thin/daemonizing.rb
+ 1445 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/thin-1.6.2/lib/thin/server.rb
+ 1446 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/thin-1.6.2/lib/thin/backends/base.rb
+ 1447 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/thin-1.6.2/lib/thin/backends/tcp_server.rb
+ 1448 /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/thin-1.6.2/lib/thin/connection.rb
+
+* Process memory map:
+
+7f6033df4000-7f6033dff000 r-xp 00000000 08:02 49287087                   /lib/x86_64-linux-gnu/libnss_files-2.19.so
+7f6033dff000-7f6033ffe000 ---p 0000b000 08:02 49287087                   /lib/x86_64-linux-gnu/libnss_files-2.19.so
+7f6033ffe000-7f6033fff000 r--p 0000a000 08:02 49287087                   /lib/x86_64-linux-gnu/libnss_files-2.19.so
+7f6033fff000-7f6034000000 rw-p 0000b000 08:02 49287087                   /lib/x86_64-linux-gnu/libnss_files-2.19.so
+7f6034000000-7f603420b000 rw-p 00000000 00:00 0 
+7f603420b000-7f6038000000 ---p 00000000 00:00 0 
+7f6038113000-7f6038114000 ---p 00000000 00:00 0 
+7f6038114000-7f6038315000 rw-p 00000000 00:00 0                          [stack:26077]
+7f6038315000-7f6038316000 r-xp 00000000 00:19 17041290                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/digest/md5.so
+7f6038316000-7f6038515000 ---p 00001000 00:19 17041290                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/digest/md5.so
+7f6038515000-7f6038516000 r--p 00000000 00:19 17041290                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/digest/md5.so
+7f6038516000-7f6038517000 rw-p 00001000 00:19 17041290                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/digest/md5.so
+7f6038517000-7f603851d000 r-xp 00000000 00:19 17957348                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/extensions/x86_64-linux/2.1.0-static/thin-1.6.2/thin_parser.so
+7f603851d000-7f603871c000 ---p 00006000 00:19 17957348                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/extensions/x86_64-linux/2.1.0-static/thin-1.6.2/thin_parser.so
+7f603871c000-7f603871d000 r--p 00005000 00:19 17957348                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/extensions/x86_64-linux/2.1.0-static/thin-1.6.2/thin_parser.so
+7f603871d000-7f603871e000 rw-p 00006000 00:19 17957348                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/extensions/x86_64-linux/2.1.0-static/thin-1.6.2/thin_parser.so
+7f603871e000-7f603871f000 r-xp 00000000 00:19 16787226                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/coverage.so
+7f603871f000-7f603891f000 ---p 00001000 00:19 16787226                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/coverage.so
+7f603891f000-7f6038920000 r--p 00001000 00:19 16787226                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/coverage.so
+7f6038920000-7f6038921000 rw-p 00002000 00:19 16787226                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/coverage.so
+7f6038921000-7f6038922000 r-xp 00000000 00:19 16787236                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/fiber.so
+7f6038922000-7f6038b21000 ---p 00001000 00:19 16787236                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/fiber.so
+7f6038b21000-7f6038b22000 r--p 00000000 00:19 16787236                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/fiber.so
+7f6038b22000-7f6038b23000 rw-p 00001000 00:19 16787236                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/fiber.so
+7f6038b23000-7f6038b28000 r-xp 00000000 00:19 17566635                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/extensions/x86_64-linux/2.1.0-static/debase-0.0.9/debase_internals.so
+7f6038b28000-7f6038d28000 ---p 00005000 00:19 17566635                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/extensions/x86_64-linux/2.1.0-static/debase-0.0.9/debase_internals.so
+7f6038d28000-7f6038d29000 r--p 00005000 00:19 17566635                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/extensions/x86_64-linux/2.1.0-static/debase-0.0.9/debase_internals.so
+7f6038d29000-7f6038d2a000 rw-p 00006000 00:19 17566635                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/extensions/x86_64-linux/2.1.0-static/debase-0.0.9/debase_internals.so
+7f6038d2a000-7f6038d40000 r-xp 00000000 08:02 49287039                   /lib/x86_64-linux-gnu/libgcc_s.so.1
+7f6038d40000-7f6038f3f000 ---p 00016000 08:02 49287039                   /lib/x86_64-linux-gnu/libgcc_s.so.1
+7f6038f3f000-7f6038f40000 rw-p 00015000 08:02 49287039                   /lib/x86_64-linux-gnu/libgcc_s.so.1
+7f6038f40000-7f6039026000 r-xp 00000000 08:02 27272384                   /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.19
+7f6039026000-7f6039225000 ---p 000e6000 08:02 27272384                   /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.19
+7f6039225000-7f603922d000 r--p 000e5000 08:02 27272384                   /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.19
+7f603922d000-7f603922f000 rw-p 000ed000 08:02 27272384                   /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.19
+7f603922f000-7f6039244000 rw-p 00000000 00:00 0 
+7f6039244000-7f603929e000 r-xp 00000000 00:19 17829366                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/extensions/x86_64-linux/2.1.0-static/eventmachine-1.0.3/rubyeventmachine.so
+7f603929e000-7f603949e000 ---p 0005a000 00:19 17829366                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/extensions/x86_64-linux/2.1.0-static/eventmachine-1.0.3/rubyeventmachine.so
+7f603949e000-7f603949f000 r--p 0005a000 00:19 17829366                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/extensions/x86_64-linux/2.1.0-static/eventmachine-1.0.3/rubyeventmachine.so
+7f603949f000-7f60394a2000 rw-p 0005b000 00:19 17829366                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/extensions/x86_64-linux/2.1.0-static/eventmachine-1.0.3/rubyeventmachine.so
+7f60394a2000-7f60394a3000 r-xp 00000000 00:19 17041291                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/digest/sha2.so
+7f60394a3000-7f60396a3000 ---p 00001000 00:19 17041291                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/digest/sha2.so
+7f60396a3000-7f60396a4000 r--p 00001000 00:19 17041291                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/digest/sha2.so
+7f60396a4000-7f60396a5000 rw-p 00002000 00:19 17041291                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/digest/sha2.so
+7f60396a5000-7f60396af000 r-xp 00000000 00:19 17041284                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/json/ext/generator.so
+7f60396af000-7f60398ae000 ---p 0000a000 00:19 17041284                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/json/ext/generator.so
+7f60398ae000-7f60398af000 r--p 00009000 00:19 17041284                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/json/ext/generator.so
+7f60398af000-7f60398b0000 rw-p 0000a000 00:19 17041284                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/json/ext/generator.so
+7f60398b0000-7f60398b1000 r-xp 00000000 00:19 17041247                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/enc/utf_32le.so
+7f60398b1000-7f6039ab0000 ---p 00001000 00:19 17041247                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/enc/utf_32le.so
+7f6039ab0000-7f6039ab1000 r--p 00000000 00:19 17041247                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/enc/utf_32le.so
+7f6039ab1000-7f6039ab2000 rw-p 00001000 00:19 17041247                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/enc/utf_32le.so
+7f6039ab2000-7f6039ab3000 r-xp 00000000 00:19 17041232                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/enc/utf_32be.so
+7f6039ab3000-7f6039cb2000 ---p 00001000 00:19 17041232                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/enc/utf_32be.so
+7f6039cb2000-7f6039cb3000 r--p 00000000 00:19 17041232                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/enc/utf_32be.so
+7f6039cb3000-7f6039cb4000 rw-p 00001000 00:19 17041232                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/enc/utf_32be.so
+7f6039cb4000-7f6039cb5000 r-xp 00000000 00:19 17041238                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/enc/utf_16le.so
+7f6039cb5000-7f6039eb5000 ---p 00001000 00:19 17041238                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/enc/utf_16le.so
+7f6039eb5000-7f6039eb6000 r--p 00001000 00:19 17041238                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/enc/utf_16le.so
+7f6039eb6000-7f6039eb7000 rw-p 00002000 00:19 17041238                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/enc/utf_16le.so
+7f6039eb7000-7f6039eb8000 r-xp 00000000 00:19 17041270                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/enc/utf_16be.so
+7f6039eb8000-7f603a0b8000 ---p 00001000 00:19 17041270                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/enc/utf_16be.so
+7f603a0b8000-7f603a0b9000 r--p 00001000 00:19 17041270                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/enc/utf_16be.so
+7f603a0b9000-7f603a0ba000 rw-p 00002000 00:19 17041270                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/enc/utf_16be.so
+7f603a0ba000-7f603a0c0000 r-xp 00000000 00:19 17041283                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/json/ext/parser.so
+7f603a0c0000-7f603a2bf000 ---p 00006000 00:19 17041283                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/json/ext/parser.so
+7f603a2bf000-7f603a2c0000 r--p 00005000 00:19 17041283                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/json/ext/parser.so
+7f603a2c0000-7f603a2c1000 rw-p 00006000 00:19 17041283                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/json/ext/parser.so
+7f603a2c1000-7f603a315000 r-xp 00000000 08:02 49284291                   /lib/x86_64-linux-gnu/libssl.so.1.0.0
+7f603a315000-7f603a515000 ---p 00054000 08:02 49284291                   /lib/x86_64-linux-gnu/libssl.so.1.0.0
+7f603a515000-7f603a518000 r--p 00054000 08:02 49284291                   /lib/x86_64-linux-gnu/libssl.so.1.0.0
+7f603a518000-7f603a51e000 rw-p 00057000 08:02 49284291                   /lib/x86_64-linux-gnu/libssl.so.1.0.0
+7f603a51e000-7f603a51f000 rw-p 00000000 00:00 0 
+7f603a51f000-7f603a571000 r-xp 00000000 00:19 16787231                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/openssl.so
+7f603a571000-7f603a770000 ---p 00052000 00:19 16787231                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/openssl.so
+7f603a770000-7f603a771000 r--p 00051000 00:19 16787231                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/openssl.so
+7f603a771000-7f603a773000 rw-p 00052000 00:19 16787231                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/openssl.so
+7f603a773000-7f603a774000 rw-p 00000000 00:00 0 
+7f603a774000-7f603a775000 r-xp 00000000 00:19 16787235                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/fcntl.so
+7f603a775000-7f603a974000 ---p 00001000 00:19 16787235                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/fcntl.so
+7f603a974000-7f603a975000 r--p 00000000 00:19 16787235                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/fcntl.so
+7f603a975000-7f603a976000 rw-p 00001000 00:19 16787235                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/fcntl.so
+7f603a976000-7f603a98e000 r-xp 00000000 08:02 49287173                   /lib/x86_64-linux-gnu/libz.so.1.2.8
+7f603a98e000-7f603ab8d000 ---p 00018000 08:02 49287173                   /lib/x86_64-linux-gnu/libz.so.1.2.8
+7f603ab8d000-7f603ab8e000 r--p 00017000 08:02 49287173                   /lib/x86_64-linux-gnu/libz.so.1.2.8
+7f603ab8e000-7f603ab8f000 rw-p 00018000 08:02 49287173                   /lib/x86_64-linux-gnu/libz.so.1.2.8
+7f603ab8f000-7f603ab9f000 r-xp 00000000 00:19 16787233                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/zlib.so
+7f603ab9f000-7f603ad9e000 ---p 00010000 00:19 16787233                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/zlib.so
+7f603ad9e000-7f603ad9f000 r--p 0000f000 00:19 16787233                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/zlib.so
+7f603ad9f000-7f603ada0000 rw-p 00010000 00:19 16787233                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/zlib.so
+7f603ada0000-7f603adc8000 r-xp 00000000 00:19 16787224                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/socket.so
+7f603adc8000-7f603afc8000 ---p 00028000 00:19 16787224                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/socket.so
+7f603afc8000-7f603afc9000 r--p 00028000 00:19 16787224                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/socket.so
+7f603afc9000-7f603afca000 rw-p 00029000 00:19 16787224                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/socket.so
+7f603afca000-7f603afcd000 r-xp 00000000 00:19 16787218                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/digest.so
+7f603afcd000-7f603b1cd000 ---p 00003000 00:19 16787218                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/digest.so
+7f603b1cd000-7f603b1ce000 r--p 00003000 00:19 16787218                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/digest.so
+7f603b1ce000-7f603b1cf000 rw-p 00004000 00:19 16787218                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/digest.so
+7f603b1cf000-7f603b380000 r-xp 00000000 08:02 49284292                   /lib/x86_64-linux-gnu/libcrypto.so.1.0.0
+7f603b380000-7f603b57f000 ---p 001b1000 08:02 49284292                   /lib/x86_64-linux-gnu/libcrypto.so.1.0.0
+7f603b57f000-7f603b59a000 r--p 001b0000 08:02 49284292                   /lib/x86_64-linux-gnu/libcrypto.so.1.0.0
+7f603b59a000-7f603b5a5000 rw-p 001cb000 08:02 49284292                   /lib/x86_64-linux-gnu/libcrypto.so.1.0.0
+7f603b5a5000-7f603b5a9000 rw-p 00000000 00:00 0 
+7f603b5a9000-7f603b5aa000 r-xp 00000000 00:19 17041288                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/digest/sha1.so
+7f603b5aa000-7f603b7a9000 ---p 00001000 00:19 17041288                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/digest/sha1.so
+7f603b7a9000-7f603b7aa000 r--p 00000000 00:19 17041288                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/digest/sha1.so
+7f603b7aa000-7f603b7ab000 rw-p 00001000 00:19 17041288                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/digest/sha1.so
+7f603b7ab000-7f603b7af000 r-xp 00000000 00:19 17041279                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/io/console.so
+7f603b7af000-7f603b9ae000 ---p 00004000 00:19 17041279                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/io/console.so
+7f603b9ae000-7f603b9af000 r--p 00003000 00:19 17041279                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/io/console.so
+7f603b9af000-7f603b9b0000 rw-p 00004000 00:19 17041279                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/io/console.so
+7f603b9b0000-7f603b9b7000 r-xp 00000000 00:19 16787232                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/pathname.so
+7f603b9b7000-7f603bbb6000 ---p 00007000 00:19 16787232                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/pathname.so
+7f603bbb6000-7f603bbb7000 r--p 00006000 00:19 16787232                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/pathname.so
+7f603bbb7000-7f603bbb8000 rw-p 00007000 00:19 16787232                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/pathname.so
+7f603bbb8000-7f603bbbf000 r-xp 00000000 00:19 17697923                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/statistics2-0.54/ext/statistics2.so
+7f603bbbf000-7f603bdbe000 ---p 00007000 00:19 17697923                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/statistics2-0.54/ext/statistics2.so
+7f603bdbe000-7f603bdbf000 r--p 00006000 00:19 17697923                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/statistics2-0.54/ext/statistics2.so
+7f603bdbf000-7f603bdc0000 rw-p 00007000 00:19 17697923                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/statistics2-0.54/ext/statistics2.so
+7f603bdc0000-7f603bdd4000 r-xp 00000000 00:19 21104973                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/extensions/x86_64-linux/2.1.0-static/bigdecimal-1.2.5/bigdecimal.so
+7f603bdd4000-7f603bfd3000 ---p 00014000 00:19 21104973                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/extensions/x86_64-linux/2.1.0-static/bigdecimal-1.2.5/bigdecimal.so
+7f603bfd3000-7f603bfd4000 r--p 00013000 00:19 21104973                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/extensions/x86_64-linux/2.1.0-static/bigdecimal-1.2.5/bigdecimal.so
+7f603bfd4000-7f603bfd5000 rw-p 00014000 00:19 21104973                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/extensions/x86_64-linux/2.1.0-static/bigdecimal-1.2.5/bigdecimal.so
+7f603bfd5000-7f603c00b000 r-xp 00000000 00:19 16787229                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/date_core.so
+7f603c00b000-7f603c20b000 ---p 00036000 00:19 16787229                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/date_core.so
+7f603c20b000-7f603c20c000 r--p 00036000 00:19 16787229                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/date_core.so
+7f603c20c000-7f603c20d000 rw-p 00037000 00:19 16787229                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/date_core.so
+7f603c20d000-7f603c20f000 rw-p 00000000 00:00 0 
+7f603c20f000-7f603c215000 r-xp 00000000 00:19 16787219                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/strscan.so
+7f603c215000-7f603c415000 ---p 00006000 00:19 16787219                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/strscan.so
+7f603c415000-7f603c416000 r--p 00006000 00:19 16787219                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/strscan.so
+7f603c416000-7f603c417000 rw-p 00007000 00:19 16787219                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/strscan.so
+7f603c417000-7f603c41f000 r-xp 00000000 00:19 16787214                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/stringio.so
+7f603c41f000-7f603c61e000 ---p 00008000 00:19 16787214                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/stringio.so
+7f603c61e000-7f603c61f000 r--p 00007000 00:19 16787214                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/stringio.so
+7f603c61f000-7f603c620000 rw-p 00008000 00:19 16787214                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/stringio.so
+7f603c620000-7f603c645000 r-xp 00000000 00:19 16787217                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/psych.so
+7f603c645000-7f603c845000 ---p 00025000 00:19 16787217                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/psych.so
+7f603c845000-7f603c846000 r--p 00025000 00:19 16787217                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/psych.so
+7f603c846000-7f603c847000 rw-p 00026000 00:19 16787217                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/psych.so
+7f603c847000-7f603c84a000 r-xp 00000000 00:19 16787228                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/etc.so
+7f603c84a000-7f603ca49000 ---p 00003000 00:19 16787228                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/etc.so
+7f603ca49000-7f603ca4a000 r--p 00002000 00:19 16787228                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/etc.so
+7f603ca4a000-7f603ca4b000 rw-p 00003000 00:19 16787228                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/etc.so
+7f603ca4b000-7f603ca4e000 r-xp 00000000 00:19 17041269                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/enc/windows_31j.so
+7f603ca4e000-7f603cc4d000 ---p 00003000 00:19 17041269                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/enc/windows_31j.so
+7f603cc4d000-7f603cc4e000 r--p 00002000 00:19 17041269                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/enc/windows_31j.so
+7f603cc4e000-7f603cc4f000 rw-p 00003000 00:19 17041269                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/enc/windows_31j.so
+7f603cc4f000-7f603cc52000 r-xp 00000000 00:19 17041235                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/enc/euc_jp.so
+7f603cc52000-7f603ce51000 ---p 00003000 00:19 17041235                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/enc/euc_jp.so
+7f603ce51000-7f603ce52000 r--p 00002000 00:19 17041235                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/enc/euc_jp.so
+7f603ce52000-7f603ce53000 rw-p 00003000 00:19 17041235                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/enc/euc_jp.so
+7f603ce53000-7f603ce56000 r-xp 00000000 00:19 16787221                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/thread.so
+7f603ce56000-7f603d055000 ---p 00003000 00:19 16787221                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/thread.so
+7f603d055000-7f603d056000 r--p 00002000 00:19 16787221                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/thread.so
+7f603d056000-7f603d057000 rw-p 00003000 00:19 16787221                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/thread.so
+7f603d057000-7f603d059000 r-xp 00000000 00:19 17041259                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/enc/trans/transdb.so
+7f603d059000-7f603d259000 ---p 00002000 00:19 17041259                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/enc/trans/transdb.so
+7f603d259000-7f603d25a000 r--p 00002000 00:19 17041259                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/enc/trans/transdb.so
+7f603d25a000-7f603d25b000 rw-p 00003000 00:19 17041259                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/enc/trans/transdb.so
+7f603d25b000-7f603d25d000 r-xp 00000000 00:19 17041245                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/enc/encdb.so
+7f603d25d000-7f603d45c000 ---p 00002000 00:19 17041245                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/enc/encdb.so
+7f603d45c000-7f603d45d000 r--p 00001000 00:19 17041245                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/enc/encdb.so
+7f603d45d000-7f603d45e000 rw-p 00002000 00:19 17041245                   /home/alveric/.rbenv/versions/2.1.2/lib/ruby/2.1.0/x86_64-linux/enc/encdb.so
+7f603d45e000-7f603d89b000 r--p 00000000 08:02 27270853                   /usr/lib/locale/locale-archive
+7f603d89b000-7f603da57000 r-xp 00000000 08:02 49287012                   /lib/x86_64-linux-gnu/libc-2.19.so
+7f603da57000-7f603dc56000 ---p 001bc000 08:02 49287012                   /lib/x86_64-linux-gnu/libc-2.19.so
+7f603dc56000-7f603dc5a000 r--p 001bb000 08:02 49287012                   /lib/x86_64-linux-gnu/libc-2.19.so
+7f603dc5a000-7f603dc5c000 rw-p 001bf000 08:02 49287012                   /lib/x86_64-linux-gnu/libc-2.19.so
+7f603dc5c000-7f603dc61000 rw-p 00000000 00:00 0 
+7f603dc61000-7f603dd66000 r-xp 00000000 08:02 49287062                   /lib/x86_64-linux-gnu/libm-2.19.so
+7f603dd66000-7f603df65000 ---p 00105000 08:02 49287062                   /lib/x86_64-linux-gnu/libm-2.19.so
+7f603df65000-7f603df66000 r--p 00104000 08:02 49287062                   /lib/x86_64-linux-gnu/libm-2.19.so
+7f603df66000-7f603df67000 rw-p 00105000 08:02 49287062                   /lib/x86_64-linux-gnu/libm-2.19.so
+7f603df67000-7f603df70000 r-xp 00000000 08:02 49287022                   /lib/x86_64-linux-gnu/libcrypt-2.19.so
+7f603df70000-7f603e170000 ---p 00009000 08:02 49287022                   /lib/x86_64-linux-gnu/libcrypt-2.19.so
+7f603e170000-7f603e171000 r--p 00009000 08:02 49287022                   /lib/x86_64-linux-gnu/libcrypt-2.19.so
+7f603e171000-7f603e172000 rw-p 0000a000 08:02 49287022                   /lib/x86_64-linux-gnu/libcrypt-2.19.so
+7f603e172000-7f603e1a0000 rw-p 00000000 00:00 0 
+7f603e1a0000-7f603e1a3000 r-xp 00000000 08:02 49287029                   /lib/x86_64-linux-gnu/libdl-2.19.so
+7f603e1a3000-7f603e3a2000 ---p 00003000 08:02 49287029                   /lib/x86_64-linux-gnu/libdl-2.19.so
+7f603e3a2000-7f603e3a3000 r--p 00002000 08:02 49287029                   /lib/x86_64-linux-gnu/libdl-2.19.so
+7f603e3a3000-7f603e3a4000 rw-p 00003000 08:02 49287029                   /lib/x86_64-linux-gnu/libdl-2.19.so
+7f603e3a4000-7f603e3bd000 r-xp 00000000 08:02 49287132                   /lib/x86_64-linux-gnu/libpthread-2.19.so
+7f603e3bd000-7f603e5bc000 ---p 00019000 08:02 49287132                   /lib/x86_64-linux-gnu/libpthread-2.19.so
+7f603e5bc000-7f603e5bd000 r--p 00018000 08:02 49287132                   /lib/x86_64-linux-gnu/libpthread-2.19.so
+7f603e5bd000-7f603e5be000 rw-p 00019000 08:02 49287132                   /lib/x86_64-linux-gnu/libpthread-2.19.so
+7f603e5be000-7f603e5c2000 rw-p 00000000 00:00 0 
+7f603e5c2000-7f603e5e5000 r-xp 00000000 08:02 49286986                   /lib/x86_64-linux-gnu/ld-2.19.so
+7f603e6b1000-7f603e7b6000 rw-p 00000000 00:00 0 
+7f603e7dd000-7f603e7de000 rw-p 00000000 00:00 0 
+7f603e7de000-7f603e7df000 ---p 00000000 00:00 0 
+7f603e7df000-7f603e7e4000 rw-p 00000000 00:00 0                          [stack:26076]
+7f603e7e4000-7f603e7e5000 r--p 00022000 08:02 49286986                   /lib/x86_64-linux-gnu/ld-2.19.so
+7f603e7e5000-7f603e7e6000 rw-p 00023000 08:02 49286986                   /lib/x86_64-linux-gnu/ld-2.19.so
+7f603e7e6000-7f603e7e7000 rw-p 00000000 00:00 0 
+7f603e7e7000-7f603eaa9000 r-xp 00000000 00:19 16786271                   /home/alveric/.rbenv/versions/2.1.2/bin/ruby
+7f603eca9000-7f603ecae000 r--p 002c2000 00:19 16786271                   /home/alveric/.rbenv/versions/2.1.2/bin/ruby
+7f603ecae000-7f603ecb0000 rw-p 002c7000 00:19 16786271                   /home/alveric/.rbenv/versions/2.1.2/bin/ruby
+7f603ecb0000-7f603ecd6000 rw-p 00000000 00:00 0 
+7f604012f000-7f604456c000 rw-p 00000000 00:00 0                          [heap]
+7fff4df32000-7fff4df54000 rw-p 00000000 00:00 0 
+7fff4dffe000-7fff4e000000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+
+[NOTE]
+You may have encountered a bug in the Ruby interpreter or extension libraries.
+Bug reports are welcome.
+For details: http://www.ruby-lang.org/bugreport.html
+

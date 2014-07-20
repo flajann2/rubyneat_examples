@@ -45,6 +45,7 @@ gem 'aquarium', '~> 0'
 gem 'thor', '~> 0'
 gem 'awesome_print', '~> 1'
 gem 'deep_dive', '~> 0'
+gem 'queue_ding'
 gem 'bond', '~> 0.5'
 gem 'rb-readline', '~> 0.5'
 group :development do
