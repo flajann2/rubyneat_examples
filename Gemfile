@@ -1,7 +1,6 @@
 # Gemfile for your RubyNEAT RubyneatExamples project.
 source 'https://rubygems.org'
 
-#ruby '2.1.2'
 # TODO: Uncomment the following
 #gem 'rubyneat'
 
@@ -13,7 +12,6 @@ gem 'gosu', require: false
 # your RubyNEAT progress, etc. Feel free to remove
 # this if you don't need it.
 gem 'rubyvis', require: false
-
 
 group :development do
   # If this fails, comment this out as the
@@ -46,8 +44,8 @@ gem 'thor', '~> 0'
 gem 'awesome_print', '~> 1'
 gem 'deep_dive', '~> 0'
 gem 'queue_ding'
-gem 'bond', '~> 0.5'
-gem 'rb-readline', '~> 0.5'
+gem 'bond', '~> 0'
+gem 'rb-readline', '~> 0'
 group :development do
   gem 'rspec', '~> 2'
   gem 'yard', '~> 0'
@@ -70,6 +68,6 @@ gem 'eventmachine'
 gem 'sinatra-contrib'
 
 group :development do
-  gem "rdoc", "~> 3.12"
-  gem "bundler", "~> 1.0"
+  gem "rdoc", "~> 3"
+  gem "bundler", "~> 1"
 end
