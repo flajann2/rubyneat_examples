@@ -1,0 +1,40 @@
+################################################################
+################################################################
+################################################################
+# TODO: Debugging only -- remove all below
+
+gem 'distribution', '~> 0'
+gem 'statistics2', '~> 0'
+gem 'debase', '~> 0'
+gem 'aquarium', '~> 0'
+gem 'thor', '~> 0'
+gem 'awesome_print', '~> 1'
+gem 'deep_dive', '~> 0'
+gem 'queue_ding'
+gem 'bond', '~> 0'
+gem 'rb-readline', '~> 0'
+group :development do
+  gem 'rspec', '~> 2'
+  gem 'yard', '~> 0'
+  gem 'guard', '~> 2'
+  gem 'guard-rspec', '~> 4'
+  gem "simplecov", '~> 0'
+end
+
+gem 'sinatra', '~> 1'
+gem 'thin'
+gem 'haml', '~> 4'
+gem 'sass', '~> 3'
+gem 'json', '~> 1'
+gem 'json-stream', '~> 0'
+gem 'compass'
+gem 'barista'
+gem 'sinatra-assetpack'
+gem 'eventmachine'
+
+gem 'sinatra-contrib'
+
+group :development do
+  gem "rdoc", "~> 3"
+  gem "bundler", "~> 1"
+end
