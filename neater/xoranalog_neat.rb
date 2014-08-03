@@ -121,8 +121,14 @@ evolve do
 
   stop_on_fitness {|fitness, c|
     puts "*** Generation Run #{c.generation_num}, best is #{fitness[:best]} ***\n\n"
-    fitness[:best] >= ALMOST_FIT
+    fitness[:overall] >= ALMOST_FIT #FIXME: -- should be :best.
   }
+end
+
+# This requires the rubyneat_dashboard plugin.
+# If you don't need this, remove the next 3 lines.
+dashboard do
+  $log.info '**** Dashboard Running FOR XOR Analog *****'
 end
 
 report do |pop, rept|

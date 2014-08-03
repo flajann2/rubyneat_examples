@@ -125,7 +125,7 @@ evolve do
 
   stop_on_fitness {|fitness, c|
     puts "*** Generation Run #{c.generation_num}, best is #{fitness[:best]} ***\n\n"
-    fitness[:best] >= MAX_FIT - 0.5
+    fitness[:overall] >= MAX_FIT - 0.5
   }
 end
 

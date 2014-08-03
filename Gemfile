@@ -29,7 +29,7 @@ gem 'semver'
 # So we can have a dashboard to monitor and control the
 # progress of RubyNEAT
 # TODO: Uncomment the following
-#gem 'rubyneat_dashboard'
+gem 'rubyneat_dashboard'
 
 ################################################################
 ################################################################
