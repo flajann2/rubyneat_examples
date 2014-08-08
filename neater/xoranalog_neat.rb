@@ -5,7 +5,7 @@ include NEAT::DSL
 #= TEST FOR RubyNEAT -- Analog Fitness Vector for XOR
 
 # The number of inputs to the xor function
-XOR_INPUTS = 2
+XOR_INPUTS = 4
 XOR_STATES = 2 ** XOR_INPUTS
 MAX_FIT    = XOR_STATES
 ALMOST_FIT = XOR_STATES - 0.3
@@ -23,7 +23,8 @@ define "XOR Analog Fitness System" do
   # Hidden neuron specification is optional. 
   # The name given here is largely meaningless, but may be useful as some sort
   # of unique flag.
-  hidden tan: TanhNeuron
+  #hidden tan: TanhNeuron
+  hidden tanh: TanhNeuron, gau: GaussianNeuron #, lin: LinearNeuron
 
   ### Settings
   ## General
@@ -121,7 +122,7 @@ evolve do
 
   stop_on_fitness {|fitness, c|
     puts "*** Generation Run #{c.generation_num}, best is #{fitness[:best]} ***\n\n"
-    fitness[:overall] >= ALMOST_FIT #FIXME: -- should be :best.
+    fitness[:best] >= ALMOST_FIT
   }
 end
 
