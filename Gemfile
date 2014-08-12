@@ -25,28 +25,29 @@ end
 gem 'semver'
 
 unless ENV['IDE_DEBUGGER']
+  puts '<<<Running from Command Line>>>'
   gem 'rubyneat'
 
   # So we can have a dashboard to monitor and control the
   # progress of RubyNEAT
   #gem 'rubyneat_dashboard'
 else
-  puts 'Running in IDE Debugger so we can debug the RubyNEAT Gems.'
+  puts '<<<Running in IDE Debugger so we can debug the RubyNEAT Gems.>>>'
   ################################################################
   ################################################################
   ################################################################
   # TODO: Debugging only -- remove all below
 
-  gem 'distribution', '~> 0'
-  gem 'statistics2', '~> 0'
-  gem 'debase', '~> 0'
-  gem 'aquarium', '~> 0'
-  gem 'thor', '~> 0'
-  gem 'awesome_print', '~> 1'
+  gem 'distribution'#, '~> 0'
+  gem 'statistics2'#, '~> 0'
+  gem 'debase'#, '~> 0'
+  gem 'aquarium'#, '~> 0'
+  gem 'thor'#, '~> 0'
+  gem 'awesome_print'#, '~> 1'
   gem 'deep_dive'
   gem 'queue_ding'
   gem 'bond', '~> 0'
-  gem 'rb-readline', '~> 0'
+  gem 'rb-readline'#, '~> 0'
   group :development do
     gem 'rspec', '~> 2'
     gem 'yard', '~> 0'
@@ -55,12 +56,12 @@ else
     gem 'simplecov'
   end
 
-  gem 'sinatra', '~> 1'
+  gem 'sinatra'#, '~> 1'
   gem 'thin'
-  gem 'haml', '~> 4'
-  gem 'sass', '~> 3'
-  gem 'json', '~> 1'
-  gem 'json-stream', '~> 0'
+  gem 'haml'#, '~> 4'
+  gem 'sass'#, '~> 3'
+  gem 'json'#, '~> 1'
+  gem 'json-stream'#, '~> 0'
   gem 'compass'
   gem 'barista'
   gem 'sinatra-assetpack'
