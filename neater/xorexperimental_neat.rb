@@ -5,7 +5,7 @@ include NEAT::DSL
 #= TEST FOR RubyNEAT -- Analog Fitness Vector for XOR (EXPERIMENTAL)
 
 # The number of inputs to the xor function
-XOR_INPUTS = 4
+XOR_INPUTS = 5
 XOR_STATES = 2 ** XOR_INPUTS
 MAX_FIT    = XOR_STATES
 ALMOST_FIT = XOR_STATES - 0.3
