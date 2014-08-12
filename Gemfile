@@ -14,7 +14,7 @@ gem 'rubyvis', require: false
 group :development do
   # If this fails, comment this out as the
   # dashboard is still under development.
-  gem 'rubyneat_dashboard'
+  # gem 'rubyneat_dashboard'
 
   # If you are using an IDE, you may wish to remove
   # or replace with the IDE's debugger gem
@@ -30,7 +30,7 @@ unless ENV['IDE_DEBUGGER']
 
   # So we can have a dashboard to monitor and control the
   # progress of RubyNEAT
-  #gem 'rubyneat_dashboard'
+  gem 'rubyneat_dashboard'
 else
   puts '<<<Running in IDE Debugger so we can debug the RubyNEAT Gems.>>>'
   ################################################################
