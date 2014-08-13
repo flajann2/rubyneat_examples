@@ -128,9 +128,10 @@ evolve do
 end
 
 # This requires the rubyneat_dashboard plugin.
-# If you don't need this, remove the next 3 lines.
+# If you don't need this, remove the next 4 lines.
 dashboard do
-  $log.info '**** Dashboard Running FOR XOR Analog *****'
+  port 4912
+  bind '0.0.0.0'
 end
 
 report do |pop, rept|
