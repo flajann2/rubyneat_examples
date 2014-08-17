@@ -48,6 +48,7 @@ else
   gem 'queue_ding'
   gem 'bond', '~> 0'
   gem 'rb-readline'#, '~> 0'
+  gem 'rabl'
   group :development do
     gem 'rspec', '~> 2'
     gem 'yard', '~> 0'
