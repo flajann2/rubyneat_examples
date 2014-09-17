@@ -5,8 +5,8 @@
 # TODO: removed later.
 
 %w{
-/home/alveric/development/ruby_proj/rubyneat/lib
-/home/alveric/development/ruby_proj/rubyneat_dashboard/lib
+../rubyneat/lib
+../rubyneat_dashboard/lib
 }.each do |dir|
   $:.unshift dir
 end
