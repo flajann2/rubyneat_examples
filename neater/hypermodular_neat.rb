@@ -13,7 +13,7 @@ MAX_FIT    = XOR_STATES
 ALMOST_FIT = XOR_STATES - 0.3
 
 # This defines the controller
-define "XOR Experimental Analog Fitness System" do
+define "Hyper Modular" do
   # Define the IO neurons
   inputs {
     cinv = Hash[(1..XOR_INPUTS).map{|i| [("i%s" % i).to_sym, InputNeuron]}]
@@ -67,18 +67,19 @@ define "XOR Experimental Analog Fitness System" do
 
     # define the connections between the tweans
     connections do
-      inputs  r1: retina.i1,
-              r2: retina.i2,
-              r3: retina.i3,
-              r4: retina.i4,
-              n1: right.i2,
-              n2: left.i2
+      inputs  r1: {retina: :i1},
+              r2: {retina: :i2},
+              r3: {retina: :i3},
+              r4: {retina: :i4},
+              n1: {right:  :i2},
+              n2: {left:   :i2}
 
-      retina  out1: left.i1,
-              out2: right.i1
+      retina  out1: {left: :i1},
+              out2: {right: :i1}
 
-      left    out: output.oleft
-      right   out: output.oright
+      left    out: {output: :oleft}
+
+      right   out: {output: :oright}
     end
   end
 
