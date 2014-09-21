@@ -7,7 +7,7 @@ MIT_IMAGES = "~/"
 #= TEST FOR RubyNEAT -- HyperNEAT and ModularNEAT (experimental)
 
 # The number of inputs to the xor function
-XOR_INPUTS = 5
+XOR_INPUTS = 2
 XOR_STATES = 2 ** XOR_INPUTS
 MAX_FIT    = XOR_STATES
 ALMOST_FIT = XOR_STATES - 0.3
