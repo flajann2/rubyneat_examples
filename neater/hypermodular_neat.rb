@@ -14,22 +14,24 @@ ALMOST_FIT = XOR_STATES - 0.3
 
 # This defines the controller
 define "Hyper Modular" do
-  # Define the IO neurons
-  inputs {
-    cinv = Hash[(1..XOR_INPUTS).map{|i| [("i%s" % i).to_sym, InputNeuron]}]
-    cinv[:bias] = BiasNeuron
-    cinv
-  }
-  outputs out: TanhNeuron
-
-  # Hidden neuron specification is optional. 
-  # The name given here is largely meaningless, but may be useful as some sort
-  # of unique flag.
-  #hidden tan: TanhNeuron
-  #hidden tanh: TanhNeuron, sign: SignNeuron# gau: GaussianNeuron, , mul: MulNeuron #, lin: LinearNeuron
-  hidden mul: MulNeuron, sine: SineNeuron #lin: LinearNeuron
-
   compose do
+    twean :main do
+      # Define the IO neurons
+      inputs {
+        cinv = Hash[(1..XOR_INPUTS).map{|i| [("i%s" % i).to_sym, InputNeuron]}]
+        cinv[:bias] = BiasNeuron
+        cinv
+      }
+      outputs out: TanhNeuron
+
+      # Hidden neuron specification is optional.
+      # The name given here is largely meaningless, but may be useful as some sort
+      # of unique flag.
+      #hidden tan: TanhNeuron
+      #hidden tanh: TanhNeuron, sign: SignNeuron# gau: GaussianNeuron, , mul: MulNeuron #, lin: LinearNeuron
+      hidden mul: MulNeuron, sine: SineNeuron #lin: LinearNeuron
+    end
+
     twean :left do
       inputs  i1: InputNeuron,
               i2: InputNeuron,
