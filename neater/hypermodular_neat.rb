@@ -15,7 +15,7 @@ ALMOST_FIT = XOR_STATES - 0.3
 # This defines the controller
 define "Hyper Modular" do
   compose do
-    twean :main do
+    tweann :main do
       # Define the IO neurons
       inputs {
         cinv = Hash[(1..XOR_INPUTS).map{|i| [("i%s" % i).to_sym, InputNeuron]}]
@@ -32,27 +32,7 @@ define "Hyper Modular" do
       hidden mul: MulNeuron, sine: SineNeuron #lin: LinearNeuron
     end
 
-    twean :left do
-      inputs  i1: InputNeuron,
-              i2: InputNeuron,
-              bias: BiasNeuron
-
-      outputs out: TanhNeuron
-
-      hidden  hid: TanhNeuron
-    end
-
-    twean :right do
-      inputs  i1: InputNeuron,
-              i2: InputNeuron,
-              bias: BiasNeuron
-
-      outputs out: TanhNeuron
-
-      hidden  hid: TanhNeuron
-    end
-
-    twean :retina, hyper: true do
+    tweann :retina, hyper: true do
       inputs  i1: InputNeuron,
               i2: InputNeuron,
               i3: InputNeuron,
@@ -67,21 +47,58 @@ define "Hyper Modular" do
               lin: LinearNeuron
     end
 
-    # define the connections between the tweans
+    tweann :left do
+      inputs  i1: InputNeuron,
+              i2: InputNeuron,
+              bias: BiasNeuron
+
+      outputs lout: TanhNeuron
+
+      hidden  hid: TanhNeuron
+    end
+
+    tweann :middle do
+      inputs  i1: InputNeuron,
+              i2: InputNeuron,
+              bias: BiasNeuron
+
+      outputs mout: TanhNeuron
+
+      hidden  hid: TanhNeuron
+    end
+
+    tweann :right do
+      inputs  i1: InputNeuron,
+              i2: InputNeuron,
+              bias: BiasNeuron
+
+      outputs rout: TanhNeuron
+
+      hidden  hid: TanhNeuron
+    end
+
+    # Define the connections between the TWEANs.
+    # Note that "output:" defines the output neurons
+    # of the critter itself, just like the "inputs"
+    # directive specifies the inputs of the critter itself.
     connections do
       inputs  r1: {retina: :i1},
               r2: {retina: :i2},
               r3: {retina: :i3},
               r4: {retina: :i4},
-              n1: {right:  :i2},
-              n2: {left:   :i2}
+              n1: {right:  :i2, middle: :i1},
+              n2: {left:   :i2, middle: :i2}
 
       retina  out1: {left: :i1},
               out2: {right: :i1}
 
       left    out: {output: :oleft}
 
+      middle  out: {output: :omiddle}
+
       right   out: {output: :oright}
+
+      outputs :oleft, :omiddle, :oright
     end
   end
 
