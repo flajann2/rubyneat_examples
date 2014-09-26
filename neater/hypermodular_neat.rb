@@ -42,9 +42,23 @@ define "Hyper Modular" do
       outputs out1: TanhNeuron,
               out2: TanhNeuron
 
-      hidden  mul: MulNeuron,
-              sine: SineNeuron,
-              lin: LinearNeuron
+      hidden  mul: TanhNeuron
+
+      hyper do
+        tuple 3
+        depth 16
+        scale 3.0
+
+        inputs  all: InputNeuron
+
+        hidden  mul: MulNeuron,
+                sine: SineNeuron,
+                gauss: GaussianNeuron,
+                lin: LinearNeuron
+
+        outputs weight: TanhNeuron,
+                leo: HeavisideNeuron
+      end
     end
 
     tweann :left do
