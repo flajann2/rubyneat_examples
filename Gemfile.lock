@@ -1,68 +1,100 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (4.1.6)
-      i18n (~> 0.6, >= 0.6.9)
+    activesupport (4.2.0)
+      i18n (~> 0.7)
       json (~> 1.7, >= 1.7.7)
       minitest (~> 5.1)
-      thread_safe (~> 0.1)
+      thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     aquarium (0.5.1)
-    awesome_print (1.2.0)
-    backports (3.6.3)
+    awesome_print (1.6.1)
+    backports (3.6.4)
     barista (1.3.0)
       coffee-script (~> 2.2)
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
     bond (0.5.1)
-    chunky_png (1.3.1)
+    byebug (3.5.1)
+      columnize (~> 0.8)
+      debugger-linecache (~> 1.2)
+      slop (~> 3.6)
+    chunky_png (1.3.3)
+    coderay (1.1.0)
     coffee-script (2.3.0)
       coffee-script-source
       execjs
     coffee-script-source (1.8.0)
-    compass (1.0.1)
+    columnize (0.9.0)
+    compass (1.0.3)
       chunky_png (~> 1.2)
-      compass-core (~> 1.0.1)
+      compass-core (~> 1.0.2)
       compass-import-once (~> 1.0.5)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
       sass (>= 3.3.13, < 3.5)
-    compass-core (1.0.1)
+    compass-core (1.0.3)
       multi_json (~> 1.0)
       sass (>= 3.3.0, < 3.5)
     compass-import-once (1.0.5)
       sass (>= 3.2, < 3.5)
     daemons (1.1.9)
-    debase (0.0.9)
-      debugger-ruby_core_source
-    debugger-ruby_core_source (1.3.5)
+    debase (0.1.1)
+      debase-ruby_core_source
+    debase-ruby_core_source (0.7.5)
+    debug_inspector (0.0.2)
+    debugger-linecache (1.2.0)
     deep_dive (0.2.1)
       debase
     distribution (0.7.1)
-    eventmachine (1.0.3)
-    execjs (2.2.1)
+    eventmachine (1.0.4)
+    execjs (2.2.2)
     ffi (1.9.6)
-    haml (4.0.5)
+    gosu (0.8.6)
+    haml (4.0.6)
       tilt
-    i18n (0.6.11)
+    i18n (0.7.0)
+    interception (0.5)
     jsmin (1.0.1)
-    json (1.8.1)
+    json (1.8.2)
     json-stream (0.2.1)
     k-tree (0.0.2)
-    minitest (5.4.2)
+    method_source (0.8.2)
+    minitest (5.5.1)
     multi_json (1.10.1)
+    pry (0.10.1)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    pry-byebug (2.0.0)
+      byebug (~> 3.4)
+      pry (~> 0.10)
+    pry-doc (0.6.0)
+      pry (~> 0.9)
+      yard (~> 0.8)
+    pry-remote (0.1.8)
+      pry (~> 0.9)
+      slop (~> 3.0)
+    pry-rescue (1.4.1)
+      interception (>= 0.5)
+      pry
+    pry-stack_explorer (0.4.9.1)
+      binding_of_caller (>= 0.7)
+      pry (>= 0.9.11)
     queue_ding (0.1.0)
       aquarium (~> 0)
-    rabl (0.11.0)
+    rabl (0.11.5)
       activesupport (>= 2.3.14)
-    rack (1.5.2)
+    rack (1.6.0)
     rack-protection (1.5.3)
       rack
-    rack-test (0.6.2)
+    rack-test (0.6.3)
       rack (>= 1.0)
     rb-fsevent (0.9.4)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
-    rb-readline (0.5.1)
-    rubyneat (0.5.0.hyper.alpha.1)
+    rb-readline (0.5.2)
+    rubyneat (0.5.1.hyper.alpha.5)
       aquarium (~> 0)
       awesome_print (~> 1)
       bond (~> 0)
@@ -74,7 +106,7 @@ GEM
       rb-readline (~> 0)
       statistics2 (~> 0)
       thor (~> 0)
-    rubyneat_dashboard (0.4.0.hyper.alpha.1)
+    rubyneat_dashboard (0.4.0.hyper.alpha.2)
       barista
       compass
       eventmachine
@@ -89,7 +121,7 @@ GEM
       sinatra-assetpack
       sinatra-contrib
       thin
-    sass (3.4.5)
+    sass (3.4.10)
     semver (1.0.1)
     sinatra (1.4.5)
       rack (~> 1.4)
@@ -107,6 +139,7 @@ GEM
       rack-test
       sinatra (~> 1.4.0)
       tilt (~> 1.3)
+    slop (3.6.0)
     statistics2 (0.54)
     thin (1.6.3)
       daemons (~> 1.0, >= 1.0.9)
@@ -117,11 +150,19 @@ GEM
     tilt (1.4.1)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    yard (0.8.7.6)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  gosu
+  pry
+  pry-byebug
+  pry-doc
+  pry-remote
+  pry-rescue
+  pry-stack_explorer
   rubyneat
   rubyneat_dashboard
   semver
