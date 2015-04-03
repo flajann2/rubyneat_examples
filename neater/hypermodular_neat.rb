@@ -170,7 +170,7 @@ end
 
 evolve do
   # This query shall return a vector result that will serve
-  # as the inputs to the critter. 
+  # as the inputs to the critter.
   query { |seq|
     # We'll use the seq to create the xor sequences via
     # the least signficant bits.
@@ -187,7 +187,7 @@ evolve do
     $log.debug ">>>>>>> fitvec #{fitvec} => #{fit}, cost #{cost}"
     fit
   }
-
+  
   fitness { |vin, vout, seq|
     unless vout == :error
       bin = uncondition_boolean_vector vin

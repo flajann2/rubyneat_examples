@@ -7,25 +7,38 @@ include NEAT::DSL
 # The number of inputs to the xor function
 XOR_INPUTS = 2
 XOR_STATES = 2 ** XOR_INPUTS
+XOR_INLIST = (1..XOR_INPUTS).map{ |i| ("i%d" % i).to_sym }
 MAX_FIT    = XOR_STATES
 ALMOST_FIT = XOR_STATES - 0.5
 
 # This defines the controller
 define "XOR System" do
-  # Define the IO neurons
-  inputs {
-    Hash[
-        (1..XOR_INPUTS).map{ |i|
-          [("i%d" % i).to_sym, InputNeuron]
-        } + [[:bias, BiasNeuron]]
-    ]
-  }
-  outputs out: TanhNeuron
+  compose do
+    tweann :main do
+      # Define the IO neurons
+      inputs {
+        Hash[
+           XOR_INLIST.map{ |inp|
+             [inp, InputNeuron]
+           } + [[:bias, BiasNeuron]]
+          ]
+      }
+      outputs out: TanhNeuron
+      
+      # Hidden neuron specification is optional. 
+      # The name given here is largely meaningless, but may be useful as some sort
+      # of unique flag.
+      hidden tan: TanhNeuron
+    end
 
-  # Hidden neuron specification is optional. 
-  # The name given here is largely meaningless, but may be useful as some sort
-  # of unique flag.
-  hidden tan: TanhNeuron
+    connections do
+      inputs {
+        Hash[ XOR_INLIST.map{ |inp| [inp, {main: inp}] } ]
+      }
+      main out: {output: :out}
+      outputs :out
+    end
+  end
 
   ### Settings
   ## General

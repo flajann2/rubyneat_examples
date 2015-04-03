@@ -6,8 +6,8 @@ gem 'semver'
 #gem 'rubyneat'
 #gem 'rubyneat_dashboard'
 
-gem 'rubyneat',          github: '~/development/ruby_proj/rubyneat', branch: 'hyper'
-gem 'rubyneat_dashboard' github: '~/development/ruby_proj/rubyneat_dashboard', branch: 'master'
+gem 'rubyneat',           github: '~/development/ruby_proj/rubyneat', branch: 'hyper'
+gem 'rubyneat_dashboard', github: '~/development/ruby_proj/rubyneat_dashboard', branch: 'master'
 
 # For demo purposes, we include the gosu library, but if you don't
 # need this, then comment it out  or remove it.

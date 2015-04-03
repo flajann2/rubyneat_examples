@@ -1,8 +1,13 @@
 #!/usr/bin/env ruby
-# TODO: This is hacked up so we can debug everything in Rubymine
+# TODO: This is hacked up so we can debug everything locally
 # TODO: and to avoid loading the modules as gems.
 # TODO: on my local machine. It is incredibly ugly, and will be
 # TODO: removed later.
+
+trap("SIGINT") { 
+  puts "Gotcha!!!!"
+  exit! 
+}
 
 %w{
 ../rubyneat/lib
