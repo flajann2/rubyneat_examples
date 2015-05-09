@@ -1,14 +1,10 @@
-#include <string>
-#include <iostream>
-#include <thread>
-#include "maze.h"
+#include "maze.hpp"
 
 using namespace std;
+using namespace maze;
 
 int main() {
   cout << "rat in the maze\n";
-  Room r;
-  for (auto i=0; i < sizeof(r.walls); ++i)
-    cout << "room " << i << " is " << r.walls[i]  << endl;
+  Maze m {10, 10};
   return 0;
 }

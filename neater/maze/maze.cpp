@@ -1,10 +1,17 @@
-#include "maze.h"
+#include "maze.hpp"
 
-using namespace std;
+namespace maze 
+{
+  using namespace std;
 
-Room::Room() {
-  
-}
+  Room::Room() {
+    walls = vector<bool>(Dim*2, true);
+  }
 
-Maze::Maze() {
+  Room::~Room() {
+  }
+
+  Maze::Maze(int w, int b) : width(w), breadth(b) {
+    
+  }
 }
