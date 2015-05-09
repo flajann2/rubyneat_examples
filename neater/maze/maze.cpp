@@ -12,6 +12,17 @@ namespace maze
   }
 
   Maze::Maze(int w, int b) : width(w), breadth(b) {
-    
+    for (auto i = 0; i < w; ++i) {
+      board.insert(board.cend(), vector<Room>(b, Room()));
+    }
+  }
+
+  void Maze::dump_out() {
+    for (auto vw : board) {
+      cout << "vw" << endl;
+      for (auto vb : vw){
+        cout << "vb ";
+      }
+    }
   }
 }

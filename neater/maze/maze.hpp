@@ -31,6 +31,8 @@ namespace maze
      
      The maze encapsulates a number of rooms of the specification
      given. 
+
+     In this, we shall make simplifying assumptions. 
      
   */
 
@@ -42,6 +44,6 @@ namespace maze
     
   public:
     Maze(int w, int b);
+    void dump_out();
   };
 }
-
