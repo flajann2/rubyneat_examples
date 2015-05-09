@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/~/development/ruby_proj/rubyneat.git
-  revision: 55c1808a7a59615aa6bd302cd707f195ae2afdc9
+  revision: b9db6436a026c81c45658cccb3883d0f48ea2aa8
   branch: hyper
   specs:
     rubyneat (0.5.1.hyper.alpha.5)
@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: git://github.com/~/development/ruby_proj/rubyneat_dashboard.git
-  revision: 199968859abba2a821bc4475b9357c4cf89f73f4
+  revision: 83eb0754020a3c85c5c8896203ccbf2af276a12f
   branch: master
   specs:
     rubyneat_dashboard (0.4.0.hyper.alpha.2)
@@ -28,6 +28,7 @@ GIT
       haml (~> 4)
       json (~> 1)
       json-stream (~> 0)
+      opal (~> 0.7)
       queue_ding
       rabl
       rubyneat
@@ -35,7 +36,7 @@ GIT
       sinatra
       sinatra-assetpack
       sinatra-contrib
-      thin
+      thin (~> 1.6)
 
 GEM
   remote: https://rubygems.org/
@@ -58,10 +59,10 @@ GEM
       columnize (= 0.9.0)
     chunky_png (1.3.4)
     coderay (1.1.0)
-    coffee-script (2.3.0)
+    coffee-script (2.4.1)
       coffee-script-source
       execjs
-    coffee-script-source (1.9.1)
+    coffee-script-source (1.9.1.1)
     columnize (0.9.0)
     compass (1.0.3)
       chunky_png (~> 1.2)
@@ -76,19 +77,20 @@ GEM
     compass-import-once (1.0.5)
       sass (>= 3.2, < 3.5)
     daemons (1.2.2)
-    debase (0.1.2)
+    debase (0.1.3)
       debase-ruby_core_source
-    debase-ruby_core_source (0.7.8)
+    debase-ruby_core_source (0.7.9)
     debug_inspector (0.0.2)
     deep_dive (0.2.2)
       debase
-    distribution (0.7.1)
+    distribution (0.7.2)
     eventmachine (1.0.7)
-    execjs (2.4.0)
+    execjs (2.5.2)
     ffi (1.9.8)
     gosu (0.8.7.2)
     haml (4.0.6)
       tilt
+    hike (1.2.3)
     i18n (0.7.0)
     interception (0.5)
     jsmin (1.0.1)
@@ -96,8 +98,13 @@ GEM
     json-stream (0.2.1)
     k-tree (0.0.2)
     method_source (0.8.2)
-    minitest (5.5.1)
+    minitest (5.6.1)
     multi_json (1.11.0)
+    opal (0.7.2)
+      hike (~> 1.2)
+      sourcemap (~> 0.1.0)
+      sprockets (>= 2.2.3, < 3.0.0)
+      tilt (~> 1.4)
     pry (0.10.1)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -111,7 +118,7 @@ GEM
     pry-remote (0.1.8)
       pry (~> 0.9)
       slop (~> 3.0)
-    pry-rescue (1.4.1)
+    pry-rescue (1.4.2)
       interception (>= 0.5)
       pry
     pry-stack_explorer (0.4.9.2)
@@ -121,7 +128,7 @@ GEM
       aquarium (~> 0)
     rabl (0.11.6)
       activesupport (>= 2.3.14)
-    rack (1.6.0)
+    rack (1.6.1)
     rack-protection (1.5.3)
       rack
     rack-test (0.6.3)
@@ -149,6 +156,12 @@ GEM
       sinatra (~> 1.4.0)
       tilt (~> 1.3)
     slop (3.6.0)
+    sourcemap (0.1.1)
+    sprockets (2.12.3)
+      hike (~> 1.2)
+      multi_json (~> 1.0)
+      rack (~> 1.0)
+      tilt (~> 1.1, != 1.3.0)
     statistics2 (0.54)
     thin (1.6.3)
       daemons (~> 1.0, >= 1.0.9)

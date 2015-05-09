@@ -2,10 +2,13 @@ require 'xor'
 
 include NEAT::DSL
 
-#= TEST FOR RubyNEAT
+#= TEST FOR RubyNEAT XOR Modular
+# Here we test the modular bit with the simple XOR algorithm.
+# Does it enhance the speed of evolution if we compose
+# two or more modules in the neural solution?
 
 # The number of inputs to the xor function
-XOR_INPUTS = 4
+XOR_INPUTS = 5
 XOR_STATES = 2 ** XOR_INPUTS
 XOR_INLIST = (1..XOR_INPUTS).map{ |i| ("i%d" % i).to_sym }
 MAX_FIT    = XOR_STATES
@@ -16,13 +19,7 @@ define "XOR System" do
   compose do
     tweann :main do
       # Define the IO neurons
-      inputs {
-        Hash[
-           XOR_INLIST.map{ |inp|
-             [inp, InputNeuron]
-           } + [[:bias, BiasNeuron]]
-          ]
-      }
+      inputs i1: InputNeuron, i2: InputNeuron, i3: InputNeuron
       outputs out: TanhNeuron
       
       # Hidden neuron specification is optional. 
@@ -35,6 +32,32 @@ define "XOR System" do
       inputs {
         Hash[ XOR_INLIST.map{ |inp| [inp, {main: inp}] } ]
       }
+      main out: {output: :out}
+      outputs :out
+    end
+
+    tweann :precon do
+      # Define the IO neurons
+      inputs {
+        Hash[
+           XOR_INLIST.map{ |inp|
+             [inp, InputNeuron]
+           } + [[:bias, BiasNeuron]]
+          ]
+      }
+      outputs p1: TanhNeuron, p2: TanhNeuron, p3: TanhNeuron
+      
+      # Hidden neuron specification is optional. 
+      # The name given here is largely meaningless, but may be useful as some sort
+      # of unique flag.
+      hidden tan: TanhNeuron, gauss: GaussianNeuron, heav: HeavisideNeuron
+    end
+
+    connections do
+      inputs { Hash[ XOR_INLIST.map{ |inp| [inp, {precon: inp}] } ] }
+      precon p1: {main: :i1}, 
+             p2: {main: :i2},
+             p3: {main: :i3}
       main out: {output: :out}
       outputs :out
     end
@@ -136,7 +159,7 @@ evolve do
 
   stop_on_fitness { |fitness, c|
     puts "*** Generation Run #{c.generation_num}, best is #{fitness[:best]} ***\n\n"
-    fitness[:overall] >= ALMOST_FIT # FIXME: This should be the :best here
+    fitness[:best] >= ALMOST_FIT # FIXME: This should be the :best here
   }
 end
 
