@@ -5,7 +5,7 @@ using namespace maze;
 
 int main() {
   cout << "Rat in the proverbial maze\n";
-  Maze m {10, 10};
+  Maze m {50, 25};
   m.dump_out();
   return 0;
 }

@@ -27,10 +27,6 @@ namespace maze
   }
 
   void Room::open_passage(Room* adjr){
-    //cout << "opening passages between "; 
-    //this->dump_out();
-    //adjr->dump_out();
-    //cout << endl;
     adjr->visited = true;
     auto wpass = pass_walls(adjr);
     walls[get<thiswall>(wpass)] = adjr->walls[get<thatwall>(wpass)] = false;
@@ -87,7 +83,6 @@ namespace maze
     auto i = rw(gen);
     auto j = rb(gen);
     Room* room = &(*this)[i][j];
-    //cout << " random beginnings at (" << i << "," << j << ")" << endl << endl;
     pool.push_back(room);
 
     while(pool.size() > 0) {
@@ -114,13 +109,41 @@ namespace maze
     return board[i];
   }
 
+  enum WallMode { top, left, rightend, bottomend };
+  const array<WallMode, 3> wallmode = {top, left, bottomend};
+
   void Maze::dump_out() {
+    const string UpperWallClosed = "+--";
+    const string BottomWall      = "+--";
+    const string UpperWallOpened = "+  ";
+    const string UpperEndWall    =    "+";
+    const string LowerEndWall    =    "+";
+    const string LeftWallClosed  = "|  ";
+    const string LeftWallOpen    = "   ";
+    const string RightEndWall    =    "|";
+
     for (auto j=breadth-1; j>=0; --j) {
-      for(auto i=0; i<width; ++i) {
-        Room &r = (*this)[i][j];
-        r.dump_out();
+      for (auto wm : wallmode) {
+        for(auto i=0; i<width; ++i) {
+          Room &r = (*this)[i][j];
+          switch (wm) {
+          case top: 
+            cout << ((r.walls[3]) ? UpperWallClosed : UpperWallOpened); 
+            break;
+          case left: 
+            cout << ((r.walls[0]) ? LeftWallClosed : LeftWallOpen); 
+            break;
+          case bottomend:
+            if (j == 0)
+              cout << UpperWallClosed;
+            break;
+          }
+        }
+        if (wm != bottomend)
+          cout << ((wm == top) ? UpperEndWall : RightEndWall) << endl;
+        else if (j == 0)
+          cout << LowerEndWall << endl;
       }
-      cout << endl;
     }
   }
 }

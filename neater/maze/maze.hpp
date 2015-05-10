@@ -41,6 +41,7 @@ namespace maze
     {make_tuple(0, 1),  make_tuple(2, 3)}
   };
 
+
   /*
     See README.md for documentation on the layout, etc.
    */
