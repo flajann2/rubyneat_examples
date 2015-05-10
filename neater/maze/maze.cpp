@@ -27,11 +27,21 @@ namespace maze
   }
 
   void Room::open_passage(Room* adjr){
-    cout << "opening passages between "; 
-    this->dump_out();
-    adjr->dump_out();
-    cout << endl;
+    //cout << "opening passages between "; 
+    //this->dump_out();
+    //adjr->dump_out();
+    //cout << endl;
+    adjr->visited = true;
+    auto wpass = pass_walls(adjr);
+    walls[get<thiswall>(wpass)] = adjr->walls[get<thatwall>(wpass)] = false;
+  }
 
+  tuple<int,int> &Room::pass_walls(Room* that){
+    auto index = tuple<int,int> {
+        get<x>(coord) - get<x>(that->coord), 
+        get<y>(coord) - get<y>(that->coord)
+        };
+    return passage[index];
   }
 
   void Room::dump_out() {
@@ -77,8 +87,7 @@ namespace maze
     auto i = rw(gen);
     auto j = rb(gen);
     Room* room = &(*this)[i][j];
-    room->dump_out();
-    cout << " random beginnings at (" << i << "," << j << ")" << endl;
+    //cout << " random beginnings at (" << i << "," << j << ")" << endl << endl;
     pool.push_back(room);
 
     while(pool.size() > 0) {
@@ -92,6 +101,7 @@ namespace maze
         Room* adjoining_room = neighbors[r];
         adjoining_room->visited = true;
         room->open_passage(adjoining_room);
+        pool.push_back(adjoining_room);
       } else {
         auto it = pool.cbegin();
         advance(it, rroom);
@@ -105,10 +115,10 @@ namespace maze
   }
 
   void Maze::dump_out() {
-    for (auto vw : board) {
-      cout << "vw: ";
-      for (auto vb : vw){
-        vb.dump_out();
+    for (auto j=breadth-1; j>=0; --j) {
+      for(auto i=0; i<width; ++i) {
+        Room &r = (*this)[i][j];
+        r.dump_out();
       }
       cout << endl;
     }

@@ -22,6 +22,8 @@ namespace maze
   const int x=0;
   const int y=1;
   const int z=2; // for the future, we reserve this for now.
+  const int thiswall = 0;
+  const int thatwall = 1;
 
   // dx, dy room offsets for adjoining rooms
   const vector<tuple<int,int>> neighbor_room_offsets {
@@ -32,7 +34,7 @@ namespace maze
       };
 
   // this - that -> this_wall_index, that_wall_index
-  const map<tuple<int, int>, tuple<int, int>> passage {
+  map<tuple<int,int>, tuple<int,int>> passage {
     {make_tuple(-1, 0), make_tuple(1, 0)},
     {make_tuple(1, 0),  make_tuple(0, 1)},
     {make_tuple(0, -1), make_tuple(3, 2)},
@@ -40,6 +42,7 @@ namespace maze
   };
 
   /*
+    See README.md for documentation on the layout, etc.
    */
   class Room { 
     friend class Maze;
@@ -57,6 +60,9 @@ namespace maze
     vector<Room*> available_neighbors();
     void open_passage(Room* adjoining_room);
     void dump_out();
+
+  private:
+    tuple<int,int> &pass_walls(Room* that);
   };
   
   /* Maze class
