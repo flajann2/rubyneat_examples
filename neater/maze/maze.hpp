@@ -4,6 +4,7 @@
 #include <vector>
 #include <tuple>
 #include <random>
+#include <map>
 
 /*
   For now, we'll just do a 2-D maze.
@@ -21,10 +22,22 @@ namespace maze
   const int x=0;
   const int y=1;
   const int z=2; // for the future, we reserve this for now.
-  const vector<tuple<int, int>> neighbor_room_offsets {
-    make_tuple(-1, 0), make_tuple(1, 0),
-      make_tuple(0, -1), make_tuple(0, 1)
+
+  // dx, dy room offsets for adjoining rooms
+  const vector<tuple<int,int>> neighbor_room_offsets {
+      make_tuple(-1, 0), 
+      make_tuple(1,  0),
+      make_tuple(0,  -1), 
+      make_tuple(0,  1)
       };
+
+  // this - that -> this_wall_index, that_wall_index
+  const map<tuple<int, int>, tuple<int, int>> passage {
+    {make_tuple(-1, 0), make_tuple(1, 0)},
+    {make_tuple(1, 0),  make_tuple(0, 1)},
+    {make_tuple(0, -1), make_tuple(3, 2)},
+    {make_tuple(0, 1),  make_tuple(2, 3)}
+  };
 
   /*
     Room layout:
@@ -35,7 +48,25 @@ namespace maze
     * 1 - upper x
     * 2 - lower y
     * 3 - upper y
-    (see neighbor_room_offsets)
+    (see neighbor_room_offsets and passage)
+
+
+                       (0, 1)
+                    y upper wall
+                ---------------------
+                |         3         |
+                |                   |
+                |                   |
+  x lower wall  | 0               1 | x upper wall
+     (-1,0)     |                   |   (+1, 0)
+                |                   |
+                |         2         |
+                ---------------------
+                    y lower wall
+                       (0, -1)
+
+                Wall indexing in Room
+                as reflected in passage
 
     Adjacent rooms with walls knocked out MUST have
     the adjacent wall knocked out.

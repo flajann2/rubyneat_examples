@@ -27,6 +27,11 @@ namespace maze
   }
 
   void Room::open_passage(Room* adjr){
+    cout << "opening passages between "; 
+    this->dump_out();
+    adjr->dump_out();
+    cout << endl;
+
   }
 
   void Room::dump_out() {
