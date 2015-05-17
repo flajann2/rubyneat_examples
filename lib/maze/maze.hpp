@@ -61,6 +61,7 @@ namespace maze
     vector<Room*> available_neighbors();
     void open_passage(Room* adjoining_room);
     void dump_out();
+    auto to_encoded();
 
   private:
     tuple<int,int> &pass_walls(Room* that);
@@ -78,6 +79,7 @@ namespace maze
 
   class Maze {
     friend class Room;
+    unsigned char *expar = nullptr;
 
   private:
     int width;
@@ -91,6 +93,7 @@ namespace maze
   public:
     Maze(int w, int b);
     Maze(int w, int b, double room_size);
+    ~Maze();
     vector<Room> &operator[](int i);
     void dump_out();
     auto to_export();

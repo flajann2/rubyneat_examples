@@ -28,7 +28,7 @@ module Maze
   class Maze
     extend FFI::Library
     ffi_lib MAZE_LIB
-    attach_function :generate_maze, [ :int, :int ], :string
+    attach_function :generate_maze, [ :int, :int ], :pointer
   end
 
   module DSL
@@ -47,7 +47,8 @@ module Maze
       @maze = Maze.new
             
       def show(mazeob: @maze, &block)
-        mazeob.generate_maze @width, @breadth
+        r = mazeob.generate_maze(@width, @breadth).get_array_of_uchar(2, @width * @breadth)
+        pp r.map{|i| i.to_s(2)}
       end
 
       block.(@maze)

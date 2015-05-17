@@ -48,6 +48,14 @@ namespace maze
     cout << "]";
   }
 
+  auto Room::to_encoded() {
+    unsigned char er = 0;
+    for (auto w : walls) {
+      er = (er << 1) | w;
+    }
+    return er;
+  }
+
   Maze::Maze(int w, int b) : width(w), breadth(b), room_size(10.0) {
     init();
   }
@@ -56,6 +64,11 @@ namespace maze
                                         breadth(b),
                                         room_size(rs) {
     init();
+  }
+
+  Maze::~Maze() {
+    if (expar != nullptr)
+      free(expar);
   }
 
   void Maze::init() {
@@ -147,13 +160,33 @@ namespace maze
     }
   }
 
+  /* Returns an array of unsigned chars,
+     W|B|cccccccc...
+     
+     Note that this will be only generated once, 
+     and the results cached.
+   */
   auto Maze::to_export() {
-    return nullptr;
+    if (expar == nullptr) {
+      expar = (unsigned char *) calloc(width * breadth + 2, sizeof(unsigned char));
+      expar[0] = width;
+      expar[1] = breadth;
+      auto wb = expar + 2;
+      
+      for (auto i = 0; i < width; ++i) {
+        for (auto j = 0; j < breadth; ++j) {
+          wb[i * breadth + j] = (*this)[i][j].to_encoded();
+        }
+      }
+      
+    }
+    return expar;
   }
 
+  //FIXME: Leaks memory!!!! Ownership issues to be resolved.
   extern "C" auto generate_maze(int width, int breadth) {
-    Maze m {width, breadth};
-    m.dump_out();
-    return m.to_export();
+    auto m = new Maze {width, breadth};
+    m->dump_out();
+    return m->to_export();
   }
 }
