@@ -13,6 +13,12 @@ gem 'rubyneat_dashboard', github: '~/development/ruby_proj/rubyneat_dashboard', 
 # need this, then comment it out  or remove it.
 gem 'gosu', require: false
 
+# Well, we may supplant gosu with opengl
+gem 'opengl', require: false
+gem 'glu', require: false
+gem 'glut', require: false
+gem 'rubysdl', require: false
+
 group :development do
   gem 'pry'
   gem 'pry-doc'
