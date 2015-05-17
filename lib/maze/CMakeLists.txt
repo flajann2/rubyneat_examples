@@ -16,15 +16,13 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 set(CMAKE_BUILD_TYPE Debug)
 
-find_package (Threads)
-find_package (GLUT)
-find_package (OpenGL)
-find_package(Magnum REQUIRED) # MeshTools Primitives Sdl2Application)
+#find_package (Threads REQUIRED)
 
 add_executable(mz main.cpp)
 
 set_property(TARGET mz PROPERTY CXX_STANDARD 14)
 set_property(TARGET mz PROPERTY CXX_STANDARD_REQUIRED ON)
+# set(CMAKE_THREAD_PREFER_PTHREAD TRUE)
 
 add_library(maze SHARED maze.cpp)
 target_link_libraries (mz maze ${CMAKE_THREAD_LIBS_INIT})

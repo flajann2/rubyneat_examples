@@ -18,11 +18,17 @@ maze generations, are all done in a C++14 library for speed.
 require 'opengl'
 require 'glu'
 require 'glut'
+require 'ffi'
 
 module Maze
+  MAZE_BASE = File.join(File.dirname(__FILE__), 'maze')
+  MAZE_LIB = File.join(MAZE_BASE, "lib/libmaze.#{FFI::Platform::LIBSUFFIX}")
 
   # Ruby reprentation and interface to the C++ Maze module
   class Maze
+    extend FFI::Library
+    ffi_lib MAZE_LIB
+    attach_function :generate_maze, [ :int, :int ], :string
   end
 
   module DSL
@@ -38,26 +44,13 @@ module Maze
 
 
     def maze(&block)
-      @ipwin = InvPendWindow.new
-      
-      def cart(&block)
-        @cart_params = block.()
-        unless @cart_params[:naked]
-          @cart = @ipwin.cart = Cart.new({ipwin: @ipwin}.merge @cart_params)
-        else
-          @cart = Cart.new(@cart_params)
-        end
+      @maze = Maze.new
+            
+      def show(mazeob: @maze, &block)
+        mazeob.generate_maze @width, @breadth
       end
-      
-      def show(cart: @cart, &block)
-        unless cart.nil?
-          @ipwin.cart = cart
-          cart.ipwin = @ipwin
-        end
-        
-        @ipwin.show
-      end
-      block.(@ipwin)
+
+      block.(@maze)
     end
   end
 end

@@ -93,5 +93,6 @@ namespace maze
     Maze(int w, int b, double room_size);
     vector<Room> &operator[](int i);
     void dump_out();
+    auto to_export();
   };
 }

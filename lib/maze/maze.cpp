@@ -111,7 +111,7 @@ namespace maze
 
   enum WallMode { top, left, rightend, bottomend };
   const array<WallMode, 3> wallmode = {top, left, bottomend};
-
+  
   void Maze::dump_out() {
     const string UpperWallClosed = "+--";
     const string BottomWall      = "+--";
@@ -145,5 +145,15 @@ namespace maze
           cout << LowerEndWall << endl;
       }
     }
+  }
+
+  auto Maze::to_export() {
+    return nullptr;
+  }
+
+  extern "C" auto generate_maze(int width, int breadth) {
+    Maze m {width, breadth};
+    m.dump_out();
+    return m.to_export();
   }
 }

@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/~/development/ruby_proj/rubyneat.git
-  revision: b9db6436a026c81c45658cccb3883d0f48ea2aa8
+  revision: c0602041533dd2e27289d6b69acb4d70e3a2bcea
   branch: hyper
   specs:
     rubyneat (0.5.1.hyper.alpha.5)
@@ -182,6 +182,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  ffi
   glu
   glut
   gosu
