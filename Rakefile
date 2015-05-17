@@ -7,7 +7,6 @@ MAZE_ARTIFACTS = [MAZE_LIB, MAZE_EX]
 
 task :default => :build
 
-
 desc "Deletes the artifacts"
 task :clean do
   MAZE_ARTIFACTS.each do |file|
@@ -15,10 +14,18 @@ task :clean do
   end
 end
 
-desc "Compile the maze code"
+desc "CMake and make the maze code"
 task :build  do
   sh %[
 cd #{MAZE_BASE}
 cmake . && make
+]
+end
+
+desc "Make the maze code"
+task :make  do
+  sh %[
+cd #{MAZE_BASE}
+make
 ]
 end
