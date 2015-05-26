@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/~/development/ruby_proj/rubyneat.git
-  revision: c0602041533dd2e27289d6b69acb4d70e3a2bcea
+  revision: dc2f1b2161f9d419cf97ef107d8ad9cb0b4e2b44
   branch: hyper
   specs:
     rubyneat (0.5.1.hyper.alpha.5)
@@ -77,7 +77,7 @@ GEM
     compass-import-once (1.0.5)
       sass (>= 3.2, < 3.5)
     daemons (1.2.2)
-    debase (0.1.3)
+    debase (0.1.4)
       debase-ruby_core_source
     debase-ruby_core_source (0.7.9)
     debug_inspector (0.0.2)
@@ -89,7 +89,7 @@ GEM
     ffi (1.9.8)
     glu (8.2.1)
     glut (8.2.1)
-    gosu (0.9.1)
+    gosu (0.9.2)
     haml (4.0.6)
       tilt
     hike (1.2.3)
@@ -136,12 +136,12 @@ GEM
       rack
     rack-test (0.6.3)
       rack (>= 1.0)
-    rb-fsevent (0.9.4)
+    rb-fsevent (0.9.5)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
     rb-readline (0.5.2)
     rubysdl (2.2.0)
-    sass (3.4.13)
+    sass (3.4.14)
     semver (1.0.1)
     sinatra (1.4.6)
       rack (~> 1.4)
