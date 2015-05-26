@@ -7,7 +7,6 @@ include Maze::DSL
 =Bots in a Maze
 =end
 
-
 maze do 
   puts "Maze"
   

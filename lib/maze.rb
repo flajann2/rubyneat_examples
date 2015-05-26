@@ -29,12 +29,22 @@ module Maze
     extend FFI::Library
     ffi_lib MAZE_LIB
     attach_function :generate_maze, [ :int, :int ], :pointer
+
+    def gen_maze!(width, breadth)
+      @width = width
+      @breadth = breadth
+      @raw = generate_maze(@width, @breadth).get_array_of_uchar(2, @width * @breadth)
+    end
+
+    def raw
+      @raw
+    end
   end
 
   module DSL
 
     # dimensions of the maze (width x breadth)
-    def dimensions(width: 7, breadth: 7, &block)
+    def dimensions(width: 5, breadth: 3, &block)
       @width, @breadth = if block_given?
                            block.()
                          else
@@ -47,7 +57,7 @@ module Maze
       @maze = Maze.new
             
       def show(mazeob: @maze, &block)
-        r = mazeob.generate_maze(@width, @breadth).get_array_of_uchar(2, @width * @breadth)
+        r = mazeob.gen_maze!(@width, @breadth)
         pp r.map{|i| i.to_s(2)}
       end
 
