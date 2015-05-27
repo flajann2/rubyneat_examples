@@ -1,9 +1,9 @@
 GIT
   remote: git://github.com/~/development/ruby_proj/rubyneat.git
-  revision: dc2f1b2161f9d419cf97ef107d8ad9cb0b4e2b44
+  revision: e95693e0530834d7cc4a0003c4c482e3ee6806b7
   branch: hyper
   specs:
-    rubyneat (0.5.1.hyper.alpha.5)
+    rubyneat (0.5.2)
       aquarium (~> 0)
       awesome_print (~> 1)
       bond (~> 0)

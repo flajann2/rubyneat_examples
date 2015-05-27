@@ -5,6 +5,7 @@
 #include <tuple>
 #include <random>
 #include <map>
+#include <btBulletDynamicsCommon.h>
 
 /*
   For now, we'll just do a 2-D maze.

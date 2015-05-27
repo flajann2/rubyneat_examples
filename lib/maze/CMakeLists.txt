@@ -16,7 +16,10 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 set(CMAKE_BUILD_TYPE Debug)
 
+include_directories(SYSTEM /usr/local/include/bullet)
+
 find_package (Threads REQUIRED)
+find_package (Bullet REQUIRED)
 
 add_executable(mz main.cpp)
 
@@ -25,7 +28,8 @@ set_property(TARGET mz PROPERTY CXX_STANDARD_REQUIRED ON)
 set(CMAKE_THREAD_PREFER_PTHREAD TRUE)
 
 add_library(maze SHARED maze.cpp)
-target_link_libraries (mz maze ${CMAKE_THREAD_LIBS_INIT})
+target_link_libraries (maze PRIVATE ${CMAKE_THREAD_LIBS_INIT})
+target_link_libraries (mz maze ${CMAKE_THREAD_LIBS_INIT} ${BULLET_LIBRARIES})
 
 set_property(TARGET maze PROPERTY CXX_STANDARD 14)
 set_property(TARGET maze PROPERTY CXX_STANDARD_REQUIRED ON)

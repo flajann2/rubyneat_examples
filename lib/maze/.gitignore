@@ -4,4 +4,4 @@ bin/
 lib/
 build/
 CMakeFiles/
-CMakeLists.txt
+CMakeCache.txt
