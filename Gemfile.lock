@@ -83,7 +83,7 @@ GEM
     debug_inspector (0.0.2)
     deep_dive (0.2.2)
       debase
-    distribution (0.7.2)
+    distribution (0.7.3)
     eventmachine (1.0.7)
     execjs (2.5.2)
     ffi (1.9.8)
@@ -100,7 +100,7 @@ GEM
     json-stream (0.2.1)
     k-tree (0.0.2)
     method_source (0.8.2)
-    minitest (5.6.1)
+    minitest (5.7.0)
     multi_json (1.11.0)
     opal (0.7.2)
       hike (~> 1.2)
