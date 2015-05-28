@@ -33,3 +33,13 @@ target_link_libraries (mz maze ${CMAKE_THREAD_LIBS_INIT} ${BULLET_LIBRARIES})
 
 set_property(TARGET maze PROPERTY CXX_STANDARD 14)
 set_property(TARGET maze PROPERTY CXX_STANDARD_REQUIRED ON)
+
+LINK_LIBRARIES(
+  Bullet3Common
+  BulletSoftBody
+  BulletDynamics
+  BulletCollision
+  LinearMath
+  OpenGLWindow
+  gwen ${OPENGL_gl_LIBRARY} ${OPENGL_glu_LIBRARY}
+)
