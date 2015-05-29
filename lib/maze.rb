@@ -109,7 +109,7 @@ module Maze
       @maze.height = if block_given?
                        block.()
                      else
-                       [room, wall]
+                       [room, wall, height]
                      end
     end
 
@@ -118,9 +118,9 @@ module Maze
       @maze = Maze.new
             
       def show(mazeob: @maze, &block)
-        r = mazeob.gen_maze!.flatten
+        mazeob.gen_maze!
         puts mazeob.to_s
-        pp r
+        mazeob.show_loop
       end
 
       block.(@maze)
