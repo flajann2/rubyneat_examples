@@ -14,11 +14,8 @@ During the evaluation mode, the actual simulations, as well as the
 maze generations, are all done in a C++14 library for speed.
 =end
 
-require 'opengl'
-require 'glu'
-require 'glut'
 require 'ffi'
-require 'chunky_png'
+require_relative 'maze_opengl'
 
 module Maze
   MAZE_BASE = File.join(File.dirname(__FILE__), 'maze')
@@ -26,14 +23,11 @@ module Maze
 
   # Ruby reprentation and interface to the C++ Maze module
   class Maze
-    include Gl
-    include Glu
-    include Glut
     extend FFI::Library
     ffi_lib MAZE_LIB
     attach_function :generate_maze, [ :int, :int ], :pointer
 
-    attr_accessor :width, :breadth, :room_measure, :wall_measure
+    attr_accessor :width, :breadth, :room_measure, :wall_measure, :height
     attr :raw
 
     def gen_maze!
@@ -97,12 +91,14 @@ module Maze
 
     # Assume MKS units, define the witdth of the 
     # square room and the width of the wall.
-    def physical(room: 1.0, wall: 0.1, &block)
-      @maze.room_measure, @maze.wall_measure = if block_given?
-                                                 block.()
-                                               else
-                                                 [room, wall]
-                                               end
+    def physical(room: 1.0, wall: 0.1, height: 1.0 &block)
+      @maze.room_measure,
+      @maze.wall_measure,
+      @maze.height = if block_given?
+                       block.()
+                     else
+                       [room, wall]
+                     end
     end
 
 
@@ -123,6 +119,3 @@ module Maze
     end
   end
 end
-
-
-
