@@ -118,13 +118,9 @@ module Maze
       @maze = Maze.new
             
       def show(mazeob: @maze, &block)
-        mazeob.gen_maze!
+        r = mazeob.gen_maze!.flatten
         puts mazeob.to_s
-        #(0...@maze.width).each do |i|
-        #  (0...@maze.breadth).each do |j|
-        #    puts "(#{i},#{j}) = #{r[i][j]}"
-        #  end
-        #end
+        pp r
       end
 
       block.(@maze)
