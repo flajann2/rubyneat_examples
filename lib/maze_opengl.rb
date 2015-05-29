@@ -99,8 +99,8 @@ module Maze
       glRotatef @xrot, 1.0, 0.0, 0.0
       glRotatef @yrot, 0.0, 1.0, 0.0
       
+      # Maze
       glBindTexture GL_TEXTURE_2D, @textures[@filter]
-      
       glBegin GL_QUADS do
         rooms.each do |room|
           room.each do |wall, segment|
@@ -115,6 +115,8 @@ module Maze
               when :right ; glNormal3f(1.0,  0.0,  0.0)
               when :left  ; glNormal3f(-1.0,  0.0,  0.0)
               end
+
+              #
               glTexCoord2f(0.0, 1.0) ; glVertex3f(x1, y1, z1)
               glTexCoord2f(1.0, 1.0) ; glVertex3f(x1, y1, z2)
               glTexCoord2f(1.0, 0.0) ; glVertex3f(x2, y2, z2)
@@ -124,6 +126,9 @@ module Maze
           end
         end
       end
+
+      # Bots
+      # TODO: Bot rendering
 
       @xrot += @x_speed
       @yrot += @y_speed
@@ -174,13 +179,9 @@ module Maze
       glutPostRedisplay
     end
 
-
     
     def load_texture
       png = ChunkyPNG::Image.from_file(File.expand_path('../../public/crate.png', __FILE__))
-      
-      height = png.height
-      width = png.width
       
       image = png.to_rgba_stream
       
@@ -188,17 +189,17 @@ module Maze
       glBindTexture GL_TEXTURE_2D, @textures[0]
       glTexParameteri GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST
       glTexParameteri GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST
-      glTexImage2D GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, image
+      glTexImage2D GL_TEXTURE_2D, 0, GL_RGBA, png.width, png.height, 0, GL_RGBA, GL_UNSIGNED_BYTE, image
       
       glBindTexture GL_TEXTURE_2D, @textures[1]
       glTexParameteri GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR
       glTexParameteri GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR
-      glTexImage2D GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, image
+      glTexImage2D GL_TEXTURE_2D, 0, GL_RGBA, png.width, png.height, 0, GL_RGBA, GL_UNSIGNED_BYTE, image
       
       glBindTexture GL_TEXTURE_2D, @textures[2]
       glTexParameteri GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR
       glTexParameteri GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_NEAREST
-      gluBuild2DMipmaps GL_TEXTURE_2D, GL_RGBA, width, height, GL_RGBA, GL_UNSIGNED_BYTE, image
+      gluBuild2DMipmaps GL_TEXTURE_2D, GL_RGBA, png.width, png.height, GL_RGBA, GL_UNSIGNED_BYTE, image
     end
   end
 end

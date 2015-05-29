@@ -117,9 +117,9 @@ module Maze
     def maze(&block)
       @maze = Maze.new
             
-      def show(mazeob: @maze, &block)
+      def show(mazeob: @maze, debug: false, &block)
         mazeob.gen_maze!
-        puts mazeob.to_s
+        puts mazeob.to_s if debug
         mazeob.show_loop
       end
 
