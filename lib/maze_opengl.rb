@@ -110,35 +110,16 @@ module Maze
               ((x1, y1), (x2, y2)) = segment
               # Face normal
               case wall
-              when :top
-                glNormal3f(0.0,  1.0,  0.0)
-                glTexCoord2f(0.0, 1.0) ; glVertex3f(x1, y1, z1)
-                glTexCoord2f(1.0, 1.0) ; glVertex3f(x1, y1, z2)
-                glTexCoord2f(1.0, 0.0) ; glVertex3f(x2, y1, z2)
-                glTexCoord2f(0.0, 0.0) ; glVertex3f(x2, y1, z1)
-
-              when :bot 
-                glNormal3f(0.0,  -1.0,  0.0)
-                glTexCoord2f(0.0, 1.0) ; glVertex3f(x1, y1, z1)
-                glTexCoord2f(1.0, 1.0) ; glVertex3f(x1, y1, z2)
-                glTexCoord2f(1.0, 0.0) ; glVertex3f(x2, y1, z2)
-                glTexCoord2f(0.0, 0.0) ; glVertex3f(x2, y1, z1)
-
-              when :right 
-                glNormal3f(1.0,  0.0,  0.0)
-                glTexCoord2f(0.0, 1.0) ; glVertex3f(x1, y1, z1)
-                glTexCoord2f(1.0, 1.0) ; glVertex3f(x1, y1, z2)
-                glTexCoord2f(1.0, 0.0) ; glVertex3f(x1, y2, z2)
-                glTexCoord2f(0.0, 0.0) ; glVertex3f(x1, y2, z1)
-
-              when :left 
-                glNormal3f(-1.0,  0.0,  0.0)
-                glTexCoord2f(0.0, 1.0) ; glVertex3f(x1, y1, z1)
-                glTexCoord2f(1.0, 1.0) ; glVertex3f(x1, y1, z2)
-                glTexCoord2f(1.0, 0.0) ; glVertex3f(x1, y2, z2)
-                glTexCoord2f(0.0, 0.0) ; glVertex3f(x1, y2, z1)
-
+              when :top   ; glNormal3f(0.0,  1.0,  0.0)
+              when :bot   ; glNormal3f(0.0,  -1.0,  0.0)
+              when :right ; glNormal3f(1.0,  0.0,  0.0)
+              when :left  ; glNormal3f(-1.0,  0.0,  0.0)
               end
+              glTexCoord2f(0.0, 1.0) ; glVertex3f(x1, y1, z1)
+              glTexCoord2f(1.0, 1.0) ; glVertex3f(x1, y1, z2)
+              glTexCoord2f(1.0, 0.0) ; glVertex3f(x2, y2, z2)
+              glTexCoord2f(0.0, 0.0) ; glVertex3f(x2, y2, z1)
+
             end
           end
         end
