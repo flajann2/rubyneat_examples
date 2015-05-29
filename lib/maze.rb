@@ -31,11 +31,12 @@ module Maze
     attr :raw
 
     def gen_maze!
-      @raw = generate_maze(@width, @breadth).get_array_of_uchar(2, @width * @breadth)
+      @raw ||= generate_maze(@width, @breadth).get_array_of_uchar(2, @width * @breadth)
+      @room_maze_walls ||= wall_it
     end
    
     # Create the line segments that define the maze
-    def wall_it!
+    def wall_it
       bmaze = []
       @raw.each_slice(@breadth) do |a|
         bmaze << a
@@ -77,6 +78,17 @@ module Maze
       end
       rmaze
     end
+
+    def to_s(delim="\n")
+      s = []
+      r = gen_maze!
+      (0...width).each do |i|
+        (0...breadth).each do |j|
+          s << "(#{i},#{j}): #{r[i][j]}"
+        end
+      end
+      s.join(delim)
+    end
   end
 
   module DSL
@@ -106,13 +118,13 @@ module Maze
       @maze = Maze.new
             
       def show(mazeob: @maze, &block)
-        r = mazeob.gen_maze!
-        mwalls = mazeob.wall_it!
-        (0...@maze.width).each do |i|
-          (0...@maze.breadth).each do |j|
-            puts "(#{i},#{j}) = #{mwalls[i][j]}"
-          end
-        end
+        mazeob.gen_maze!
+        puts mazeob.to_s
+        #(0...@maze.width).each do |i|
+        #  (0...@maze.breadth).each do |j|
+        #    puts "(#{i},#{j}) = #{r[i][j]}"
+        #  end
+        #end
       end
 
       block.(@maze)
