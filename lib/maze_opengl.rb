@@ -43,7 +43,7 @@ module Maze
       glutKeyboardFunc :keyboard
       
       reshape IW_WIDTH, IW_HEIGHT
-      load_texture
+      load_textures 'stone_wall_seamless.png', 'rock_mixed.png', 'tilesf4.png'
       init_gl
     end
 
@@ -180,26 +180,17 @@ module Maze
     end
 
     
-    def load_texture
-      png = ChunkyPNG::Image.from_file(File.expand_path('../../public/crate.png', __FILE__))
-      
-      image = png.to_rgba_stream
-      
-      @textures = glGenTextures 3
-      glBindTexture GL_TEXTURE_2D, @textures[0]
-      glTexParameteri GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST
-      glTexParameteri GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST
-      glTexImage2D GL_TEXTURE_2D, 0, GL_RGBA, png.width, png.height, 0, GL_RGBA, GL_UNSIGNED_BYTE, image
-      
-      glBindTexture GL_TEXTURE_2D, @textures[1]
-      glTexParameteri GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR
-      glTexParameteri GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR
-      glTexImage2D GL_TEXTURE_2D, 0, GL_RGBA, png.width, png.height, 0, GL_RGBA, GL_UNSIGNED_BYTE, image
-      
-      glBindTexture GL_TEXTURE_2D, @textures[2]
-      glTexParameteri GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR
-      glTexParameteri GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_NEAREST
-      gluBuild2DMipmaps GL_TEXTURE_2D, GL_RGBA, png.width, png.height, GL_RGBA, GL_UNSIGNED_BYTE, image
+    def load_textures(*images)
+      @textures = glGenTextures images.size
+      images.each_with_index do |file, i|
+        png = ChunkyPNG::Image.from_file(File.expand_path("../../public/#{file}", __FILE__))
+        image = png.to_rgba_stream
+
+        glBindTexture GL_TEXTURE_2D, @textures[i]
+        glTexParameteri GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR
+        glTexParameteri GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_NEAREST
+        gluBuild2DMipmaps GL_TEXTURE_2D, GL_RGBA, png.width, png.height, GL_RGBA, GL_UNSIGNED_BYTE, image
+      end
     end
   end
 end
