@@ -43,7 +43,10 @@ module Maze
       glutKeyboardFunc :keyboard
       
       reshape IW_WIDTH, IW_HEIGHT
-      load_textures 'stone_wall_seamless.png', 'rock_mixed.png', 'tilesf4.png'
+      load_textures('stone_wall_seamless.png',
+                    'rock_mixed.png',
+                    'tilesf4.png',
+                    'concrete_tile.png')
       init_gl
     end
 
@@ -154,11 +157,11 @@ module Maze
           glDisable GL_LIGHTING
           puts "lights off"
         end
-      when 'f' then
-        @filter += 1
-        @filter %= 3         
-        puts "texture #{@filter}"
       when 'F' then
+        @filter += 1
+        @filter %= @texture_count         
+        puts "texture #{@filter}"
+      when 'f' then
         @fullscreen = !@fullscreen
         
         if @fullscreen then
@@ -181,7 +184,7 @@ module Maze
 
     
     def load_textures(*images)
-      @textures = glGenTextures images.size
+      @textures = glGenTextures(@texture_count = images.size)
       images.each_with_index do |file, i|
         png = ChunkyPNG::Image.from_file(File.expand_path("../../public/#{file}", __FILE__))
         image = png.to_rgba_stream
