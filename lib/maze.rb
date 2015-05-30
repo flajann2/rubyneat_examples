@@ -54,8 +54,8 @@ module Maze
       # Here we calculate the actual line segments
       # for all the rooms
       rmaze = []
-      roompt = @room_measure / 2.0
-      wallpt = @wall_measure / 2.0
+      @roompt = @room_measure / 2.0
+      @wallpt = @wall_measure / 2.0
       (0...@width).each do |i|
         b_rooms = []
         x = i * @room_measure
@@ -63,15 +63,15 @@ module Maze
           room = bmaze[i][j]
           y = j * @room_measure
           b_rooms << {
-            top: room[:top] ? [[(x + roompt) - roompt + wallpt, (y + roompt) + roompt - wallpt], 
-                               [(x + roompt) + roompt - wallpt, (y + roompt) + roompt - wallpt]] : nil,
-            bot: room[:bot] ? [[(x + roompt) - roompt + wallpt, (y + roompt) - roompt + wallpt],
-                               [(x + roompt) + roompt - wallpt, (y + roompt) - roompt + wallpt]] : nil,
+            top: room[:top] ? [[(x + @roompt) - @roompt + @wallpt, (y + @roompt) + @roompt - @wallpt], 
+                               [(x + @roompt) + @roompt - @wallpt, (y + @roompt) + @roompt - @wallpt]] : nil,
+            bot: room[:bot] ? [[(x + @roompt) - @roompt + @wallpt, (y + @roompt) - @roompt + @wallpt],
+                               [(x + @roompt) + @roompt - @wallpt, (y + @roompt) - @roompt + @wallpt]] : nil,
 
-            right: room[:right] ? [[(x + roompt) + roompt - wallpt, (y + roompt) - roompt + wallpt], 
-                                   [(x + roompt) + roompt - wallpt, (y + roompt) + roompt - wallpt]] : nil,
-            left:  room[:left]  ? [[(x + roompt) - roompt + wallpt, (y + roompt) - roompt + wallpt],
-                                   [(x + roompt) - roompt + wallpt, (y + roompt) + roompt - wallpt]] : nil,
+            right: room[:right] ? [[(x + @roompt) + @roompt - @wallpt, (y + @roompt) - @roompt + @wallpt], 
+                                   [(x + @roompt) + @roompt - @wallpt, (y + @roompt) + @roompt - @wallpt]] : nil,
+            left:  room[:left]  ? [[(x + @roompt) - @roompt + @wallpt, (y + @roompt) - @roompt + @wallpt],
+                                   [(x + @roompt) - @roompt + @wallpt, (y + @roompt) + @roompt - @wallpt]] : nil,
           }
         end
         rmaze << b_rooms

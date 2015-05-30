@@ -113,18 +113,23 @@ module Maze
               ((x1, y1), (x2, y2)) = segment
               # Face normal
               case wall
-              when :top   ; glNormal3f(0.0,  1.0,  0.0)
-              when :bot   ; glNormal3f(0.0,  -1.0,  0.0)
-              when :right ; glNormal3f(1.0,  0.0,  0.0)
-              when :left  ; glNormal3f(-1.0,  0.0,  0.0)
+              when :top   ; glNormal3f(0.0, -1.0,  0.0) ; (ix, iy) = [0.0, 1.0] 
+              when :bot   ; glNormal3f(0.0, 1.0, 0.0) ; (ix, iy) = [0.0, -1.0] 
+              when :right ; glNormal3f(-1.0, 0.0,  0.0) ; (ix, iy) = [1.0, 0.0] 
+              when :left  ; glNormal3f(1.0, 0.0, 0.0) ; (ix, iy) = [-1.0, 0.0] 
               end
 
-              #
+              # wall
               glTexCoord2f(0.0, 1.0) ; glVertex3f(x1, y1, z1)
               glTexCoord2f(1.0, 1.0) ; glVertex3f(x1, y1, z2)
               glTexCoord2f(1.0, 0.0) ; glVertex3f(x2, y2, z2)
               glTexCoord2f(0.0, 0.0) ; glVertex3f(x2, y2, z1)
 
+              # wall cap top
+              glTexCoord2f(0.0, 1.0) ; glVertex3f(x1, y1, z2)
+              glTexCoord2f(1.0, 1.0) ; glVertex3f(x1 + (@wallpt*ix), y1 + (@wallpt*iy), z2)
+              glTexCoord2f(1.0, 0.0) ; glVertex3f(x2 + (@wallpt*ix), y2 + (@wallpt*iy), z2)
+              glTexCoord2f(0.0, 0.0) ; glVertex3f(x2, y2, z2)
             end
           end
         end
