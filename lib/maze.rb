@@ -140,7 +140,7 @@ module Maze
         rbreadth.each_with_index do |room, j|
           room.each{ |side, segment|
             unless cap_skip? i, j, side, segment 
-              quad = {normal: [0.0, 0.0, 1.0]} #caps face up as all
+              quad = {normal: [0.0, 0.0, 1.0], side: side} #caps face up as all
               ((x1, y1), (x2, y2)) = segment
               ix, iy = cap_rot(side)
               quad[:side] = side # for debugging only
@@ -162,7 +162,7 @@ module Maze
     # cap, respectively, generate the vertices and texture map
     # of the cap. Generate 5 faces and return the array of the
     # vertices.
-    def pin_cap(x, y)
+    def pin_cap(x, y, side = nil)
       faces = []
       z = height
       xw = x + @wall_measure
@@ -170,7 +170,7 @@ module Maze
       zw = 0.0
 
       # cap of the cap -- maze square
-      quad = {normal: [0.0, 0.0, 1.0]}
+      quad = {normal: [0.0, 0.0, 1.0], side: side}
       quad[:rect] = [
                      {texture: [0.0, 1.0], vertex: [x,  y,  z]},
                      {texture: [1.0, 1.0], vertex: [x,  yw, z]},
@@ -180,7 +180,7 @@ module Maze
       faces << quad
 
       # top(2d ref) wall
-      quad = {normal: [1.0, 0.0, 0.0]}
+      quad = {normal: [1.0, 0.0, 0.0], side: side}
       quad[:rect] = [
                      {texture: [0.0, 1.0], vertex: [x,  yw, z]},
                      {texture: [1.0, 1.0], vertex: [x,  yw, zw]},
@@ -190,7 +190,7 @@ module Maze
       faces << quad
 
       # bot(2d ref) wall
-      quad = {normal: [-1.0, 0.0, 0.0]}
+      quad = {normal: [-1.0, 0.0, 0.0], side: side}
       quad[:rect] = [
                      {texture: [0.0, 1.0], vertex: [x,  y, z]},
                      {texture: [1.0, 1.0], vertex: [x,  y, zw]},
@@ -200,7 +200,7 @@ module Maze
       faces << quad
 
       # right(2d ref) wall
-      quad = {normal: [0.0, 1.0, 0.0]}
+      quad = {normal: [0.0, 1.0, 0.0], side: side}
       quad[:rect] = [
                      {texture: [0.0, 1.0], vertex: [xw, y,  z]},
                      {texture: [1.0, 1.0], vertex: [xw, y,  zw]},
@@ -210,7 +210,7 @@ module Maze
       faces << quad
 
       # left(2d ref) wall
-      quad = {normal: [0.0, -1.0, 0.0]}
+      quad = {normal: [0.0, -1.0, 0.0], side: side}
       quad[:rect] = [
                      {texture: [0.0, 1.0], vertex: [x, y,  z]},
                      {texture: [1.0, 1.0], vertex: [x, y,  zw]},
@@ -218,7 +218,6 @@ module Maze
                      {texture: [0.0, 0.0], vertex: [x, yw, z]}
                     ]
       faces << quad
-
 
       faces
     end
@@ -240,7 +239,7 @@ module Maze
           room.each{ |side, segment|
             unless pin_skip? i, j, side, segment
               ((x1, y1), (x2, y2)) = segment
-              li += pin_cap( x2, y2)
+              li += pin_cap(x2, y2, side)
             end
           }
         end
