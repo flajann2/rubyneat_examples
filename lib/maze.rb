@@ -55,7 +55,7 @@ module Maze
       # for all the rooms
       @rmaze = []
       @roompt = @room_measure / 2.0
-      @wallpt = @wall_measure / 2.0
+      @wall_measure = @wall_measure / 2.0
       (0...@width).each do |i|
         b_rooms = []
         x = i * @room_measure
@@ -63,15 +63,15 @@ module Maze
           room = bmaze[i][j]
           y = j * @room_measure
           b_rooms << {
-            top: room[:top]     ? [[(x + @roompt) - @roompt + @wallpt, (y + @roompt) + @roompt - @wallpt],
-                                   [(x + @roompt) + @roompt - @wallpt, (y + @roompt) + @roompt - @wallpt]] : nil,
-            bot: room[:bot]     ? [[(x + @roompt) - @roompt + @wallpt, (y + @roompt) - @roompt + @wallpt],
-                                   [(x + @roompt) + @roompt - @wallpt, (y + @roompt) - @roompt + @wallpt]] : nil,
+            top: room[:top]     ? [[(x + @roompt) - @roompt + @wall_measure, (y + @roompt) + @roompt - @wall_measure],
+                                   [(x + @roompt) + @roompt - @wall_measure, (y + @roompt) + @roompt - @wall_measure]] : nil,
+            bot: room[:bot]     ? [[(x + @roompt) - @roompt + @wall_measure, (y + @roompt) - @roompt + @wall_measure],
+                                   [(x + @roompt) + @roompt - @wall_measure, (y + @roompt) - @roompt + @wall_measure]] : nil,
 
-            right: room[:right] ? [[(x + @roompt) + @roompt - @wallpt, (y + @roompt) - @roompt + @wallpt],
-                                   [(x + @roompt) + @roompt - @wallpt, (y + @roompt) + @roompt - @wallpt]] : nil,
-            left:  room[:left]  ? [[(x + @roompt) - @roompt + @wallpt, (y + @roompt) - @roompt + @wallpt],
-                                   [(x + @roompt) - @roompt + @wallpt, (y + @roompt) + @roompt - @wallpt]] : nil,
+            right: room[:right] ? [[(x + @roompt) + @roompt - @wall_measure, (y + @roompt) - @roompt + @wall_measure],
+                                   [(x + @roompt) + @roompt - @wall_measure, (y + @roompt) + @roompt - @wall_measure]] : nil,
+            left:  room[:left]  ? [[(x + @roompt) - @roompt + @wall_measure, (y + @roompt) - @roompt + @wall_measure],
+                                   [(x + @roompt) - @roompt + @wall_measure, (y + @roompt) + @roompt - @wall_measure]] : nil,
           }
         end
         @rmaze << b_rooms
@@ -118,14 +118,36 @@ module Maze
       li
     end
 
+    def cap_rot(side)
+      case side
+      when :top   ; [0.0, 1.0] 
+      when :bot   ; [0.0, -1.0] 
+      when :right ; [1.0, 0.0] 
+      when :left  ; [-1.0, 0.0] 
+      end
+    end
+
     # Create caps between walls
     def list_wall_cap_it(rmaze)
       li = []
+      z = height
       rmaze.each_with_index do |rbreadth, i|
         rbreadth.each_with_index do |room, j|
           puts "wc: #{i},#{j}-> #{room}"
-          li += room.map{ |side, segment|
+          room.each{ |side, segment|
             unless segment.nil?
+              quad = {normal: [0.0, 0.0, 1.0]} #caps face up as all
+              ((x1, y1), (x2, y2)) = segment
+              ix, iy = cap_rot(side)
+              quad[:side] = side
+              quad[:rect] = [
+                             {texture: [0.0, 1.0], vertex: [x1, y1, z]},
+                             {texture: [1.0, 1.0], vertex: [x1 + (@wall_measure*ix), y1 + (@wall_measure*iy), z]},
+                             {texture: [1.0, 0.0], vertex: [x2 + (@wall_measure*ix), y2 + (@wall_measure*iy), z]},
+                             {texture: [0.0, 0.0], vertex: [x2, y2, z]}
+                            ]
+
+              li << quad
             end
           }
         end
