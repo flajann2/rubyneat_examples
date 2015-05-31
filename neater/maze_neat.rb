@@ -8,9 +8,7 @@ include Maze::DSL
 =end
 
 maze do 
-  puts "Maze"
-  
-  dimensions width: 3, breadth: 2
+  dimensions width: 4, breadth: 3
   physical room: 1.0, wall: 0.3, height: 0.5
   show debug: true, gl: true
 end
