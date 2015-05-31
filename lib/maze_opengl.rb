@@ -93,8 +93,35 @@ module Maze
     end
 
     def draw_gl_scene
-      rooms = gen_maze!.flatten
+      quads = gen_maze!.compact
+      glClear GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT
+      glLoadIdentity
+      glTranslatef -width * room_measure / 2.0, -breadth * room_measure / 2.0, @z
+      
+      glRotatef @xrot, 1.0, 0.0, 0.0
+      glRotatef @yrot, 0.0, 1.0, 0.0
+      
+      # Maze
+      glBindTexture GL_TEXTURE_2D, @textures[@filter]
+      glBegin GL_QUADS do
+        quads.each do |quad|
+          glNormal3f(* quad[:normal])
+          quad[:rect].each_with_index do |ver, i|
+            glTexCoord2f(*ver[:texture])
+            glVertex3f(*ver[:vertex])
+          end
+        end
+      end
 
+      # Bots
+      # TODO: bots
+      @xrot += @x_speed
+      @yrot += @y_speed
+      glutSwapBuffers
+    end
+
+    def deprecated_draw_gl_scene
+      rooms = nil
       glClear GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT
       glLoadIdentity
       glTranslatef -width * room_measure / 2.0, -breadth * room_measure / 2.0, @z

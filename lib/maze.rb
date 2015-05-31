@@ -28,11 +28,11 @@ module Maze
     attach_function :generate_maze, [ :int, :int ], :pointer
 
     attr_accessor :width, :breadth, :room_measure, :wall_measure, :height
-    attr :raw
+    attr :raw, :lmaze, :lwcaps, :lpcaps, :lewalls, :lfloor, :lall
 
     def gen_maze!
       @raw ||= generate_maze(@width, @breadth).get_array_of_uchar(2, @width * @breadth)
-      @room_maze_walls ||= wall_it
+      @list_maze_quads ||= wall_it
     end
    
     # Create the line segments that define the maze
@@ -53,7 +53,7 @@ module Maze
 
       # Here we calculate the actual line segments
       # for all the rooms
-      rmaze = []
+      @rmaze = []
       @roompt = @room_measure / 2.0
       @wallpt = @wall_measure / 2.0
       (0...@width).each do |i|
@@ -63,28 +63,97 @@ module Maze
           room = bmaze[i][j]
           y = j * @room_measure
           b_rooms << {
-            top: room[:top] ? [[(x + @roompt) - @roompt + @wallpt, (y + @roompt) + @roompt - @wallpt], 
-                               [(x + @roompt) + @roompt - @wallpt, (y + @roompt) + @roompt - @wallpt]] : nil,
-            bot: room[:bot] ? [[(x + @roompt) - @roompt + @wallpt, (y + @roompt) - @roompt + @wallpt],
-                               [(x + @roompt) + @roompt - @wallpt, (y + @roompt) - @roompt + @wallpt]] : nil,
+            top: room[:top]     ? [[(x + @roompt) - @roompt + @wallpt, (y + @roompt) + @roompt - @wallpt],
+                                   [(x + @roompt) + @roompt - @wallpt, (y + @roompt) + @roompt - @wallpt]] : nil,
+            bot: room[:bot]     ? [[(x + @roompt) - @roompt + @wallpt, (y + @roompt) - @roompt + @wallpt],
+                                   [(x + @roompt) + @roompt - @wallpt, (y + @roompt) - @roompt + @wallpt]] : nil,
 
-            right: room[:right] ? [[(x + @roompt) + @roompt - @wallpt, (y + @roompt) - @roompt + @wallpt], 
+            right: room[:right] ? [[(x + @roompt) + @roompt - @wallpt, (y + @roompt) - @roompt + @wallpt],
                                    [(x + @roompt) + @roompt - @wallpt, (y + @roompt) + @roompt - @wallpt]] : nil,
             left:  room[:left]  ? [[(x + @roompt) - @roompt + @wallpt, (y + @roompt) - @roompt + @wallpt],
                                    [(x + @roompt) - @roompt + @wallpt, (y + @roompt) + @roompt - @wallpt]] : nil,
           }
         end
-        rmaze << b_rooms
+        @rmaze << b_rooms
       end
-      rmaze
+      @lmaze   = list_wall_it @rmaze
+      @lwcaps  = list_wall_cap_it @rmaze
+      @lpcaps  = list_pin_cap_it @rmaze
+      @lewalls = list_edge_wall_it @rmaze
+      @lfloor  = list_maze_floor @rmaze
+      @lall = @lmaze + @lwcaps + @lpcaps + @lewalls + @lfloor 
+    end
+
+    # Create the walls
+    def list_wall_it(rmaze)
+      rooms = rmaze.flatten
+      li = []
+        rooms.each do |room|
+          room.each do |wall, segment|
+            unless segment.nil?
+              quad = {}
+              z1 = 0.0
+              z2 = height
+              ((x1, y1), (x2, y2)) = segment
+              # Face normal
+              case wall
+              when :top   ; quad[:normal] = [ 0.0, -1.0, 0.0] ; (ix, iy) = [ 0.0,  1.0]
+              when :bot   ; quad[:normal] = [ 0.0,  1.0, 0.0] ; (ix, iy) = [ 0.0, -1.0] 
+              when :right ; quad[:normal] = [-1.0,  0.0, 0.0] ; (ix, iy) = [ 1.0,  0.0]
+              when :left  ; quad[:normal] = [ 1.0,  0.0, 0.0] ; (ix, iy) = [-1.0,  0.0] 
+              end
+
+              # wall
+              quad[:rect] = [
+                             {texture: [0.0, 1.0], vertex: [x1, y1, z1]},
+                             {texture: [1.0, 1.0], vertex: [x1, y1, z2]},
+                             {texture: [1.0, 0.0], vertex: [x2, y2, z2]},
+                             {texture: [0.0, 0.0], vertex: [x2, y2, z1]}
+                            ]
+              li << quad
+            end
+          end
+        end
+
+      li
+    end
+
+    # Create caps between walls
+    def list_wall_cap_it(rmaze)
+      li = []
+      rmaze.each_with_index do |rbreadth, i|
+        rbreadth.each_with_index do |room, j|
+          puts "wc: #{i},#{j}-> #{room}"
+          li += room.map{ |side, segment|
+            unless segment.nil?
+            end
+          }
+        end
+      end
+      li
+    end
+
+    # Create pin caps between wall junctions
+    def list_pin_cap_it(rmaze)
+      []
+    end
+
+    # Create the edge walls
+    def list_edge_wall_it(rmaze)
+      []
+    end
+
+    # Create the maze floor
+    def list_maze_floor(rmaze)
+      []
     end
 
     def to_s(delim="\n")
       s = []
-      r = gen_maze!
+      gen_maze!
       (0...width).each do |i|
         (0...breadth).each do |j|
-          s << "(#{i},#{j}): #{r[i][j]}"
+          s << "(#{i},#{j}): #{@rmaze[i][j]}"
         end
       end
       s.join(delim)
@@ -117,10 +186,18 @@ module Maze
     def maze(&block)
       @maze = Maze.new
             
-      def show(mazeob: @maze, debug: false, &block)
+      def show(mazeob: @maze, debug: false, gl: true, &block)
         mazeob.gen_maze!
-        puts mazeob.to_s if debug
-        mazeob.show_loop
+        if debug
+          puts mazeob.to_s 
+          puts "lmaze:::";   pp @maze.lmaze
+          puts "lwcaps:::";  pp @maze.lwcaps
+          puts "lpcaps:::";  pp @maze.lpcaps
+          puts "lewalls:::"; pp @maze.lewalls
+          puts "lfloor:::";  pp @maze.lfloor
+        end
+
+        mazeob.show_loop if gl
       end
 
       block.(@maze)

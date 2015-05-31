@@ -10,7 +10,7 @@ include Maze::DSL
 maze do 
   puts "Maze"
   
-  dimensions width: 10, breadth: 10
-  physical room: 1.0, wall: 0.1, height: 0.5
-  show
+  dimensions width: 3, breadth: 2
+  physical room: 1.0, wall: 0.3, height: 0.5
+  show debug: true, gl: true
 end
