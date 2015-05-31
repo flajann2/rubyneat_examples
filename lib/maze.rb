@@ -138,7 +138,6 @@ module Maze
       z = height
       rmaze.each_with_index do |rbreadth, i|
         rbreadth.each_with_index do |room, j|
-          puts "wc: #{i},#{j}-> #{room}"
           room.each{ |side, segment|
             unless cap_skip? i, j, side, segment 
               quad = {normal: [0.0, 0.0, 1.0]} #caps face up as all
@@ -159,9 +158,94 @@ module Maze
       li
     end
 
+    # given the x,y coordinate of the left and bottom of the
+    # cap, respectively, generate the vertices and texture map
+    # of the cap. Generate 5 faces and return the array of the
+    # vertices.
+    def pin_cap(x, y)
+      faces = []
+      z = height
+      xw = x + @wall_measure
+      yw = y + @wall_measure
+      zw = 0.0
+
+      # cap of the cap -- maze square
+      quad = {normal: [0.0, 0.0, 1.0]}
+      quad[:rect] = [
+                     {texture: [0.0, 1.0], vertex: [x,  y,  z]},
+                     {texture: [1.0, 1.0], vertex: [x,  yw, z]},
+                     {texture: [1.0, 0.0], vertex: [xw, yw, z]},
+                     {texture: [0.0, 0.0], vertex: [xw, y,  z]}
+                    ]
+      faces << quad
+
+      # top(2d ref) wall
+      quad = {normal: [1.0, 0.0, 0.0]}
+      quad[:rect] = [
+                     {texture: [0.0, 1.0], vertex: [x,  yw, z]},
+                     {texture: [1.0, 1.0], vertex: [x,  yw, zw]},
+                     {texture: [1.0, 0.0], vertex: [xw, yw, zw]},
+                     {texture: [0.0, 0.0], vertex: [xw, yw, z]}
+                    ]
+      faces << quad
+
+      # bot(2d ref) wall
+      quad = {normal: [-1.0, 0.0, 0.0]}
+      quad[:rect] = [
+                     {texture: [0.0, 1.0], vertex: [x,  y, z]},
+                     {texture: [1.0, 1.0], vertex: [x,  y, zw]},
+                     {texture: [1.0, 0.0], vertex: [xw, y, zw]},
+                     {texture: [0.0, 0.0], vertex: [xw, y, z]}
+                    ]
+      faces << quad
+
+      # right(2d ref) wall
+      quad = {normal: [0.0, 1.0, 0.0]}
+      quad[:rect] = [
+                     {texture: [0.0, 1.0], vertex: [xw, y,  z]},
+                     {texture: [1.0, 1.0], vertex: [xw, y,  zw]},
+                     {texture: [1.0, 0.0], vertex: [xw, yw, zw]},
+                     {texture: [0.0, 0.0], vertex: [xw, yw, z]}
+                    ]
+      faces << quad
+
+      # left(2d ref) wall
+      quad = {normal: [0.0, -1.0, 0.0]}
+      quad[:rect] = [
+                     {texture: [0.0, 1.0], vertex: [x, y,  z]},
+                     {texture: [1.0, 1.0], vertex: [x, y,  zw]},
+                     {texture: [1.0, 0.0], vertex: [x, yw, zw]},
+                     {texture: [0.0, 0.0], vertex: [x, yw, z]}
+                    ]
+      faces << quad
+
+
+      faces
+    end
+
+    def pin_skip?(i, j, side, segment)
+      segment.nil? ||
+        (side == :bot  && j != 0) ||
+        (side == :left && i != 0) 
+    end
+
     # Create pin caps between wall junctions
+    # Here we will take the room coordinate as addressing
+    # the pin to and right of the room, and negative coordinates
+    # for the lower and left edges.
     def list_pin_cap_it(rmaze)
-      []
+      li = []
+      rmaze.each_with_index do |rbreadth, i|
+        rbreadth.each_with_index do |room, j|
+          room.each{ |side, segment|
+            unless pin_skip? i, j, side, segment
+              ((x1, y1), (x2, y2)) = segment
+              li += pin_cap( x2, y2)
+            end
+          }
+        end
+      end
+      li
     end
 
     # Create the edge walls
