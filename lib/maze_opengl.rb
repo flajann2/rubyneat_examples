@@ -45,6 +45,7 @@ module Maze
       reshape IW_WIDTH, IW_HEIGHT
       load_textures('stone_wall_seamless.png',
                     'rock_mixed.png',
+                    'tilesf2.png',
                     'tilesf4.png',
                     'concrete_tile.png')
       init_gl

@@ -224,8 +224,8 @@ module Maze
 
     def pin_skip?(i, j, side, segment)
       segment.nil? ||
-        (side == :bot  && j != 0) ||
-        (side == :left && i != 0) 
+        (side == :bot  && i != 0) ||
+        (side == :left && j != 0) 
     end
 
     # Create pin caps between wall junctions
@@ -239,7 +239,7 @@ module Maze
           room.each{ |side, segment|
             unless pin_skip? i, j, side, segment
               ((x1, y1), (x2, y2)) = segment
-              li += pin_cap(x2, y2, side)
+              li += pin_cap(x2, y2, [side, i, j, x2, y2])
             end
           }
         end
@@ -298,7 +298,7 @@ module Maze
       def show(mazeob: @maze, debug: false, gl: true, &block)
         mazeob.gen_maze!
         if debug
-          puts mazeob.to_s 
+          puts mazeob.to_s
           puts "lmaze:::";   pp @maze.lmaze
           puts "lwcaps:::";  pp @maze.lwcaps
           puts "lpcaps:::";  pp @maze.lpcaps
