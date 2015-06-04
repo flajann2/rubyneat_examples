@@ -244,12 +244,25 @@ module Maze
 
     # Create the edge walls
     def list_edge_wall_it(rmaze)
-      []
+      li = []
+      li
     end
 
     # Create the maze floor
     def list_maze_floor(rmaze)
-      []
+      c0 = [-wallpt, -wallpt, 0.0]
+      c1 = [-wallpt, room_measure * breadth + wallpt, 0.0]
+      c2 = [room_measure * width + wallpt, room_measure * breadth + wallpt, 0.0]
+      c3 = [room_measure * width + wallpt, -wallpt, 0.0]
+      [{
+         normal: [0.0, 0.0, 1.0],
+         rect: [
+                {texture: [0.0, 1.0], vertex: c0},
+                {texture: [1.0, 1.0], vertex: c1},
+                {texture: [1.0, 0.0], vertex: c2},
+                {texture: [0.0, 0.0], vertex: c3}
+               ]
+       }]
     end
 
     def to_s(delim="\n")
