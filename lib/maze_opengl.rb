@@ -28,7 +28,7 @@ module Maze
       @keys = []
       @lighting = false
       @fullscreen = false
-      @tmap = {wall: 0, floor: 1, cap: 2}
+      @tmap = {wall: 0, floor: 1, cap: 2} #HERE: texture symbols mapped to cardinals for textures.
 
       glutInit
       
