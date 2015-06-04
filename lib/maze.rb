@@ -28,11 +28,16 @@ module Maze
     attach_function :generate_maze, [ :int, :int ], :pointer
 
     attr_accessor :width, :breadth, :room_measure, :wall_measure, :height
-    attr :raw, :lmaze, :lwcaps, :lpcaps, :lewalls, :lfloor, :lall
+    attr_reader :raw, :lmaze, :lwcaps, :lpcaps, :lewalls, :lfloor, :lall
+    attr_reader :roompt, :wallpt
 
     def gen_maze!
       @raw ||= generate_maze(@width, @breadth).get_array_of_uchar(2, @width * @breadth)
       @list_maze_quads ||= wall_it
+    end
+
+    def ij2xy(i, j, xoff: 0.0, yoff: 0.0)
+      [i * @room_measure + xoff, j * @room_measure + yoff]
     end
    
     # Create the line segments that define the maze
@@ -56,21 +61,21 @@ module Maze
       @rmaze = []
       @roompt = @room_measure / 2.0
       @wallpt = @wall_measure / 2.0
+
       (0...@width).each do |i|
         b_rooms = []
-        x = i * @room_measure
         (0...@breadth).each do |j|
           room = bmaze[i][j]
-          y = j * @room_measure
+          x, y = ij2xy(i, j, xoff: @roompt, yoff: @roompt)
           b_rooms << {
-            top: room[:top]     ? [[(x + @roompt) - @roompt + @wallpt, (y + @roompt) + @roompt - @wallpt],
-                                   [(x + @roompt) + @roompt - @wallpt, (y + @roompt) + @roompt - @wallpt]] : nil,
-            bot: room[:bot]     ? [[(x + @roompt) - @roompt + @wallpt, (y + @roompt) - @roompt + @wallpt],
-                                   [(x + @roompt) + @roompt - @wallpt, (y + @roompt) - @roompt + @wallpt]] : nil,
-            right: room[:right] ? [[(x + @roompt) + @roompt - @wallpt, (y + @roompt) - @roompt + @wallpt],
-                                   [(x + @roompt) + @roompt - @wallpt, (y + @roompt) + @roompt - @wallpt]] : nil,
-            left:  room[:left]  ? [[(x + @roompt) - @roompt + @wallpt, (y + @roompt) - @roompt + @wallpt],
-                                   [(x + @roompt) - @roompt + @wallpt, (y + @roompt) + @roompt - @wallpt]] : nil,
+            top: room[:top]     ? [[x - @roompt + @wallpt, y + @roompt - @wallpt],
+                                   [x + @roompt - @wallpt, y + @roompt - @wallpt]] : nil,
+            bot: room[:bot]     ? [[x - @roompt + @wallpt, y - @roompt + @wallpt],
+                                   [x + @roompt - @wallpt, y - @roompt + @wallpt]] : nil,
+            right: room[:right] ? [[x + @roompt - @wallpt, y - @roompt + @wallpt],
+                                   [x + @roompt - @wallpt, y + @roompt - @wallpt]] : nil,
+            left:  room[:left]  ? [[x - @roompt + @wallpt, y - @roompt + @wallpt],
+                                   [x - @roompt + @wallpt, y + @roompt - @wallpt]] : nil,
           }
         end
         @rmaze << b_rooms
@@ -117,7 +122,7 @@ module Maze
       li
     end
 
-    def cap_rot(side)
+    def wall_cap_rot(side)
       case side
       when :top   ; [0.0, 1.0] 
       when :bot   ; [0.0, -1.0] 
@@ -126,7 +131,7 @@ module Maze
       end
     end
 
-    def cap_skip?(i, j, side, segment)
+    def wall_cap_skip?(i, j, side, segment)
       segment.nil? ||
         (side == :bot  && j != 0) ||
         (side == :left && i != 0) 
@@ -139,10 +144,10 @@ module Maze
       rmaze.each_with_index do |rbreadth, i|
         rbreadth.each_with_index do |room, j|
           room.each{ |side, segment|
-            unless cap_skip? i, j, side, segment 
+            unless wall_cap_skip? i, j, side, segment 
               quad = {normal: [0.0, 0.0, 1.0], side: side} #caps face up as all
               ((x1, y1), (x2, y2)) = segment
-              ix, iy = cap_rot(side)
+              ix, iy = wall_cap_rot(side)
               quad[:side] = side # for debugging only
               quad[:rect] = [
                              {texture: [0.0, 1.0], vertex: [x1, y1, z]},
@@ -222,26 +227,16 @@ module Maze
       faces
     end
 
-    def pin_skip?(i, j, side, segment)
-      segment.nil? ||
-        (side == :bot  && i != 0) ||
-        (side == :left && j != 0) 
-    end
-
     # Create pin caps between wall junctions
     # Here we will take the room coordinate as addressing
     # the pin to and right of the room, and negative coordinates
     # for the lower and left edges.
     def list_pin_cap_it(rmaze)
       li = []
-      rmaze.each_with_index do |rbreadth, i|
-        rbreadth.each_with_index do |room, j|
-          room.each{ |side, segment|
-            unless pin_skip? i, j, side, segment
-              ((x1, y1), (x2, y2)) = segment
-              li += pin_cap(x2, y2, [side, i, j, x2, y2])
-            end
-          }
+      (-1...width).each do |i|
+        (-1...breadth).each do |j|
+          x,y = ij2xy(i, j, xoff: room_measure - wallpt, yoff: room_measure - wallpt)
+          li += pin_cap(x, y, [i, j, x, y])
         end
       end
       li
