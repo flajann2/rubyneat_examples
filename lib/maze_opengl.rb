@@ -28,7 +28,8 @@ module Maze
       @keys = []
       @lighting = false
       @fullscreen = false
-      
+      @tmap = {wall: 0, floor: 1, cap: 2}
+
       glutInit
       
       glutInitDisplayMode GLUT_RGB | GLUT_DOUBLE | GLUT_ALPHA | GLUT_DEPTH
@@ -108,7 +109,7 @@ module Maze
         quads.each do |quad|
           glNormal3f(* quad[:normal])
           quad[:rect].each_with_index do |ver, i|
-            glTexCoord2f(*ver[:texture])
+            glTexCoord2f(*ver[:tex_coord])
             glVertex3f(*ver[:vertex])
           end
         end
@@ -116,56 +117,6 @@ module Maze
 
       # Bots
       # TODO: bots
-      @xrot += @x_speed
-      @yrot += @y_speed
-      glutSwapBuffers
-    end
-
-    def deprecated_draw_gl_scene
-      rooms = nil
-      glClear GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT
-      glLoadIdentity
-      glTranslatef -width * room_measure / 2.0, -breadth * room_measure / 2.0, @z
-      
-      glRotatef @xrot, 1.0, 0.0, 0.0
-      glRotatef @yrot, 0.0, 1.0, 0.0
-      
-      # Maze
-      glBindTexture GL_TEXTURE_2D, @textures[@filter]
-      glBegin GL_QUADS do
-        rooms.each do |room|
-          room.each do |wall, segment|
-            unless segment.nil?
-              z1 = 0.0
-              z2 = height
-              ((x1, y1), (x2, y2)) = segment
-              # Face normal
-              case wall
-              when :top   ; glNormal3f(0.0, -1.0,  0.0) ; (ix, iy) = [0.0, 1.0] 
-              when :bot   ; glNormal3f(0.0, 1.0, 0.0) ; (ix, iy) = [0.0, -1.0] 
-              when :right ; glNormal3f(-1.0, 0.0,  0.0) ; (ix, iy) = [1.0, 0.0] 
-              when :left  ; glNormal3f(1.0, 0.0, 0.0) ; (ix, iy) = [-1.0, 0.0] 
-              end
-
-              # wall
-              glTexCoord2f(0.0, 1.0) ; glVertex3f(x1, y1, z1)
-              glTexCoord2f(1.0, 1.0) ; glVertex3f(x1, y1, z2)
-              glTexCoord2f(1.0, 0.0) ; glVertex3f(x2, y2, z2)
-              glTexCoord2f(0.0, 0.0) ; glVertex3f(x2, y2, z1)
-
-              # wall cap top
-              glTexCoord2f(0.0, 1.0) ; glVertex3f(x1, y1, z2)
-              glTexCoord2f(1.0, 1.0) ; glVertex3f(x1 + (@wallpt*ix), y1 + (@wallpt*iy), z2)
-              glTexCoord2f(1.0, 0.0) ; glVertex3f(x2 + (@wallpt*ix), y2 + (@wallpt*iy), z2)
-              glTexCoord2f(0.0, 0.0) ; glVertex3f(x2, y2, z2)
-            end
-          end
-        end
-      end
-
-      # Bots
-      # TODO: Bot rendering
-
       @xrot += @x_speed
       @yrot += @y_speed
       glutSwapBuffers

@@ -30,6 +30,7 @@ module Maze
     attr_accessor :width, :breadth, :room_measure, :wall_measure, :height
     attr_reader :raw, :lmaze, :lwcaps, :lpcaps, :lewalls, :lfloor, :lall
     attr_reader :roompt, :wallpt
+    attr_reader :tmap # texture map
 
     def gen_maze!
       @raw ||= generate_maze(@width, @breadth).get_array_of_uchar(2, @width * @breadth)
@@ -109,10 +110,10 @@ module Maze
 
               # wall
               quad[:rect] = [
-                             {texture: [0.0, 1.0], vertex: [x1, y1, z1]},
-                             {texture: [1.0, 1.0], vertex: [x1, y1, z2]},
-                             {texture: [1.0, 0.0], vertex: [x2, y2, z2]},
-                             {texture: [0.0, 0.0], vertex: [x2, y2, z1]}
+                             {tex_coord: [0.0, 1.0], vertex: [x1, y1, z1]},
+                             {tex_coord: [1.0, 1.0], vertex: [x1, y1, z2]},
+                             {tex_coord: [1.0, 0.0], vertex: [x2, y2, z2]},
+                             {tex_coord: [0.0, 0.0], vertex: [x2, y2, z1]}
                             ]
               li << quad
             end
@@ -150,10 +151,10 @@ module Maze
               ix, iy = wall_cap_rot(side)
               quad[:side] = side # for debugging only
               quad[:rect] = [
-                             {texture: [0.0, 1.0], vertex: [x1, y1, z]},
-                             {texture: [1.0, 1.0], vertex: [x1 + (@wall_measure*ix), y1 + (@wall_measure*iy), z]},
-                             {texture: [1.0, 0.0], vertex: [x2 + (@wall_measure*ix), y2 + (@wall_measure*iy), z]},
-                             {texture: [0.0, 0.0], vertex: [x2, y2, z]}
+                             {tex_coord: [0.0, 1.0], vertex: [x1, y1, z]},
+                             {tex_coord: [1.0, 1.0], vertex: [x1 + (@wall_measure*ix), y1 + (@wall_measure*iy), z]},
+                             {tex_coord: [1.0, 0.0], vertex: [x2 + (@wall_measure*ix), y2 + (@wall_measure*iy), z]},
+                             {tex_coord: [0.0, 0.0], vertex: [x2, y2, z]}
                             ]
               li << quad
             end
@@ -177,50 +178,50 @@ module Maze
       # cap of the cap -- maze square
       quad = {normal: [0.0, 0.0, 1.0], side: side}
       quad[:rect] = [
-                     {texture: [0.0, 1.0], vertex: [x,  y,  z]},
-                     {texture: [1.0, 1.0], vertex: [x,  yw, z]},
-                     {texture: [1.0, 0.0], vertex: [xw, yw, z]},
-                     {texture: [0.0, 0.0], vertex: [xw, y,  z]}
+                     {tex_coord: [0.0, 1.0], vertex: [x,  y,  z]},
+                     {tex_coord: [1.0, 1.0], vertex: [x,  yw, z]},
+                     {tex_coord: [1.0, 0.0], vertex: [xw, yw, z]},
+                     {tex_coord: [0.0, 0.0], vertex: [xw, y,  z]}
                     ]
       faces << quad
 
       # top(2d ref) wall
       quad = {normal: [1.0, 0.0, 0.0], side: side}
       quad[:rect] = [
-                     {texture: [0.0, 1.0], vertex: [x,  yw, z]},
-                     {texture: [1.0, 1.0], vertex: [x,  yw, zw]},
-                     {texture: [1.0, 0.0], vertex: [xw, yw, zw]},
-                     {texture: [0.0, 0.0], vertex: [xw, yw, z]}
+                     {tex_coord: [0.0, 1.0], vertex: [x,  yw, z]},
+                     {tex_coord: [1.0, 1.0], vertex: [x,  yw, zw]},
+                     {tex_coord: [1.0, 0.0], vertex: [xw, yw, zw]},
+                     {tex_coord: [0.0, 0.0], vertex: [xw, yw, z]}
                     ]
       faces << quad
 
       # bot(2d ref) wall
       quad = {normal: [-1.0, 0.0, 0.0], side: side}
       quad[:rect] = [
-                     {texture: [0.0, 1.0], vertex: [x,  y, z]},
-                     {texture: [1.0, 1.0], vertex: [x,  y, zw]},
-                     {texture: [1.0, 0.0], vertex: [xw, y, zw]},
-                     {texture: [0.0, 0.0], vertex: [xw, y, z]}
+                     {tex_coord: [0.0, 1.0], vertex: [x,  y, z]},
+                     {tex_coord: [1.0, 1.0], vertex: [x,  y, zw]},
+                     {tex_coord: [1.0, 0.0], vertex: [xw, y, zw]},
+                     {tex_coord: [0.0, 0.0], vertex: [xw, y, z]}
                     ]
       faces << quad
 
       # right(2d ref) wall
       quad = {normal: [0.0, 1.0, 0.0], side: side}
       quad[:rect] = [
-                     {texture: [0.0, 1.0], vertex: [xw, y,  z]},
-                     {texture: [1.0, 1.0], vertex: [xw, y,  zw]},
-                     {texture: [1.0, 0.0], vertex: [xw, yw, zw]},
-                     {texture: [0.0, 0.0], vertex: [xw, yw, z]}
+                     {tex_coord: [0.0, 1.0], vertex: [xw, y,  z]},
+                     {tex_coord: [1.0, 1.0], vertex: [xw, y,  zw]},
+                     {tex_coord: [1.0, 0.0], vertex: [xw, yw, zw]},
+                     {tex_coord: [0.0, 0.0], vertex: [xw, yw, z]}
                     ]
       faces << quad
 
       # left(2d ref) wall
       quad = {normal: [0.0, -1.0, 0.0], side: side}
       quad[:rect] = [
-                     {texture: [0.0, 1.0], vertex: [x, y,  z]},
-                     {texture: [1.0, 1.0], vertex: [x, y,  zw]},
-                     {texture: [1.0, 0.0], vertex: [x, yw, zw]},
-                     {texture: [0.0, 0.0], vertex: [x, yw, z]}
+                     {tex_coord: [0.0, 1.0], vertex: [x, y,  z]},
+                     {tex_coord: [1.0, 1.0], vertex: [x, y,  zw]},
+                     {tex_coord: [1.0, 0.0], vertex: [x, yw, zw]},
+                     {tex_coord: [0.0, 0.0], vertex: [x, yw, z]}
                     ]
       faces << quad
 
@@ -242,10 +243,62 @@ module Maze
       li
     end
 
-    # Create the edge walls
+    # Create the edge walls.
     def list_edge_wall_it(rmaze)
-      li = []
-      li
+      z0 = 0.0
+      z1 = height
+
+      (0...width).map{ |i|
+        x1, ya = ij2xy(i,   0,       xoff: wallpt,  yoff: -wallpt)
+        x2, yb = ij2xy(i+1, breadth, xoff: -wallpt, yoff: wallpt)
+        [
+         {
+           normal: [0.0, -1.0, 0.0],
+           side: :edge_x_lower_wall,
+           rect: [
+                  {tex_coord: [0.0, 1.0], vertex: [x1, ya, z0]},
+                  {tex_coord: [1.0, 1.0], vertex: [x2, ya, z0]},
+                  {tex_coord: [1.0, 0.0], vertex: [x2, ya, z1]},
+                  {tex_coord: [0.0, 0.0], vertex: [x1, ya, z1]},
+                 ]
+         },
+         {
+           normal: [0.0, 1.0, 0.0],
+           side: :edge_x_upper_wall,
+           rect: [
+                  {tex_coord: [0.0, 1.0], vertex: [x1, yb, z0]},
+                  {tex_coord: [1.0, 1.0], vertex: [x2, yb, z0]},
+                  {tex_coord: [1.0, 0.0], vertex: [x2, yb, z1]},
+                  {tex_coord: [0.0, 0.0], vertex: [x1, yb, z1]},
+                 ]
+         }
+        ]
+      }.flatten + (0...breadth).map{ |j|
+        xa, y1 = ij2xy(0,     j,   xoff: -wallpt, yoff: wallpt)
+        xb, y2 = ij2xy(width, j+1, xoff: wallpt,  yoff: -wallpt)
+        [
+         {
+           normal: [-1.0, 0.0, 0.0],
+           side: :edge_y_right_wall,
+           rect: [
+                  {tex_coord: [0.0, 1.0], vertex: [xa, y1, z0]},
+                  {tex_coord: [1.0, 1.0], vertex: [xa, y2, z0]},
+                  {tex_coord: [1.0, 0.0], vertex: [xa, y2, z1]},
+                  {tex_coord: [0.0, 0.0], vertex: [xa, y1, z1]},
+                 ]
+         },
+         {
+           normal: [1.0, 0.0, 0.0],
+           side: :edge_y_left_wall,
+           rect: [
+                  {tex_coord: [0.0, 1.0], vertex: [xb, y1, z0]},
+                  {tex_coord: [1.0, 1.0], vertex: [xb, y2, z0]},
+                  {tex_coord: [1.0, 0.0], vertex: [xb, y2, z1]},
+                  {tex_coord: [0.0, 0.0], vertex: [xb, y1, z1]},
+                 ]
+         }
+        ]
+      }.flatten
     end
 
     # Create the maze floor
@@ -256,11 +309,12 @@ module Maze
       c3 = [room_measure * width + wallpt, -wallpt, 0.0]
       [{
          normal: [0.0, 0.0, 1.0],
+         side: :floor,
          rect: [
-                {texture: [0.0, 1.0], vertex: c0},
-                {texture: [1.0, 1.0], vertex: c1},
-                {texture: [1.0, 0.0], vertex: c2},
-                {texture: [0.0, 0.0], vertex: c3}
+                {tex_coord: [0.0, 1.0], vertex: c0},
+                {tex_coord: [1.0, 1.0], vertex: c1},
+                {tex_coord: [1.0, 0.0], vertex: c2},
+                {tex_coord: [0.0, 0.0], vertex: c3}
                ]
        }]
     end
