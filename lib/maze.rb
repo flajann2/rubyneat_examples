@@ -29,12 +29,16 @@ module Maze
 
     attr_accessor :width, :breadth, :room_measure, :wall_measure, :height
     attr_reader :raw, :lmaze, :lwcaps, :lpcaps, :lewalls, :lfloor, :lall
-    attr_reader :roompt, :wallpt
+    attr_reader :roompt, :wallpt, :textl
     attr_reader :tmap # texture map
 
     def gen_maze!
       @raw ||= generate_maze(@width, @breadth).get_array_of_uchar(2, @width * @breadth)
       @list_maze_quads ||= wall_it
+    end
+    def gen_maze_mit_texture!
+      gen_maze!
+      @textl
     end
 
     def ij2xy(i, j, xoff: 0.0, yoff: 0.0)
@@ -86,7 +90,14 @@ module Maze
       @lpcaps  = list_pin_cap_it @rmaze
       @lewalls = list_edge_wall_it @rmaze
       @lfloor  = list_maze_floor @rmaze
-      @lall = @lmaze + @lwcaps + @lpcaps + @lewalls + @lfloor 
+      @lall = (@lmaze + @lwcaps + @lpcaps + @lewalls + @lfloor).flatten
+      
+      # sort according to texture
+      @textl = Hash[@tmap.keys.map{|tex| [tex, []]}]
+      @lall.each do |quad|
+        @textl[quad[:texture]] << quad
+      end
+      @lall
     end
 
     # Create the walls
@@ -96,7 +107,7 @@ module Maze
         rooms.each do |room|
           room.each do |wall, segment|
             unless segment.nil?
-              quad = {}
+              quad = {texture: :wall}
               z1 = 0.0
               z2 = height
               ((x1, y1), (x2, y2)) = segment
@@ -146,7 +157,7 @@ module Maze
         rbreadth.each_with_index do |room, j|
           room.each{ |side, segment|
             unless wall_cap_skip? i, j, side, segment 
-              quad = {normal: [0.0, 0.0, 1.0], side: side} #caps face up as all
+              quad = {normal: [0.0, 0.0, 1.0], side: side, texture: :cap} #caps face up as all
               ((x1, y1), (x2, y2)) = segment
               ix, iy = wall_cap_rot(side)
               quad[:side] = side # for debugging only
@@ -176,7 +187,7 @@ module Maze
       zw = 0.0
 
       # cap of the cap -- maze square
-      quad = {normal: [0.0, 0.0, 1.0], side: side}
+      quad = {normal: [0.0, 0.0, 1.0], side: side, texture: :cap}
       quad[:rect] = [
                      {tex_coord: [0.0, 1.0], vertex: [x,  y,  z]},
                      {tex_coord: [1.0, 1.0], vertex: [x,  yw, z]},
@@ -186,7 +197,7 @@ module Maze
       faces << quad
 
       # top(2d ref) wall
-      quad = {normal: [1.0, 0.0, 0.0], side: side}
+      quad = {normal: [1.0, 0.0, 0.0], side: side, texture: :wall}
       quad[:rect] = [
                      {tex_coord: [0.0, 1.0], vertex: [x,  yw, z]},
                      {tex_coord: [1.0, 1.0], vertex: [x,  yw, zw]},
@@ -196,7 +207,7 @@ module Maze
       faces << quad
 
       # bot(2d ref) wall
-      quad = {normal: [-1.0, 0.0, 0.0], side: side}
+      quad = {normal: [-1.0, 0.0, 0.0], side: side, texture: :wall}
       quad[:rect] = [
                      {tex_coord: [0.0, 1.0], vertex: [x,  y, z]},
                      {tex_coord: [1.0, 1.0], vertex: [x,  y, zw]},
@@ -206,7 +217,7 @@ module Maze
       faces << quad
 
       # right(2d ref) wall
-      quad = {normal: [0.0, 1.0, 0.0], side: side}
+      quad = {normal: [0.0, 1.0, 0.0], side: side, texture: :wall}
       quad[:rect] = [
                      {tex_coord: [0.0, 1.0], vertex: [xw, y,  z]},
                      {tex_coord: [1.0, 1.0], vertex: [xw, y,  zw]},
@@ -216,7 +227,7 @@ module Maze
       faces << quad
 
       # left(2d ref) wall
-      quad = {normal: [0.0, -1.0, 0.0], side: side}
+      quad = {normal: [0.0, -1.0, 0.0], side: side, texture: :wall}
       quad[:rect] = [
                      {tex_coord: [0.0, 1.0], vertex: [x, y,  z]},
                      {tex_coord: [1.0, 1.0], vertex: [x, y,  zw]},
@@ -255,6 +266,7 @@ module Maze
          {
            normal: [0.0, -1.0, 0.0],
            side: :edge_x_lower_wall,
+           texture: :wall,
            rect: [
                   {tex_coord: [0.0, 1.0], vertex: [x1, ya, z0]},
                   {tex_coord: [1.0, 1.0], vertex: [x2, ya, z0]},
@@ -265,6 +277,7 @@ module Maze
          {
            normal: [0.0, 1.0, 0.0],
            side: :edge_x_upper_wall,
+           texture: :wall,
            rect: [
                   {tex_coord: [0.0, 1.0], vertex: [x1, yb, z0]},
                   {tex_coord: [1.0, 1.0], vertex: [x2, yb, z0]},
@@ -280,6 +293,7 @@ module Maze
          {
            normal: [-1.0, 0.0, 0.0],
            side: :edge_y_right_wall,
+           texture: :wall,
            rect: [
                   {tex_coord: [0.0, 1.0], vertex: [xa, y1, z0]},
                   {tex_coord: [1.0, 1.0], vertex: [xa, y2, z0]},
@@ -290,6 +304,7 @@ module Maze
          {
            normal: [1.0, 0.0, 0.0],
            side: :edge_y_left_wall,
+           texture: :wall,
            rect: [
                   {tex_coord: [0.0, 1.0], vertex: [xb, y1, z0]},
                   {tex_coord: [1.0, 1.0], vertex: [xb, y2, z0]},
@@ -310,6 +325,7 @@ module Maze
       [{
          normal: [0.0, 0.0, 1.0],
          side: :floor,
+         texture: :floor,
          rect: [
                 {tex_coord: [0.0, 1.0], vertex: c0},
                 {tex_coord: [1.0, 1.0], vertex: c1},

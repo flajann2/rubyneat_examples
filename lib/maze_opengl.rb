@@ -95,7 +95,7 @@ module Maze
     end
 
     def draw_gl_scene
-      quads = gen_maze!.compact
+      quads = gen_maze_mit_texture!
       glClear GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT
       glLoadIdentity
       glTranslatef -width * room_measure / 2.0, -breadth * room_measure / 2.0, @z
@@ -104,13 +104,15 @@ module Maze
       glRotatef @yrot, 0.0, 1.0, 0.0
       
       # Maze
-      glBindTexture GL_TEXTURE_2D, @textures[@filter]
-      glBegin GL_QUADS do
-        quads.each do |quad|
-          glNormal3f(* quad[:normal])
-          quad[:rect].each_with_index do |ver, i|
-            glTexCoord2f(*ver[:tex_coord])
-            glVertex3f(*ver[:vertex])
+      quads.keys.each do |texture|
+        glBindTexture GL_TEXTURE_2D, @textures[tmap[texture]]
+        glBegin GL_QUADS do
+          quads[texture].each do |quad|
+            glNormal3f(* quad[:normal])
+            quad[:rect].each_with_index do |ver, i|
+              glTexCoord2f(*ver[:tex_coord])
+              glVertex3f(*ver[:vertex])
+            end
           end
         end
       end
