@@ -28,7 +28,9 @@ module Maze
       @keys = []
       @lighting = false
       @fullscreen = false
-      @tmap = {wall: 0, floor: 1, cap: 2} #HERE: texture symbols mapped to cardinals for textures.
+
+      #HERE: texture symbols mapped to cardinals for textures.
+      @tmap = {wall: 0, floor: 1, cap: 2, critter: 3} 
 
       glutInit
       
@@ -36,7 +38,7 @@ module Maze
       glutInitWindowSize IW_WIDTH, IW_HEIGHT
       glutInitWindowPosition 0, 0
       
-      @window = glutCreateWindow "NeHe Lesson 07 - ruby-opengl version"
+      @window = glutCreateWindow "RubyNEAT Maze Example"
       
       glutDisplayFunc :draw_gl_scene
       glutReshapeFunc :reshape
@@ -96,6 +98,7 @@ module Maze
 
     def draw_gl_scene
       quads = gen_maze_mit_texture!
+
       glClear GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT
       glLoadIdentity
       glTranslatef -width * room_measure / 2.0, -breadth * room_measure / 2.0, @z
@@ -118,6 +121,17 @@ module Maze
       end
 
       # Bots
+      glBindTexture GL_TEXTURE_2D, @textures[tmap[:critter]]
+      glBegin GL_LINE_STRIP do
+        critter_faces do |face|
+          glNormal3f(* face[:normal])
+          face[:poly].each_with_index do |ver, i|
+            #glTexCoord2f(*ver[:tex_coord])
+            glVertex3f(*ver[:vertex])
+          end
+        end
+      end   
+
       # TODO: bots
       @xrot += @x_speed
       @yrot += @y_speed

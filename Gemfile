@@ -23,6 +23,9 @@ gem 'rubysdl', require: false
 # For interfacing with the C++ modules
 gem 'ffi'
 
+# For reading in ply 3D models
+gem 'ply'
+
 group :development do
   gem 'pry'
   gem 'pry-doc'

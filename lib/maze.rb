@@ -15,11 +15,24 @@ maze generations, are all done in a C++14 library for speed.
 =end
 
 require 'ffi'
+require 'ply'
 require_relative 'maze_opengl'
 
 module Maze
   MAZE_BASE = File.join(File.dirname(__FILE__), 'maze')
   MAZE_LIB = File.join(MAZE_BASE, "lib/libmaze.#{FFI::Platform::LIBSUFFIX}")
+
+  # Ply API
+  CRITTER_FILE = File.join(MAZE_BASE, "../../public/models/critter2.ply")
+  VRTX = 'vertex'
+  FACE = 'face'
+  VRTXI = 'vertex_indices'
+  X = 'x'
+  Y = 'y'
+  Z = 'z'
+  NX = 'nx'
+  NY = 'ny'
+  NZ = 'nz'
 
   # Ruby reprentation and interface to the C++ Maze module
   class Maze
@@ -36,6 +49,7 @@ module Maze
       @raw ||= generate_maze(@width, @breadth).get_array_of_uchar(2, @width * @breadth)
       @list_maze_quads ||= wall_it
     end
+
     def gen_maze_mit_texture!
       gen_maze!
       @textl
@@ -333,6 +347,21 @@ module Maze
                 {tex_coord: [0.0, 0.0], vertex: c3}
                ]
        }]
+    end
+
+    # Critter comprises polygons (triangles and rectangles)
+    def ply_critter
+      @ply ||= Ply::PlyFile.new(CRITTER_FILE)                            
+    end
+
+    def critter_faces
+      ply_critter.data[FACE].each do |vi|
+        face = {shape: :critter, texture: :critter}
+        vrtx = vi[VRTXI].map{ |i| ply_critter.data[VRTX][i] }
+        face[:normal] = %w{nx ny nz}.map{|k| vrtx.first[k]}
+        face[:poly] = vrtx.map{ |v| {vertex: %w{x y z}.map{ |a| v[a]} } }
+        yield face
+      end
     end
 
     def to_s(delim="\n")
