@@ -27,12 +27,6 @@ module Maze
   VRTX = 'vertex'
   FACE = 'face'
   VRTXI = 'vertex_indices'
-  X = 'x'
-  Y = 'y'
-  Z = 'z'
-  NX = 'nx'
-  NY = 'ny'
-  NZ = 'nz'
 
   # Ruby reprentation and interface to the C++ Maze module
   class Maze
