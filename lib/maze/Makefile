@@ -45,7 +45,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /home/alveric/development/ruby_proj/rubyneat_examples/lib/maze
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/alveric/development/ruby_proj/rubyneat_examples/lib/maze
+CMAKE_BINARY_DIR = /development/ruby_proj/rubyneat_examples/lib/maze
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -72,9 +72,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alveric/development/ruby_proj/rubyneat_examples/lib/maze/CMakeFiles /home/alveric/development/ruby_proj/rubyneat_examples/lib/maze/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /development/ruby_proj/rubyneat_examples/lib/maze/CMakeFiles /development/ruby_proj/rubyneat_examples/lib/maze/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alveric/development/ruby_proj/rubyneat_examples/lib/maze/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /development/ruby_proj/rubyneat_examples/lib/maze/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -175,6 +175,30 @@ maze.cpp.s:
 	$(MAKE) -f CMakeFiles/maze.dir/build.make CMakeFiles/maze.dir/maze.cpp.s
 .PHONY : maze.cpp.s
 
+maze_physics.o: maze_physics.cpp.o
+.PHONY : maze_physics.o
+
+# target to build an object file
+maze_physics.cpp.o:
+	$(MAKE) -f CMakeFiles/maze.dir/build.make CMakeFiles/maze.dir/maze_physics.cpp.o
+.PHONY : maze_physics.cpp.o
+
+maze_physics.i: maze_physics.cpp.i
+.PHONY : maze_physics.i
+
+# target to preprocess a source file
+maze_physics.cpp.i:
+	$(MAKE) -f CMakeFiles/maze.dir/build.make CMakeFiles/maze.dir/maze_physics.cpp.i
+.PHONY : maze_physics.cpp.i
+
+maze_physics.s: maze_physics.cpp.s
+.PHONY : maze_physics.s
+
+# target to generate assembly for a file
+maze_physics.cpp.s:
+	$(MAKE) -f CMakeFiles/maze.dir/build.make CMakeFiles/maze.dir/maze_physics.cpp.s
+.PHONY : maze_physics.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -191,6 +215,9 @@ help:
 	@echo "... maze.o"
 	@echo "... maze.i"
 	@echo "... maze.s"
+	@echo "... maze_physics.o"
+	@echo "... maze_physics.i"
+	@echo "... maze_physics.s"
 .PHONY : help
 
 

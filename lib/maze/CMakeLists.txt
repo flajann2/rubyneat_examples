@@ -27,7 +27,7 @@ set_property(TARGET mz PROPERTY CXX_STANDARD 14)
 set_property(TARGET mz PROPERTY CXX_STANDARD_REQUIRED ON)
 set(CMAKE_THREAD_PREFER_PTHREAD TRUE)
 
-add_library(maze SHARED maze.cpp)
+add_library(maze SHARED  maze_physics.cpp maze.cpp)
 target_link_libraries (maze PRIVATE ${CMAKE_THREAD_LIBS_INIT})
 target_link_libraries (mz maze ${CMAKE_THREAD_LIBS_INIT}) # PRIVATE ${BULLET_LIBRARIES})
 

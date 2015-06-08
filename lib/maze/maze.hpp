@@ -5,7 +5,6 @@
 #include <tuple>
 #include <random>
 #include <map>
-// #include <btBulletDynamicsCommon.h>
 
 /*
   For now, we'll just do a 2-D maze.
@@ -33,14 +32,6 @@ namespace maze
       make_tuple(0,  -1), 
       make_tuple(0,  1)
       };
-
-  // this - that -> this_wall_index, that_wall_index
-  map<tuple<int,int>, tuple<int,int>> passage {
-    {make_tuple(-1, 0), make_tuple(1, 0)},
-    {make_tuple(1, 0),  make_tuple(0, 1)},
-    {make_tuple(0, -1), make_tuple(3, 2)},
-    {make_tuple(0, 1),  make_tuple(2, 3)}
-  };
 
 
   /*
@@ -100,3 +91,4 @@ namespace maze
     auto to_export();
   };
 }
+

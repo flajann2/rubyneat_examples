@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/alveric/development/ruby_proj/rubyneat_examples/lib/maze/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/development/ruby_proj/rubyneat_examples/lib/maze/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

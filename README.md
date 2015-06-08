@@ -1,5 +1,7 @@
-RubyNEAT Examples
-=================
+# RubyNEAT Examples
+
+NEAT and Iterated ES HyperNEAT implementations,
+along with TWEANN Compositions.
 
 Please see
 
@@ -13,24 +15,29 @@ for the latest docs.
 
 
 
-xor
----
+## xor
 Basic neural net test for functionality. This is the one exampled used in the
 documentation at: http://rubyneat.com/wiki/Documentation
 
-xorall
-------
+## xorall
 This exercise (nearly) all of the CPPN neuron types.
 
-xoranalog
----------
+## xoranalog
 This tests represents the XOR function as an analog function.
 
-xorsin
-------
+## xorsin
 Solves the XOR problem using the Sine and Cosine Neurons.
 This converges very fast with normally no hidden layers.
 
-invpend
--------
+## maze
+Demonstration of Iterated ES HyperNEAT in solving
+arbitrary mazes. We generate a random maze per generation
+to be solved by the Critters.
+
+The actual maze generation and maze "physics" are implemented in
+C++14, called by the Neater. So this also serves as a mixed language
+example.
+
+## invpend
 Pole Balancing (ongoing, not ready yet)
+
