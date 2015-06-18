@@ -22,6 +22,7 @@ gem 'rubysdl', require: false
 
 # For interfacing with the C++ modules
 gem 'ffi'
+gem 'rice'
 
 # For reading in ply 3D models
 gem 'ply'
