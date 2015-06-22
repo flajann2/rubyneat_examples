@@ -5,10 +5,12 @@ gem 'semver'
 
 #gem 'rubyneat'
 #gem 'rubyneat_dashboard'
+#gem 'rubyneat_rabbitmq'
 
 # During the development
-gem 'rubyneat',           github: '~/development/ruby_proj/rubyneat', branch: 'hyper'
-gem 'rubyneat_dashboard', github: '~/development/ruby_proj/rubyneat_dashboard', branch: 'master'
+gem 'rubyneat',           github: '/development/ruby_proj/rubyneat',           branch: 'hyper'
+gem 'rubyneat_dashboard', github: '/development/ruby_proj/rubyneat_dashboard', branch: 'master'
+gem 'rubyneat_rabbitmq',  github: '/development/ruby_proj/rubyneat_rabbitmq',  branch: 'master'
 
 # For demo purposes, we include the gosu library, but if you don't
 # need this, then comment it out  or remove it.
@@ -35,4 +37,3 @@ group :development do
   gem 'pry-rescue'
   gem 'pry-stack_explorer'
 end
-
