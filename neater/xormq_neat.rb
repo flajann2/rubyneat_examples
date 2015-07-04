@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 require 'xor'
 
 include NEAT::DSL
@@ -48,6 +49,10 @@ define "XOR System" do
   max_generations 10000
   max_population_history 10
 
+  # Elitism
+  elite_count 4
+  elite_percentage 10
+
   ## Evolver probabilities and SDs
   # Perturbations
   mutate_perturb_gene_weights_prob 0.10
@@ -88,6 +93,7 @@ define "XOR System" do
   # Sequencing
   start_sequence_at 0
   end_sequence_at 2 ** XOR_INPUTS - 1
+
 end
 
 evolve do
@@ -162,6 +168,8 @@ rabbit do |r|
   # channel names, etc.
   config do
     url 'localhost'
+    route 'xor_queue'
+    reply_to 'xor_reply'
   end
 
   # Workers to intepret and process the remote phenotypes

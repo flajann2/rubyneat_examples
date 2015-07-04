@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com//development/ruby_proj/rubyneat.git
-  revision: d6ffe6edafa3c5f4e43aa72d5b793ca4abed8cfe
+  revision: 404db5015a90d18f566054a3d6a28ebd27b5fef3
   branch: hyper
   specs:
     rubyneat (0.5.2.hyper)
@@ -39,7 +39,7 @@ GIT
 
 GIT
   remote: git://github.com//development/ruby_proj/rubyneat_rabbitmq.git
-  revision: 4e31c9a1132fee01b8d6790c403f909517fc971a
+  revision: 45a7bc17656e40dc7ab3c53571cd42a67d4ea13a
   branch: master
   specs:
     rubyneat_rabbitmq (0.0.1.notreadyforuse.0)
