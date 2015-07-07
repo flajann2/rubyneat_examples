@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 require 'xor'
+require 'deep_dive'
 
 include NEAT::DSL
 
 #= TEST FOR RubyNEAT and RubyNEAT_rabbitMQ extension
+#DeepDive.verbose = true
 
 # The number of inputs to the xor function
 XOR_INPUTS = 4
@@ -44,14 +46,10 @@ define "XOR System" do
   ### Settings
   ## General
   hash_on_fitness false
-  start_population_size 30
-  population_size 30
+  start_population_size 50
+  population_size 50
   max_generations 10000
   max_population_history 10
-
-  # Elitism
-  elite_count 4
-  elite_percentage 10
 
   ## Evolver probabilities and SDs
   # Perturbations
@@ -60,7 +58,7 @@ define "XOR System" do
 
   # Complete Change of weight
   mutate_change_gene_weights_prob 0.10
-  mutate_change_gene_weights_sd 1.00
+  mutate_change_gene_weights_sd 0.50
 
   # Adding new neurons and genes
   mutate_add_neuron_prob 0.05
@@ -74,8 +72,12 @@ define "XOR System" do
   mate_only_prob 0.10 #0.7
 
   # Mating
-  survival_threshold 0.20 # top % allowed to mate in a species.
+  survival_threshold 0.50 # top % allowed to mate in a species.
   survival_mininum_per_species  4 # for small populations, we need SOMETHING to go on.
+
+  # Elitism
+  elite_count 4
+  elite_percentage 10
 
   # Fitness costs
   fitness_cost_per_neuron 0#.00001
@@ -142,7 +144,7 @@ evolve do
 
   stop_on_fitness { |fitness, c|
     puts "*** Generation Run #{c.generation_num}, best is #{fitness[:best]} ***\n\n"
-    fitness[:overall] >= ALMOST_FIT # FIXME: This should be the :best here
+    fitness[:best] >= ALMOST_FIT
   }
 end
 

@@ -72,6 +72,10 @@ define "XOR System" do
   survival_threshold 0.20 # top % allowed to mate in a species.
   survival_mininum_per_species  4 # for small populations, we need SOMETHING to go on.
 
+  # Elitism
+  elite_count 8
+  elite_percentage 20
+
   # Fitness costs
   fitness_cost_per_neuron 0#.00001
   fitness_cost_per_gene   0#.00001
@@ -136,7 +140,7 @@ evolve do
 
   stop_on_fitness { |fitness, c|
     puts "*** Generation Run #{c.generation_num}, best is #{fitness[:best]} ***\n\n"
-    fitness[:overall] >= ALMOST_FIT # FIXME: This should be the :best here
+    fitness[:best] >= ALMOST_FIT
   }
 end
 
