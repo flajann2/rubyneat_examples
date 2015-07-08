@@ -8,7 +8,7 @@ include NEAT::DSL
 #DeepDive.verbose = true
 
 # The number of inputs to the xor function
-XOR_INPUTS = 4
+XOR_INPUTS = 2
 XOR_STATES = 2 ** XOR_INPUTS
 XOR_INLIST = (1..XOR_INPUTS).map{ |i| ("i%d" % i).to_sym }
 MAX_FIT    = XOR_STATES
@@ -46,8 +46,8 @@ define "XOR System" do
   ### Settings
   ## General
   hash_on_fitness false
-  start_population_size 50
-  population_size 50
+  start_population_size 40
+  population_size 40
   max_generations 10000
   max_population_history 10
 
@@ -69,7 +69,7 @@ define "XOR System" do
   mutate_gene_reenable_prob 0.01
 
   interspecies_mate_rate 0.03
-  mate_only_prob 0.10 #0.7
+  mate_only_prob 0.10 
 
   # Mating
   survival_threshold 0.50 # top % allowed to mate in a species.
@@ -77,11 +77,13 @@ define "XOR System" do
 
   # Elitism
   elite_count 4
-  elite_percentage 10
+  elite_threshold 0.10
 
   # Fitness costs
-  fitness_cost_per_neuron 0#.00001
-  fitness_cost_per_gene   0#.00001
+  fitness_cost_per_neuron 0.00001
+  fitness_cost_per_neuron_free_until 10
+  fitness_cost_per_gene   0.00001
+  fitness_cost_per_gene_free_until   20
 
   # Speciation
   compatibility_threshold 2.5
@@ -96,6 +98,8 @@ define "XOR System" do
   start_sequence_at 0
   end_sequence_at 2 ** XOR_INPUTS - 1
 
+  # Verbose Diagnostics
+  verbose_pop_summary true
 end
 
 evolve do

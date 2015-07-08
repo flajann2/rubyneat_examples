@@ -1,7 +1,7 @@
 GIT
   remote: git://github.com//development/ruby_proj/rubyneat.git
-  revision: 4dd6ba4b9e76a3ee2dde35b088e0be60277c8f7e
-  branch: hyper
+  revision: 1110caa2a4cbe97a36e0db6e7ff8d4c755b50f44
+  branch: hyper.ast
   specs:
     rubyneat (0.5.2.hyper)
       aquarium (~> 0)
@@ -10,10 +10,12 @@ GIT
       deep_dive (~> 0)
       distribution (~> 0)
       k-tree (~> 0)
+      parser (~> 2)
       queue_ding
       rb-readline (~> 0)
       statistics2 (~> 0)
       thor (~> 0)
+      unparser
 
 GIT
   remote: git://github.com//development/ruby_proj/rubyneat_dashboard.git
@@ -49,14 +51,19 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
+    abstract_type (0.0.7)
     activesupport (4.2.3)
       i18n (~> 0.7)
       json (~> 1.7, >= 1.7.7)
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    adamantium (0.2.0)
+      ice_nine (~> 0.11.0)
+      memoizable (~> 0.4.0)
     amq-protocol (1.9.2)
     aquarium (0.5.1)
+    ast (2.0.0)
     awesome_print (1.6.1)
     backports (3.6.4)
     barista (1.3.0)
@@ -87,10 +94,15 @@ GEM
       sass (>= 3.3.0, < 3.5)
     compass-import-once (1.0.5)
       sass (>= 3.2, < 3.5)
+    concord (0.1.5)
+      adamantium (~> 0.2.0)
+      equalizer (~> 0.0.9)
     daemons (1.2.3)
     debug_inspector (0.0.2)
     deep_dive (0.3.1)
+    diff-lcs (1.2.5)
     distribution (0.7.3)
+    equalizer (0.0.11)
     eventmachine (1.0.7)
     execjs (2.5.2)
     ffi (1.9.10)
@@ -101,11 +113,14 @@ GEM
       tilt
     hike (1.2.3)
     i18n (0.7.0)
+    ice_nine (0.11.1)
     interception (0.5)
     jsmin (1.0.1)
     json (1.8.3)
     json-stream (0.2.1)
     k-tree (0.0.3)
+    memoizable (0.4.2)
+      thread_safe (~> 0.3, >= 0.3.1)
     method_source (0.8.2)
     minitest (5.7.0)
     multi_json (1.11.2)
@@ -115,7 +130,10 @@ GEM
       sprockets (>= 2.2.3, < 3.0.0)
       tilt (~> 1.4)
     opengl (0.9.2)
+    parser (2.2.2.6)
+      ast (>= 1.1, < 3.0)
     ply (0.9.1)
+    procto (0.0.2)
     pry (0.10.1)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -185,6 +203,14 @@ GEM
     tilt (1.4.1)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    unparser (0.2.4)
+      abstract_type (~> 0.0.7)
+      adamantium (~> 0.2.0)
+      concord (~> 0.1.5)
+      diff-lcs (~> 1.2.5)
+      equalizer (~> 0.0.9)
+      parser (~> 2.2.2)
+      procto (~> 0.0.2)
     yard (0.8.7.6)
 
 PLATFORMS

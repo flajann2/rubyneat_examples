@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 require 'xor'
 
 include NEAT::DSL
@@ -5,7 +6,7 @@ include NEAT::DSL
 #= TEST FOR RubyNEAT
 
 # The number of inputs to the xor function
-XOR_INPUTS = 4
+XOR_INPUTS = 2
 XOR_STATES = 2 ** XOR_INPUTS
 XOR_INLIST = (1..XOR_INPUTS).map{ |i| ("i%d" % i).to_sym }
 MAX_FIT    = XOR_STATES
@@ -26,9 +27,10 @@ define "XOR System" do
       outputs out: TanhNeuron
       
       # Hidden neuron specification is optional. 
-      # The name given here is largely meaningless, but may be useful as some sort
+      # The name given here is largely meaningless, 
+      # but may be useful as some sort
       # of unique flag.
-      hidden tan: TanhNeuron
+      hidden tanh: TanhNeuron
     end
 
     connections do
@@ -43,8 +45,8 @@ define "XOR System" do
   ### Settings
   ## General
   hash_on_fitness false
-  start_population_size 30
-  population_size 30
+  start_population_size 50
+  population_size 50
   max_generations 10000
   max_population_history 10
 
@@ -73,8 +75,8 @@ define "XOR System" do
   survival_mininum_per_species  4 # for small populations, we need SOMETHING to go on.
 
   # Elitism
-  elite_count 8
-  elite_percentage 20
+  elite_count 4
+  elite_percentage 10
 
   # Fitness costs
   fitness_cost_per_neuron 0#.00001
