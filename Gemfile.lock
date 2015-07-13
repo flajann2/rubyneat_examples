@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com//development/ruby_proj/rubyneat.git
-  revision: 1110caa2a4cbe97a36e0db6e7ff8d4c755b50f44
+  revision: aa961103fa1906811f47466c7afdb765d1f4dcb1
   branch: hyper.ast
   specs:
     rubyneat (0.5.2.hyper)
@@ -65,7 +65,7 @@ GEM
     aquarium (0.5.1)
     ast (2.0.0)
     awesome_print (1.6.1)
-    backports (3.6.4)
+    backports (3.6.5)
     barista (1.3.0)
       coffee-script (~> 2.2)
     binding_of_caller (0.7.2)
@@ -168,7 +168,7 @@ GEM
     rb-readline (0.5.3)
     rice (1.7.0)
     rubysdl (2.2.0)
-    sass (3.4.15)
+    sass (3.4.16)
     semver (1.0.1)
     sinatra (1.4.6)
       rack (~> 1.4)

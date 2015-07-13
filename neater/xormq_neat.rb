@@ -99,7 +99,8 @@ define "XOR System" do
   end_sequence_at 2 ** XOR_INPUTS - 1
 
   # Verbose Diagnostics
-  verbose_pop_summary true
+  verbose_logging false
+  verbose_pop_summary false
 end
 
 evolve do
