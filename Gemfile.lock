@@ -1,7 +1,7 @@
 GIT
   remote: git://github.com//development/ruby_proj/rubyneat.git
-  revision: aa961103fa1906811f47466c7afdb765d1f4dcb1
-  branch: hyper.ast
+  revision: 0c3e090a048a51e60a094ced601cf39d624f690e
+  branch: hyper
   specs:
     rubyneat (0.5.2.hyper)
       aquarium (~> 0)

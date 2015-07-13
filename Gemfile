@@ -8,7 +8,7 @@ gem 'semver'
 #gem 'rubyneat_rabbitmq'
 
 # During the development
-gem 'rubyneat',           github: '/development/ruby_proj/rubyneat',           branch: 'hyper.ast'
+gem 'rubyneat',           github: '/development/ruby_proj/rubyneat',           branch: 'hyper'
 gem 'rubyneat_dashboard', github: '/development/ruby_proj/rubyneat_dashboard', branch: 'master'
 gem 'rubyneat_rabbitmq',  github: '/development/ruby_proj/rubyneat_rabbitmq',  branch: 'master'
 
