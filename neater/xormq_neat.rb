@@ -4,6 +4,24 @@ require 'deep_dive'
 
 include NEAT::DSL
 
+
+# For the RabbitMQ extension
+rabbit do |r|
+  # Configuration of what RabbitMQ server to use, 
+  # channel names, etc.
+  config do
+    url 'amqp://rubyneat:hyper@localhost:5672'
+    route 'xor_route'
+    queue 'xor_queue', exclusive: false, auto_delete: true
+    reply_to 'xor_reply'
+  end
+
+  # Workers to intepret and process the remote phenotypes
+  worker do |w|
+  end
+end
+
+
 #= TEST FOR RubyNEAT and RubyNEAT_rabbitMQ extension
 #DeepDive.verbose = true
 
@@ -31,7 +49,7 @@ define "XOR System" do
       # Hidden neuron specification is optional. 
       # The name given here is largely meaningless, but may be useful as some sort
       # of unique flag.
-      hidden tan: TanhNeuron
+      hidden tan: TanhNeuron, sine: SineNeuron
     end
 
     connections do
@@ -81,9 +99,9 @@ define "XOR System" do
 
   # Fitness costs
   fitness_cost_per_neuron 0.00001
-  fitness_cost_per_neuron_free_until 10
-  fitness_cost_per_gene   0.00001
-  fitness_cost_per_gene_free_until   20
+  fitness_cost_per_neuron_free_until 20
+  fitness_cost_per_gene   0.000001
+  fitness_cost_per_gene_free_until   40
 
   # Speciation
   compatibility_threshold 2.5
@@ -99,8 +117,8 @@ define "XOR System" do
   end_sequence_at 2 ** XOR_INPUTS - 1
 
   # Verbose Diagnostics
-  verbose_logging false
-  verbose_pop_summary false
+  verbose_logging true
+  verbose_pop_summary true
 end
 
 evolve do
@@ -148,16 +166,19 @@ evolve do
   }
 
   stop_on_fitness { |fitness, c|
-    puts "*** Generation Run #{c.generation_num}, best is #{fitness[:best]} ***\n\n"
+    @current_time = Time.now
+    @elasped = @current_time - @last_time unless @last_time.nil?
+    puts "*** Generation Run #{c.generation_num}, best is #{fitness[:best]}, time #{@elasped} ***\n\n"
+    @last_time = @current_time
     fitness[:best] >= ALMOST_FIT
   }
 end
 
 # This requires the rubyneat_dashboard plugin.
 # If you don't need this, remove the next 3 lines.
-dashboard do
-  $log.info '**** Dashboard Running FOR XOR *****'
-end
+#dashboard do
+#  $log.info '**** Dashboard Running FOR XORMQ *****'
+#end
 
 report do |pop, rept|
   $log.info "REPORT #{rept.to_yaml}"
@@ -165,21 +186,7 @@ end
 
 # The block here is called upon the completion of each generation
 run_engine do |c|
-  $log.info "******** Run of generation %s completed, history count %d ********" %
-        [c.generation_num, c.population_history.size]
-end
-
-# For the RabbitMQ extension
-rabbit do |r|
-  # Configuration of what RabbitMQ server to use, 
-  # channel names, etc.
-  config do
-    url 'localhost'
-    route 'xor_queue'
-    reply_to 'xor_reply'
-  end
-
-  # Workers to intepret and process the remote phenotypes
-  worker do |w|
-  end
+  @elasped ||= 0.0
+  $log.info "******** Run of generation %s completed, history count %d, time %4.3f ********" %
+        [c.generation_num, c.population_history.size, @elasped]
 end

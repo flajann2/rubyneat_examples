@@ -14,7 +14,7 @@ gem 'rubyneat_rabbitmq',  github: '/development/ruby_proj/rubyneat_rabbitmq',  b
 
 # For demo purposes, we include the gosu library, but if you don't
 # need this, then comment it out  or remove it.
-gem 'gosu', require: false
+# gem 'gosu', require: false
 
 # Well, we may supplant gosu with opengl
 gem 'opengl', require: false
