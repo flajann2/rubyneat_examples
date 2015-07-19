@@ -42,7 +42,7 @@ GIT
 
 GIT
   remote: git://github.com//development/ruby_proj/rubyneat_rabbitmq.git
-  revision: 6de2b0429d2c8fea977af04f43db306c4d59f46f
+  revision: 37f4228c9e9538fc8cdc1fe0b79b3403484a3926
   branch: master
   specs:
     rubyneat_rabbitmq (0.0.1.notreadyforuse.0)

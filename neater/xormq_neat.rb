@@ -11,9 +11,9 @@ rabbit do |r|
   # channel names, etc.
   config do
     url 'amqp://rubyneat:hyper@localhost:5672'
-    route 'xor_route'
+    routing 'xor_queue'
     queue 'xor_queue', exclusive: false, auto_delete: true
-    reply_to 'xor_reply'
+    reply_to 'xor_reply', auto_delete: true
   end
 
   # Workers to intepret and process the remote phenotypes
