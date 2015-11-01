@@ -13,8 +13,6 @@ http://rubyneat.com
 
 for the latest docs.
 
-
-
 ## xor
 Basic neural net test for functionality. This is the one exampled used in the
 documentation at: http://rubyneat.com/wiki/Documentation
@@ -41,3 +39,12 @@ example.
 ## invpend
 Pole Balancing (ongoing, not ready yet)
 
+# Installation issues
+## glut
+
+You need:
+  apt-get install freeglut3-dev libgl1-mesa-dev libopenal-dev libsdl-mixer1.2-dev libsdl-net1.2-dev
+
+## Ruby
+You need to have ruby installed with shared libraries, thusly
+  CONFIGURE_OPTS="--enable-shared" rbenv install 2.2.3

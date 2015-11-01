@@ -4,7 +4,6 @@ require 'deep_dive'
 
 include NEAT::DSL
 
-
 # For the RabbitMQ extension
 rabbit do |r|
   # Configuration of what RabbitMQ server to use, 
