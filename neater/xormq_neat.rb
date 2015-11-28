@@ -17,6 +17,7 @@ rabbit do |r|
 
   # Workers to intepret and process the remote phenotypes
   worker do |w|
+    pp w
   end
 end
 

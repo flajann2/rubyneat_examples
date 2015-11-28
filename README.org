@@ -1,17 +1,16 @@
 * RubyNEAT Examples
-  
-NEAT and Iterated ES HyperNEAT implementations,
-along with TWEANN Compositions.
+  NEAT and Iterated ES HyperNEAT implementations,
+  along with TWEANN Compositions.
 
-Please see
+  Please see
 
-https://github.com/flajann2/rubyneat
+  https://github.com/flajann2/rubyneat
 
-For the actual engine, and:
+  For the actual engine, and:
 
-http://rubyneat.de
+  http://rubyneat.de
 
-for the latest docs.
+  for the latest docs.
 ** Background
    I wish to provide a number of examples of how to use RubyNEAT that
    not only demonstrates the power of NEAT, but also how to use RubyNEAT
@@ -31,6 +30,11 @@ for the latest docs.
 *** xorsin
     Solves the XOR problem using the Sine and Cosine Neurons.
     This converges very fast with normally no hidden layers.
+
+*** xormq
+    This is an example of using RabbitMQ to evaluate the neural nets remotely as "jobs".
+    This will allow for scaling up of the evaluations to multiple machines in a language-
+    independent manner.
 
 *** maze
     Demonstration of Iterated ES HyperNEAT in solving
