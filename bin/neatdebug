@@ -21,4 +21,4 @@ require_relative '../config/boot'
 
 require 'rubyneat_dashboard'
 
-RubyNEAT::Cli::Main.start
+NEAT::Cli::Main.start
