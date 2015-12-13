@@ -184,7 +184,8 @@ report do |pop, rept|
   $log.info "REPORT #{rept.to_yaml}"
 end
 
-# The block here is called upon the completion of each generation
+# The block here is called upon the completion of
+# each generation. This also activates the
 run_engine do |c|
   @elasped ||= 0.0
   $log.info "******** Run of generation %s completed, history count %d, time %4.3f ********" %
