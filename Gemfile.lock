@@ -43,7 +43,7 @@ GIT
 
 GIT
   remote: git://github.com//development/ruby_proj/rubyneat_rabbitmq.git
-  revision: e136eb3caff599e09e95b89076200d5a98183b64
+  revision: 14643e776e78a4bde502b39f9cfce5c6f9006411
   branch: master
   specs:
     rubyneat_rabbitmq (0.0.1.notreadyforuse.0)
@@ -65,7 +65,7 @@ GEM
       memoizable (~> 0.4.0)
     amq-protocol (1.9.2)
     aquarium (0.5.1)
-    ast (2.1.0)
+    ast (2.2.0)
     awesome_print (1.6.1)
     backports (3.6.7)
     barista (1.3.0)
@@ -125,7 +125,7 @@ GEM
     method_source (0.8.2)
     minitest (5.8.3)
     multi_json (1.11.2)
-    opal (0.8.1)
+    opal (0.9.0)
       hike (~> 1.2)
       sourcemap (~> 0.1.0)
       sprockets (~> 3.1)
@@ -165,12 +165,11 @@ GEM
       rack
     rack-test (0.6.3)
       rack (>= 1.0)
-    rb-fsevent (0.9.6)
+    rb-fsevent (0.9.7)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
     rb-readline (0.5.3)
     ref (2.0.0)
-    rice (2.0.0)
     rubysdl (2.2.0)
     sass (3.4.20)
     semver (1.0.1)
@@ -233,7 +232,6 @@ DEPENDENCIES
   pry-remote
   pry-rescue
   pry-stack_explorer
-  rice
   rubyneat!
   rubyneat_dashboard!
   rubyneat_rabbitmq!
@@ -241,4 +239,4 @@ DEPENDENCIES
   semver
 
 BUNDLED WITH
-   1.10.6
+   1.11.2

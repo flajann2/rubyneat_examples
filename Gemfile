@@ -22,9 +22,12 @@ gem 'glu', require: false
 gem 'glut', require: false
 gem 'rubysdl', require: false
 
-# For interfacing with the C++ modules
+# For interfacing with the C++ modules.
+# Note that with some newer versions of
+# Ruby, you may have issues with installing
+# them.
 gem 'ffi'
-gem 'rice'
+#gem 'rice'
 
 # For reading in ply 3D models
 gem 'ply'
