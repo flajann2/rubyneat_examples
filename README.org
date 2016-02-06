@@ -35,6 +35,9 @@
     This is an example of using RabbitMQ to evaluate the neural nets remotely as "jobs".
     This will allow for scaling up of the evaluations to multiple machines in a language-
     independent manner.
+    #+BEGIN_SRC bash
+    
+    #+END_SRC
 
 *** maze
     Demonstration of Iterated ES HyperNEAT in solving
@@ -60,3 +63,17 @@
     #+BEGIN_SRC bash
     CONFIGURE_OPTS="--enable-shared" rbenv install 2.2.3
     #+END_SRC
+
+** Scratchpad
+   This area is for my personal notes that may or
+   may not be in sync with the code or make sense
+   to anyone but me, so feel free to ignore anything
+   in this section.
+*** bundle setup for multiple gem development
+    #+BEGIN_SRC bash
+    bundle config local.rubyneat /development/ruby_proj/rubyneat
+    bundle config local.rubyneat_dashboard /development/ruby_proj/rubyneat_dashboard
+    bundle config local.rubyneat_rabbitmq /development/ruby_proj/rubyneat_rabbitmq
+    #+END_SRC
+
+    

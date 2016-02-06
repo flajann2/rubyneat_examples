@@ -146,7 +146,7 @@ evolve do
       bin = uncondition_boolean_vector vin
       bout = uncondition_boolean_vector vout
       bactual = [xor(*vin)]
-      vactual = condition_boolean_vector bactual
+      #vactual = condition_boolean_vector bactual
       fit = (bout == bactual) ? 0.00 : 1.00
       #simple_fitness_error(vout, vactual.map{|f| f * 0.50 })
       bfit = (bout == bactual) ? 'T' : 'F'

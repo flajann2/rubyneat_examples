@@ -27,7 +27,7 @@ gem 'rubysdl', require: false
 # Ruby, you may have issues with installing
 # them.
 gem 'ffi'
-#gem 'rice'
+gem 'rice'
 
 # For reading in ply 3D models
 gem 'ply'
