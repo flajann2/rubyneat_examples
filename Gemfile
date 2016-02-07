@@ -9,7 +9,7 @@ gem 'semver'
 
 # During the development
 gem 'rubyneat',           github: '/development/ruby_proj/rubyneat',           branch: 'hyper'
-gem 'rubyneat_dashboard', github: '/development/ruby_proj/rubyneat_dashboard', branch: 'master'
+#gem 'rubyneat_dashboard', github: '/development/ruby_proj/rubyneat_dashboard', branch: 'master'
 gem 'rubyneat_rabbitmq',  github: '/development/ruby_proj/rubyneat_rabbitmq',  branch: 'master'
 
 # For demo purposes, we include the gosu library, but if you don't

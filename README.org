@@ -61,7 +61,7 @@
 *** Ruby
     You need to have ruby installed with shared libraries, thusly
     #+BEGIN_SRC bash
-    CONFIGURE_OPTS="--enable-shared" rbenv install 2.2.3
+    CONFIGURE_OPTS="--enable-shared" rbenv install 2.3.0
     #+END_SRC
 
 ** Scratchpad
@@ -75,5 +75,3 @@
     bundle config local.rubyneat_dashboard /development/ruby_proj/rubyneat_dashboard
     bundle config local.rubyneat_rabbitmq /development/ruby_proj/rubyneat_rabbitmq
     #+END_SRC
-
-    
