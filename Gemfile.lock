@@ -19,7 +19,7 @@ GIT
 
 GIT
   remote: git://github.com//development/ruby_proj/rubyneat_rabbitmq.git
-  revision: fb779e5db7777b1f34b9390e34cf4644efaf72e7
+  revision: 5c79badf925f3291f483ff757cd712caaadfc070
   branch: master
   specs:
     rubyneat_rabbitmq (0.0.1.notreadyforuse.0)
@@ -44,7 +44,7 @@ GEM
     bond (0.5.1)
     bunny (1.7.1)
       amq-protocol (~> 1.9.2)
-    byebug (8.2.5)
+    byebug (9.0.4)
     coderay (1.1.1)
     concord (0.1.5)
       adamantium (~> 0.2.0)
@@ -72,8 +72,8 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
-    pry-byebug (3.3.0)
-      byebug (~> 8.0)
+    pry-byebug (3.4.0)
+      byebug (~> 9.0)
       pry (~> 0.10)
     pry-doc (0.8.0)
       pry (~> 0.9)
@@ -81,7 +81,7 @@ GEM
     pry-remote (0.1.8)
       pry (~> 0.9)
       slop (~> 3.0)
-    pry-rescue (1.4.2)
+    pry-rescue (1.4.4)
       interception (>= 0.5)
       pry
     pry-stack_explorer (0.4.9.2)
