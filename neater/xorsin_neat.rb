@@ -8,7 +8,7 @@ include NEAT::DSL
 XOR_INPUTS = 2
 XOR_STATES = 2 ** XOR_INPUTS
 MAX_FIT    = XOR_STATES
-ALMOST_FIT = (XOR_STATES - 0.5)
+ALMOST_FIT = (XOR_STATES - 0.2)
 
 # This defines the controller
 define "XOR Sin CPPN Debug System" do
@@ -125,7 +125,7 @@ evolve do
 
   stop_on_fitness {|fitness, c|
     puts "*** Generation Run #{c.generation_num}, best is #{fitness[:best]} ***\n\n"
-    fitness[:overall] >= MAX_FIT - 0.5
+    fitness[:best] >= ALMOST_FIT
   }
 end
 
