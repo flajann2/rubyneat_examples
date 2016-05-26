@@ -1,0 +1,1 @@
+/usr/bin/c++   -g   CMakeFiles/mz.dir/main.cpp.o  -o bin/mz -rdynamic lib/libmaze.so -lpthread -Wl,-rpath,/development/ruby_proj/rubyneat_examples/lib/maze/lib 

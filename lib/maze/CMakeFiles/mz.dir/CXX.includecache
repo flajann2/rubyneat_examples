@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/alveric/development/ruby_proj/rubyneat_examples/lib/maze/main.cpp
+maze.hpp
+/home/alveric/development/ruby_proj/rubyneat_examples/lib/maze/maze.hpp
+
+/home/alveric/development/ruby_proj/rubyneat_examples/lib/maze/maze.hpp
+string
+-
+iostream
+-
+thread
+-
+vector
+-
+tuple
+-
+random
+-
+map
+-
+

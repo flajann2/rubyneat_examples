@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC -g  -shared -Wl,-soname,libmaze.so -o lib/libmaze.so CMakeFiles/maze.dir/maze_physics.cpp.o CMakeFiles/maze.dir/maze.cpp.o -lpthread 
