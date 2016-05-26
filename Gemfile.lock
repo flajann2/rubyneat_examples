@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com//development/ruby_proj/rubyneat.git
-  revision: 9fdd253105d0360533abcec3ef36760eba15cf55
+  revision: 88f3d5723bc2094367b9d66997e8cae7bc4a06b6
   branch: hyper
   specs:
     rubyneat (0.5.2.hyper)
