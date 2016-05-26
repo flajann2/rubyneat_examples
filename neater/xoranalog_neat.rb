@@ -8,7 +8,7 @@ include NEAT::DSL
 XOR_INPUTS = 2
 XOR_STATES = 2 ** XOR_INPUTS
 MAX_FIT    = XOR_STATES
-ALMOST_FIT = XOR_STATES - 0.3
+ALMOST_FIT = XOR_STATES - 0.0001
 
 # This defines the controller
 define "XOR Analog Fitness System" do
