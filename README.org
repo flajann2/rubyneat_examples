@@ -61,7 +61,7 @@
 *** Ruby
     You need to have ruby installed with shared libraries, thusly
     #+BEGIN_SRC bash
-    CONFIGURE_OPTS="--enable-shared" rbenv install 2.3.0
+    CONFIGURE_OPTS="--enable-shared" rbenv install 2.3.1
     #+END_SRC
 
 ** Scratchpad
@@ -70,6 +70,7 @@
    to anyone but me, so feel free to ignore anything
    in this section.
 *** bundle setup for multiple gem development
+    This has now been put into the workstation.yml script.
     #+BEGIN_SRC bash
     bundle config local.rubyneat /development/ruby_proj/rubyneat
     bundle config local.rubyneat_dashboard /development/ruby_proj/rubyneat_dashboard

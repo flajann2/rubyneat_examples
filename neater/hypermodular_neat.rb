@@ -219,10 +219,11 @@ end
 
 # This requires the rubyneat_dashboard plugin.
 # If you don't need this, remove the next 4 lines.
-dashboard do
-  port 4912
-  bind '0.0.0.0'
-end
+#
+#dashboard do
+#  port 4912
+#  bind '0.0.0.0'
+#end
 
 report do |pop, rept|
   $log.info "REPORT #{rept.to_yaml}"

@@ -75,8 +75,8 @@ define "XOR System" do
   survival_mininum_per_species  4 # for small populations, we need SOMETHING to go on.
 
   # Elitism
-  elite_count 4
-  elite_percentage 10
+  #elite_count 4
+  #elite_percentage 10
 
   # Fitness costs
   fitness_cost_per_neuron 0#.00001
@@ -148,9 +148,9 @@ end
 
 # This requires the rubyneat_dashboard plugin.
 # If you don't need this, remove the next 3 lines.
-dashboard do
-  $log.info '**** Dashboard Running FOR XOR *****'
-end
+#dashboard do
+#  $log.info '**** Dashboard Running FOR XOR *****'
+#end
 
 report do |pop, rept|
   $log.info "REPORT #{rept.to_yaml}"
