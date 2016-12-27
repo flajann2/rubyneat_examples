@@ -35,8 +35,9 @@
     This is an example of using RabbitMQ to evaluate the neural nets remotely as "jobs".
     This will allow for scaling up of the evaluations to multiple machines in a language-
     independent manner.
+
     #+BEGIN_SRC bash
-    
+    neat run xormq
     #+END_SRC
 
 *** maze
@@ -61,10 +62,10 @@
 *** Ruby
     You need to have ruby installed with shared libraries, thusly
     #+BEGIN_SRC bash
-    CONFIGURE_OPTS="--enable-shared" rbenv install 2.3.1
+    CONFIGURE_OPTS="--enable-shared" rbenv install 2.4.0
     #+END_SRC
 
-** Scratchpad
+** The Junkyard / Scratchpad
    This area is for my personal notes that may or
    may not be in sync with the code or make sense
    to anyone but me, so feel free to ignore anything
@@ -76,3 +77,7 @@
     bundle config local.rubyneat_dashboard /development/ruby_proj/rubyneat_dashboard
     bundle config local.rubyneat_rabbitmq /development/ruby_proj/rubyneat_rabbitmq
     #+END_SRC
+*** commands to run for Rabbit Development
+    #+begin_src bash
+    neat 
+    #+end_src

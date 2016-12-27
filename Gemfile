@@ -1,7 +1,7 @@
 # Gemfile for your RubyNEAT RubyneatExamples project.
 source 'https://rubygems.org'
 
-gem 'semver'
+gem 'semver2'
 
 gem 'rubyneat'
 #gem 'rubyneat_dashboard'
