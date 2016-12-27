@@ -89,9 +89,6 @@ GEM
       semver2 (~> 3)
       thor (~> 0)
       unparser (~> 0)
-    rubyneat_rabbitmq (0.0.1.notreadyforuse.0)
-      bunny (~> 1.7)
-      rubyneat
     rubysdl (2.2.0)
     semver2 (3.4.2)
     slop (3.6.0)
@@ -124,7 +121,6 @@ DEPENDENCIES
   pry-stack_explorer
   rice
   rubyneat
-  rubyneat_rabbitmq
   rubysdl
   semver2
 

@@ -5,7 +5,7 @@ gem 'semver2'
 
 gem 'rubyneat'
 #gem 'rubyneat_dashboard'
-gem 'rubyneat_rabbitmq'
+#gem 'rubyneat_rabbitmq'
 
 # During the development
 #gem 'rubyneat',           github: '/development/ruby_proj/rubyneat',           branch: 'hyper'
