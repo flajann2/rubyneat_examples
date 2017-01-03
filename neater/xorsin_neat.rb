@@ -11,7 +11,11 @@ MAX_FIT    = XOR_STATES
 ALMOST_FIT = (XOR_STATES - 0.5)
 
 # This defines the controller
-define "XOR Sin CPPN Debug System" do
+define "XOR Sin" do
+  description <<-DESC
+Simple XOR using the Sin CPPN
+DESC
+
   # Define the IO neurons
   inputs {
     cinv = Hash[(1..XOR_INPUTS).map{|i| [("i%s" % i).to_sym, InputNeuron]}]

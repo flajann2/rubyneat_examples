@@ -14,6 +14,9 @@ ALMOST_FIT = XOR_STATES - 0.3
 
 # This defines the controller
 define "Hyper Modular" do
+  description <<-DESC
+Test for HyperNEAT and Modular features.
+DESC
   compose do
     tweann :main do
       # Define the IO neurons

@@ -33,7 +33,11 @@ MAX_FIT    = XOR_STATES
 ALMOST_FIT = XOR_STATES - 0.5
 
 # This defines the controller
-define "XOR System" do
+define "XORmq" do
+  description <<-DESC
+XOR across RabbitMQ
+DESC
+
   compose do
     tweann :main do
       # Define the IO neurons

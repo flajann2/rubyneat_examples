@@ -12,6 +12,10 @@ ALMOST_FIT = (XOR_STATES - 0.5)
 
 # This defines the controller
 define "XOR All CPPN Debug System" do
+    description <<-DESC
+XOR tests for all CPPN for debugging
+DESC
+
   # Define the IO neurons
   inputs {
     cinv = Hash[(1..XOR_INPUTS).map{|i| [("i%s" % i).to_sym, InputNeuron]}]

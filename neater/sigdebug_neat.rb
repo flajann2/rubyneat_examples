@@ -11,6 +11,10 @@ $log.level = Logger::DEBUG
 
 # This defines the controller
 define "XOR Sigmoid Debug System" do
+  description <<-DESC
+XOR Debugging of the Sigmoid CPPN
+DESC
+  
   # Define the IO neurons
   inputs {
     cinv = Hash[(1..XOR_INPUTS).map{|i| [("i%s" % i).to_sym, InputNeuron]}]

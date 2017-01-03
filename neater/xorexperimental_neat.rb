@@ -11,7 +11,11 @@ MAX_FIT    = XOR_STATES
 ALMOST_FIT = XOR_STATES - 0.3
 
 # This defines the controller
-define "XOR Experimental Analog Fitness System" do
+define "XOR Experimental" do
+  description <<-DESC
+XOR Experimental Analog Fitness System
+DESC
+
   # Define the IO neurons
   inputs {
     cinv = Hash[(1..XOR_INPUTS).map{|i| [("i%s" % i).to_sym, InputNeuron]}]

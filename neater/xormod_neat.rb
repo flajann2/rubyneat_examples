@@ -16,6 +16,10 @@ ALMOST_FIT = XOR_STATES - 0.5
 
 # This defines the controller
 define "XOR System" do
+    description <<-DESC
+XOR Modular
+DESC
+
   compose do
     tweann :main do
       # Define the IO neurons
