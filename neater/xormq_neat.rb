@@ -189,7 +189,7 @@ report do |pop, rept|
 end
 
 # The block here is called upon the completion of
-# each generation. This also activates the
+# each generation. This also activates the run of this neater.
 run_engine do |c|
   @elasped ||= 0.0
   $log.info "******** Run of generation %s completed, history count %d, time %4.3f ********" %
