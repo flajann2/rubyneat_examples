@@ -4,3 +4,4 @@ tmp/
 .idea/
 .yardoc/
 .sass-cache/
+run/
