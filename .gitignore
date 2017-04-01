@@ -5,3 +5,4 @@ tmp/
 .yardoc/
 .sass-cache/
 run/
+*.orig
