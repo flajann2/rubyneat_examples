@@ -1,0 +1,200 @@
+#include "maze.hpp"
+namespace maze 
+{
+  using namespace std;
+
+  Room::Room() {
+    walls = vector<bool>(Dim*2, true);
+  }
+
+  Room::~Room() {
+  }
+
+  // Returns a list of all neighbors not yet
+  // visited.
+  vector<Room*> Room::available_neighbors() {
+    vector<Room*> neighbors {};
+
+    for (auto offset : neighbor_room_offsets) {
+      auto i = get<x>(offset) + get<x>(coord);
+      auto j = get<y>(offset) + get<y>(coord);
+      if (i >= 0 && j >= 0 && i < pm->width && j < pm->breadth)
+        if (! (*pm)[i][j].visited)
+          neighbors.push_back(&(*pm)[i][j]);
+    }
+    return neighbors;
+  }
+
+  void Room::open_passage(Room* adjr){
+    adjr->visited = true;
+    auto wpass = pass_walls(adjr);
+    walls[get<thiswall>(wpass)] = adjr->walls[get<thatwall>(wpass)] = false;
+  }
+
+  // this - that -> this_wall_index, that_wall_index
+  map<tuple<int,int>, tuple<int,int>> passage {
+    {make_tuple(-1, 0), make_tuple(1, 0)},
+    {make_tuple(1, 0),  make_tuple(0, 1)},
+    {make_tuple(0, -1), make_tuple(3, 2)},
+    {make_tuple(0, 1),  make_tuple(2, 3)}
+  };
+
+  tuple<int,int> &Room::pass_walls(Room* that){
+
+    auto index = tuple<int,int> {
+        get<x>(coord) - get<x>(that->coord), 
+        get<y>(coord) - get<y>(that->coord)
+        };
+    return passage[index];
+  }
+
+  void Room::dump_out() {
+    cout << "[";
+    cout << get<x>(coord) << "," << get<y>(coord) << ":";
+    for (auto wall : walls) 
+      cout << wall;
+    cout << "]";
+  }
+
+  auto Room::to_encoded() {
+    unsigned char er = 0;
+    for (auto w : walls) {
+      er = (er << 1) | w;
+    }
+    return er;
+  }
+
+  Maze::Maze(int w, int b) : width(w), breadth(b), room_size(10.0) {
+    init();
+  }
+
+  Maze::Maze(int w, int b, double rs) : width(w),
+                                        breadth(b),
+                                        room_size(rs) {
+    init();
+  }
+
+  Maze::~Maze() {
+    if (expar != nullptr)
+      free(expar);
+  }
+
+  void Maze::init() {
+
+    for (auto i = 0; i < width; ++i) {
+      auto rooms = vector<Room>(breadth, Room());
+      for (auto j = 0; j < breadth; ++j) {
+        rooms[j].coord = make_tuple(i, j);
+        rooms[j].pm = this;
+      }
+      board.insert(board.cend(), rooms);      
+    }
+    blaze_the_maze();
+  }
+
+  void Maze::blaze_the_maze() {
+    // set up random number generation
+    random_device rd;
+    mt19937 gen(rd());
+    uniform_int_distribution<> rw(0, width-1);
+    uniform_int_distribution<> rb(0, breadth-1);
+    vector<Room*> pool {};
+
+    // randomly select a starting point
+    auto i = rw(gen);
+    auto j = rb(gen);
+    Room* room = &(*this)[i][j];
+    pool.push_back(room);
+
+    while(pool.size() > 0) {
+      uniform_int_distribution<> rpool(0, pool.size()-1);
+      auto rroom = rpool(gen);
+      room = pool[rroom];
+      auto neighbors = room->available_neighbors();
+      if (neighbors.size() > 0) {
+        uniform_int_distribution<> rneig(0, neighbors.size()-1);
+        auto r = rneig(gen);
+        Room* adjoining_room = neighbors[r];
+        adjoining_room->visited = true;
+        room->open_passage(adjoining_room);
+        pool.push_back(adjoining_room);
+      } else {
+        auto it = pool.cbegin();
+        advance(it, rroom);
+        pool.erase(it);
+      }
+    }
+  }
+
+  vector<Room> &Maze::operator[](int i) {
+    return board[i];
+  }
+
+  enum WallMode { top, left, rightend, bottomend };
+  const array<WallMode, 3> wallmode = {top, left, bottomend};
+  
+  void Maze::dump_out() {
+    const string UpperWallClosed = "+--";
+    const string BottomWall      = "+--";
+    const string UpperWallOpened = "+  ";
+    const string UpperEndWall    =    "+";
+    const string LowerEndWall    =    "+";
+    const string LeftWallClosed  = "|  ";
+    const string LeftWallOpen    = "   ";
+    const string RightEndWall    =    "|";
+
+    for (auto j=breadth-1; j>=0; --j) {
+      for (auto wm : wallmode) {
+        for(auto i=0; i<width; ++i) {
+          Room &r = (*this)[i][j];
+          switch (wm) {
+          case top: 
+            cout << ((r.walls[3]) ? UpperWallClosed : UpperWallOpened); 
+            break;
+          case left: 
+            cout << ((r.walls[0]) ? LeftWallClosed : LeftWallOpen); 
+            break;
+          case bottomend:
+            if (j == 0)
+              cout << UpperWallClosed;
+            break;
+          }
+        }
+        if (wm != bottomend)
+          cout << ((wm == top) ? UpperEndWall : RightEndWall) << endl;
+        else if (j == 0)
+          cout << LowerEndWall << endl;
+      }
+    }
+  }
+
+  /* Returns an array of unsigned chars,
+     W|B|cccccccc...
+     
+     Note that this will be only generated once, 
+     and the results cached.
+   */
+  auto Maze::to_export() {
+    if (expar == nullptr) {
+      expar = (unsigned char *) calloc(width * breadth + 2, sizeof(unsigned char));
+      expar[0] = width;
+      expar[1] = breadth;
+      auto wb = expar + 2;
+      
+      for (auto i = 0; i < width; ++i) {
+        for (auto j = 0; j < breadth; ++j) {
+          wb[i * breadth + j] = (*this)[i][j].to_encoded();
+        }
+      }
+      
+    }
+    return expar;
+  }
+
+  //FIXME: Leaks memory!!!! Ownership issues to be resolved.
+  extern "C" auto generate_maze(int width, int breadth) {
+    auto m = new Maze {width, breadth};
+    m->dump_out();
+    return m->to_export();
+  }
+}

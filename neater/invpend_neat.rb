@@ -29,6 +29,10 @@ invpend do |ipwin|
 end
 
 define "InvPend System" do
+    description <<-DESC
+Inverted Pedulum test.
+DESC
+
   #-----------------------------------------------------
   #= Neuron Specifications
   inputs(

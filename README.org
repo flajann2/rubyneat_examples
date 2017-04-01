@@ -1,0 +1,109 @@
+* RubyNEAT Examples Table of Contents                              :TOC_5_gh:
+ - [[#rubyneat-examples][RubyNEAT Examples]]
+   - [[#general][General]]
+   - [[#background][Background]]
+   - [[#neaters][Neaters]]
+     - [[#xor][xor]]
+     - [[#xorall][xorall]]
+     - [[#xoranalog][xoranalog]]
+     - [[#xorsin][xorsin]]
+     - [[#xormq][xormq]]
+     - [[#maze][maze]]
+     - [[#invpend][invpend]]
+   - [[#installation-issues][Installation issues]]
+     - [[#glut][glut]]
+     - [[#ruby][Ruby]]
+   - [[#the-junkyard--scratchpad][The Junkyard / Scratchpad]]
+     - [[#bundle-setup-for-multiple-gem-development][bundle setup for multiple gem development]]
+     - [[#commands-to-run-for-rabbit-development][commands to run for Rabbit Development]]
+     - [[#running-rubyneat-daemon-for-testing][Running RubyNEAT daemon for testing]]
+
+* RubyNEAT Examples
+** General
+  NEAT and Iterated ES HyperNEAT implementations,
+  along with TWEANN Compositions.
+
+  Please see
+
+  https://github.com/flajann2/rubyneat
+
+  For the actual engine, and:
+
+  http://rubyneat.de
+
+  for the latest docs.
+** Background
+   I wish to provide a number of examples of how to use RubyNEAT that
+   not only demonstrates the power of NEAT, but also how to use RubyNEAT
+   to tackle different situations.
+   
+** Neaters
+*** xor
+    Basic neural net test for functionality. This is the one exampled used in the
+    documentation at: http://rubyneat.com/wiki/Documentation
+
+*** xorall
+    This exercise (nearly) all of the CPPN neuron types.
+
+*** xoranalog
+    This tests represents the XOR function as an analog function.
+
+*** xorsin
+    Solves the XOR problem using the Sine and Cosine Neurons.
+    This converges very fast with normally no hidden layers.
+
+*** xormq
+    This is an example of using RabbitMQ to evaluate the neural nets remotely as "jobs".
+    This will allow for scaling up of the evaluations to multiple machines in a language-
+    independent manner.
+
+    #+BEGIN_SRC bash
+    neat run xormq
+    #+END_SRC
+
+*** maze
+    Demonstration of Iterated ES HyperNEAT in solving
+    arbitrary mazes. We generate a random maze per generation
+    to be solved by the Critters.
+
+    The actual maze generation and maze "physics" are implemented in
+    C++14, called by the Neater. So this also serves as a mixed language
+    example.
+
+*** invpend
+    Pole Balancing (ongoing, not ready yet)
+
+** Installation issues
+*** glut
+    You need:
+    #+BEGIN_SRC bash
+    apt-get install freeglut3-dev libgl1-mesa-dev libopenal-dev libsdl-mixer1.2-dev libsdl-net1.2-dev
+    #+END_SRC
+
+*** Ruby
+    You need to have ruby installed with shared libraries, thusly
+    #+BEGIN_SRC bash
+    CONFIGURE_OPTS="--enable-shared" rbenv install 2.4.0
+    #+END_SRC
+
+** The Junkyard / Scratchpad
+   This area is for my personal notes that may or
+   may not be in sync with the code or make sense
+   to anyone but me, so feel free to ignore anything
+   in this section.
+*** bundle setup for multiple gem development
+    This has now been put into the workstation.yml script.
+    #+BEGIN_SRC bash
+    bundle config local.rubyneat /development/ruby_proj/rubyneat
+    bundle config local.rubyneat_dashboard /development/ruby_proj/rubyneat_dashboard
+    bundle config local.rubyneat_rabbitmq /development/ruby_proj/rubyneat_rabbitmq
+    #+END_SRC
+*** commands to run for Rabbit Development
+    #+begin_src bash
+    neat 
+    #+end_src
+*** Running RubyNEAT daemon for testing
+    #+begin_src bash
+    neat daemon foreground
+    #+end_src
+

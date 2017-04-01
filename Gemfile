@@ -1,23 +1,40 @@
 # Gemfile for your RubyNEAT RubyneatExamples project.
 source 'https://rubygems.org'
 
-gem 'rubyneat'
+gem 'semver2'
 
+
+gem 'rubyneat'
+#gem 'rubyneat_dashboard'
+#gem 'rubyneat_rabbitmq'
+# During the development
+#gem 'rubyneat',           github: '/development/ruby_proj/rubyneat',           branch: 'hyper'
+#gem 'rubyneat_rabbitmq',  github: '/development/ruby_proj/rubyneat_rabbitmq',  branch: 'master'
+gem 'awesome_print'
 # For demo purposes, we include the gosu library, but if you don't
 # need this, then comment it out  or remove it.
-gem 'gosu', require: false
-
-gem 'semver'
-gem 'awesome_print'
-
+# gem 'gosu', require: false
+# Well, we may supplant gosu with opengl
+gem 'opengl', require: false
+gem 'glu', require: false
+gem 'glut', require: false
+gem 'rubysdl', require: false
+# For interfacing with the C++ modules.
+# Note that with some newer versions of
+# Ruby, you may have issues with installing
+# them.
+gem 'ffi'
+gem 'rice'
+# For reading in ply 3D models
+gem 'ply'
 
 group :development do
-  gem "rspec", "~> 3"
-  gem "yard", "~> 0.7"
-  gem "rdoc", "~> 5"
-  gem "bundler", "~> 1.0"
-  gem "juwelier", "~> 2"
-  gem "simplecov",          ">= 0"
+  gem 'pry'
+  gem 'pry-doc'
+  gem 'pry-byebug'
+  gem 'pry-remote'
+  gem 'pry-rescue'
+  gem 'pry-stack_explorer'
   gem "pry",                ">= 0"
   gem "pry-byebug",         ">= 3"
   gem "pry-doc",            ">= 0"

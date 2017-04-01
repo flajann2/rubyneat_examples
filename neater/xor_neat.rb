@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 require 'xor'
 
 include NEAT::DSL
@@ -7,31 +8,49 @@ include NEAT::DSL
 # The number of inputs to the xor function
 XOR_INPUTS = 2
 XOR_STATES = 2 ** XOR_INPUTS
+XOR_INLIST = (1..XOR_INPUTS).map{ |i| ("i%d" % i).to_sym }
 MAX_FIT    = XOR_STATES
 ALMOST_FIT = XOR_STATES - 0.5
 
 # This defines the controller
 define "XOR System" do
-  # Define the IO neurons
-  inputs {
-    Hash[
-        (1..XOR_INPUTS).map{ |i|
-          [("i%d" % i).to_sym, InputNeuron]
-        } + [[:bias, BiasNeuron]]
-    ]
-  }
-  outputs out: TanhNeuron
+  description <<-DESC
+Simple XOR
+DESC
 
-  # Hidden neuron specification is optional. 
-  # The name given here is largely meaningless, but may be useful as some sort
-  # of unique flag.
-  hidden tan: TanhNeuron
+  compose do
+    tweann :main do
+      # Define the IO neurons
+      inputs {
+        Hash[
+           XOR_INLIST.map{ |inp|
+             [inp, InputNeuron]
+           } + [[:bias, BiasNeuron]]
+          ]
+      }
+      outputs out: TanhNeuron
+      
+      # Hidden neuron specification is optional. 
+      # The name given here is largely meaningless, 
+      # but may be useful as some sort
+      # of unique flag.
+      hidden tanh: TanhNeuron
+    end
+
+    connections do
+      inputs {
+        Hash[ XOR_INLIST.map{ |inp| [inp, {main: inp}] } ]
+      }
+      main out: {output: :out}
+      outputs :out
+    end
+  end
 
   ### Settings
   ## General
   hash_on_fitness false
-  start_population_size 30
-  population_size 30
+  start_population_size 50
+  population_size 50
   max_generations 10000
   max_population_history 10
 
@@ -58,6 +77,10 @@ define "XOR System" do
   # Mating
   survival_threshold 0.20 # top % allowed to mate in a species.
   survival_mininum_per_species  4 # for small populations, we need SOMETHING to go on.
+
+  # Elitism
+  #elite_count 4
+  #elite_percentage 10
 
   # Fitness costs
   fitness_cost_per_neuron 0#.00001
@@ -123,15 +146,15 @@ evolve do
 
   stop_on_fitness { |fitness, c|
     puts "*** Generation Run #{c.generation_num}, best is #{fitness[:best]} ***\n\n"
-    fitness[:overall] >= ALMOST_FIT # FIXME: This should be the :best here
+    fitness[:best] >= ALMOST_FIT
   }
 end
 
 # This requires the rubyneat_dashboard plugin.
 # If you don't need this, remove the next 3 lines.
-dashboard do
-  $log.info '**** Dashboard Running FOR XOR *****'
-end
+#dashboard do
+#  $log.info '**** Dashboard Running FOR XOR *****'
+#end
 
 report do |pop, rept|
   $log.info "REPORT #{rept.to_yaml}"
