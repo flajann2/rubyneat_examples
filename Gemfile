@@ -3,14 +3,16 @@ source 'https://rubygems.org'
 
 gem 'semver2'
 
-
 gem 'rubyneat'
+
 #gem 'rubyneat_dashboard'
 #gem 'rubyneat_rabbitmq'
 # During the development
+
 #gem 'rubyneat',           github: '/development/ruby_proj/rubyneat',           branch: 'hyper'
 #gem 'rubyneat_rabbitmq',  github: '/development/ruby_proj/rubyneat_rabbitmq',  branch: 'master'
 gem 'awesome_print'
+
 # For demo purposes, we include the gosu library, but if you don't
 # need this, then comment it out  or remove it.
 # gem 'gosu', require: false
@@ -19,12 +21,14 @@ gem 'opengl', require: false
 gem 'glu', require: false
 gem 'glut', require: false
 gem 'rubysdl', require: false
+
 # For interfacing with the C++ modules.
 # Note that with some newer versions of
 # Ruby, you may have issues with installing
 # them.
 gem 'ffi'
 gem 'rice'
+
 # For reading in ply 3D models
 gem 'ply'
 
@@ -35,10 +39,4 @@ group :development do
   gem 'pry-remote'
   gem 'pry-rescue'
   gem 'pry-stack_explorer'
-  gem "pry",                ">= 0"
-  gem "pry-byebug",         ">= 3"
-  gem "pry-doc",            ">= 0"
-  gem "pry-remote",         ">= 0"
-  gem "pry-rescue",         ">= 1"
-  gem "pry-stack_explorer", ">= 0"
 end
