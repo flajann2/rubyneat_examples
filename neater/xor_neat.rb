@@ -129,9 +129,9 @@ end
 
 # This requires the rubyneat_dashboard plugin.
 # If you don't need this, remove the next 3 lines.
-dashboard do
-  $log.info '**** Dashboard Running FOR XOR *****'
-end
+#dashboard do
+#  $log.info '**** Dashboard Running FOR XOR *****'
+#end
 
 report do |pop, rept|
   $log.info "REPORT #{rept.to_yaml}"
