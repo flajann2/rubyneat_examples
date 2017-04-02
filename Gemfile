@@ -1,17 +1,16 @@
 # Gemfile for your RubyNEAT RubyneatExamples project.
 source 'https://rubygems.org'
 
-# TODO: Uncomment the following
-#gem 'rubyneat'
+gem 'rubyneat', '~> 0.4'
 
 # For demo purposes, we include the gosu library, but if you don't
 # need this, then comment it out  or remove it.
-gem 'gosu', require: false
+#gem 'gosu', require: false
 
 # So you can create pretty charts and graphs of
 # your RubyNEAT progress, etc. Feel free to remove
 # this if you don't need it.
-gem 'rubyvis', require: false
+#gem 'rubyvis', require: false
 
 group :development do
   # If this fails, comment this out as the
@@ -24,9 +23,9 @@ group :development do
 end
 
 #FIXME this should not be necessary here.
-gem 'semver'
+gem 'semver2'
 
 # So we can have a dashboard to monitor and control the
 # progress of RubyNEAT
 # TODO: Uncomment the following
-gem 'rubyneat_dashboard'
+#gem 'rubyneat_dashboard'

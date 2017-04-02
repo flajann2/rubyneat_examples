@@ -1,152 +1,45 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (5.0.2)
-      concurrent-ruby (~> 1.0, >= 1.0.2)
-      i18n (~> 0.7)
-      minitest (~> 5.1)
-      tzinfo (~> 1.1)
     aquarium (0.5.1)
     awesome_print (1.7.0)
-    backports (3.7.0)
-    barista (1.3.0)
-      coffee-script (~> 2.2)
     bond (0.5.1)
-    chunky_png (1.3.8)
-    coffee-script (2.4.1)
-      coffee-script-source
-      execjs
-    coffee-script-source (1.12.2)
-    compass (1.0.3)
-      chunky_png (~> 1.2)
-      compass-core (~> 1.0.2)
-      compass-import-once (~> 1.0.5)
-      rb-fsevent (>= 0.9.3)
-      rb-inotify (>= 0.9)
-      sass (>= 3.3.13, < 3.5)
-    compass-core (1.0.3)
-      multi_json (~> 1.0)
-      sass (>= 3.3.0, < 3.5)
-    compass-import-once (1.0.5)
-      sass (>= 3.2, < 3.5)
-    concurrent-ruby (1.0.5)
-    daemons (1.2.4)
     debase (0.2.1)
       debase-ruby_core_source
     debase-ruby_core_source (0.9.9)
-    deep_dive (0.3.4)
+    deep_dive (0.3.5)
+      json (~> 2.0, >= 2.0.2)
     distribution (0.7.3)
-    eventmachine (1.2.3)
-    execjs (2.7.0)
-    ffi (1.9.18)
-    gosu (0.11.3.1)
-    haml (4.0.7)
-      tilt
-    hike (1.2.3)
-    i18n (0.8.1)
-    jsmin (1.0.1)
-    json (1.8.6)
-    json-stream (0.2.1)
-    libv8 (3.16.14.19)
-    minitest (5.10.1)
-    multi_json (1.12.1)
-    opal (0.10.3)
-      hike (~> 1.2)
-      sourcemap (~> 0.1.0)
-      sprockets (~> 3.1)
-      tilt (>= 1.4)
-    opal-jquery (0.4.2)
-      opal (>= 0.7.0, < 0.11.0)
-    queue_ding (0.1.3)
+    json (2.0.3)
+    queue_ding (0.1.5)
       aquarium (~> 0)
-      semver (~> 1)
-    rabl (0.13.1)
-      activesupport (>= 2.3.14)
-    rack (1.6.5)
-    rack-protection (1.5.3)
-      rack
-    rack-test (0.6.3)
-      rack (>= 1.0)
-    rb-fsevent (0.9.8)
-    rb-inotify (0.9.8)
-      ffi (>= 0.5.0)
+      json (~> 2.0, >= 2.0.2)
+      semver2 (~> 3)
     rb-readline (0.5.4)
-    ref (2.0.0)
-    rubyneat (0.4.2)
+    rubyneat (0.4.5)
       aquarium (~> 0)
       awesome_print (~> 1)
       bond (~> 0)
       debase (~> 0)
       deep_dive (~> 0)
       distribution (~> 0)
+      json (~> 2.0, >= 2.0.2)
       queue_ding
       rb-readline (~> 0)
       semver (~> 1)
       statistics2 (~> 0)
       thor (~> 0)
-    rubyneat_dashboard (0.4.1)
-      barista
-      compass (~> 1)
-      eventmachine (~> 1)
-      haml (~> 4)
-      json (~> 1)
-      json-stream (~> 0)
-      opal (~> 0.7)
-      opal-jquery (~> 0)
-      queue_ding
-      rabl (~> 0)
-      rubyneat
-      sass (~> 3)
-      sinatra (~> 1)
-      sinatra-assetpack (~> 0)
-      sinatra-contrib (~> 1)
-      therubyracer (~> 0)
-      thin (~> 1)
-    rubyvis (0.6.1)
-    sass (3.4.23)
     semver (1.0.1)
-    sinatra (1.4.8)
-      rack (~> 1.5)
-      rack-protection (~> 1.4)
-      tilt (>= 1.3, < 3)
-    sinatra-assetpack (0.3.5)
-      jsmin
-      rack-test
-      sinatra
-      tilt (>= 1.3.0, < 2.0)
-    sinatra-contrib (1.4.7)
-      backports (>= 2.0)
-      multi_json
-      rack-protection
-      rack-test
-      sinatra (~> 1.4.0)
-      tilt (>= 1.3, < 3)
-    sourcemap (0.1.1)
-    sprockets (3.7.1)
-      concurrent-ruby (~> 1.0)
-      rack (> 1, < 3)
+    semver2 (3.4.2)
     statistics2 (0.54)
-    therubyracer (0.12.3)
-      libv8 (~> 3.16.14.15)
-      ref
-    thin (1.7.0)
-      daemons (~> 1.0, >= 1.0.9)
-      eventmachine (~> 1.0, >= 1.0.4)
-      rack (>= 1, < 3)
     thor (0.19.4)
-    thread_safe (0.3.6)
-    tilt (1.4.1)
-    tzinfo (1.2.3)
-      thread_safe (~> 0.1)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  gosu
-  rubyneat_dashboard
-  rubyvis
-  semver
+  rubyneat (~> 0.4)
+  semver2
 
 BUNDLED WITH
    1.14.6
