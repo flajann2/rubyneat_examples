@@ -4,15 +4,20 @@ include NEAT::DSL
 
 #= Mockup for RSSI Beaconline Positioning
 # All distances and coordinates are in meters.
-# Vectors [x,y,z] maps to width, breadth, height, respectively.
+# Vectors [x,y,z] maps to width(row,x), breadth(col,y),
+# height(z), respectively.
 
-BEACON_NODES = 9
-BEACON_ROWS = 3
-BEACON_COLUMS = 3
+
+NODE_ROWS = 3
+NODE_COLUMS = 3
+
+BEACONS = 20
 
 ROOM_WIDTH = 10.0
 ROOM_BREADTH = 10.0
 ROOM_HEIGHT = 3.0
+
+HIGHEST_BEACON = 1.6
 
 # This is the goal (fitness) parameter
 MAX_ALLOWED_DISTANCE_ERROR  = 0.7
