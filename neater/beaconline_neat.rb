@@ -19,20 +19,31 @@ ROOM_HEIGHT = 3.0
 
 HIGHEST_BEACON = 1.6
 
+
+$raum = Raum.new(rows: NODE_ROWS,
+                 cols: NODE_COLS,
+                 width: ROOM_WIDTH,
+                 height: ROOM_HEIGHT,
+                 breadth: ROOM_BREADTH,
+                 beacons: BEACONS,
+                 highest: HIGHEST_BEACON)
+
 # This is the goal (fitness) parameter
-MAX_ALLOWED_DISTANCE_ERROR  = 0.7
+MAX_ALLOWED_DISTANCE_ERROR  = 1.0
 
 # This defines the controller
 define "Beaconline" do
   # Define the IO neurons
   inputs {
     Hash[
-        (1..BEACON_INPUTS).map{ |i|
-          [("i%d" % i).to_sym, InputNeuron]
+      (1..NODE_COLUMNS).map{ |j|
+        (1..NODE_ROWS).map{ |i|
+          [("i%dr_%dc" % [i, j]).to_sym, InputNeuron]
         } + [[:bias, BiasNeuron]]
+      }
     ]
   }
-  outputs out: TanhNeuron
+  outputs {out_x: TanhNeuron
 
   # Hidden neuron specification is optional. 
   # The name given here is largely meaningless, but may be useful as some sort

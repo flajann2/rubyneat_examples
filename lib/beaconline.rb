@@ -67,8 +67,12 @@ class Raum
                  breadth: 10.0,
                  rand: Random.new,
                  beacons: 20,
-                 highest: 1.6)
+                 highest: 1.6)    
 
+    @width   = width
+    @breadth = breadth
+    @height  = height
+    
     @nodes = Nodes.new(rows: rows,
                        cols: cols,
                        width: width,
@@ -82,6 +86,28 @@ class Raum
                            breadth: breadth,
                            highest: height)
   end
+  
+  def distance_matrix
+    @distance_matrix ||= compute_dm
+  end
+
+  private
+  def compute_dm
+    beacons.model.map{ |beacon_key, bpos|
+      nodes.model.map{ |node_key, npos|
+        [[beacon_key, node_key], rssi(distance(npos, bpos))]
+      }
+    }
+  end
+
+  def distance(u, v)
+    Math.sqrt u.zip(v).map{ |a, b| (b-a)**2.0 }.reduce(:+)
+  end
+
+  def rssi(dist)
+    dist
+    #dist < 10.0 ? dist : @width * @breadth * @height
+  end
 end
 
 
@@ -91,24 +117,16 @@ if __FILE__ == $PROGRAM_NAME
 
   raum = Raum.new(rows: 3,
                   cols: 3,
-                  width: 10.0,
+                  width: 30.0,
                   height: 3.0,
-                  breadth: 10.0,
-                  rand: Random.new,
+                  breadth: 30.0,
                   beacons: 20,
                   highest: 1.6)
 
-  pp raum.nodes.model
-  # Should be
-  # {[1, 1]=>[2.5, 2.5, 3.0],
-  #  [2, 1]=>[5.0, 2.5, 3.0],
-  #  [3, 1]=>[7.5, 2.5, 3.0],
-  #  [1, 2]=>[2.5, 5.0, 3.0],
-  #  [2, 2]=>[5.0, 5.0, 3.0],
-  #  [3, 2]=>[7.5, 5.0, 3.0],
-  #  [1, 3]=>[2.5, 7.5, 3.0],
-  #  [2, 3]=>[5.0, 7.5, 3.0],
-  #  [3, 3]=>[7.5, 7.5, 3.0]}
-  
+  puts 'NODES'
+  pp raum.nodes.model  
+  puts 'BEACONS'
   pp raum.beacons.model
+  puts 'DISTANCE_MATRIX'
+  pp raum.distance_matrix
 end

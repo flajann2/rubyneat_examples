@@ -2,6 +2,7 @@
 source 'https://rubygems.org'
 
 gem 'rubyneat', '~> 0.4'
+gem 'activesupport'
 
 # For demo purposes, we include the gosu library, but if you don't
 # need this, then comment it out  or remove it.

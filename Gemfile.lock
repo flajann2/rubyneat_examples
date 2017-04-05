@@ -50,6 +50,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activesupport
   rescue
   rubyneat (~> 0.4)
   semver2
