@@ -13,11 +13,11 @@ include NEAT::DSL
 NODE_ROWS = 3
 NODE_COLUMNS = 3
 
-BEACONS = 20
+BEACONS = 50
 
-ROOM_WIDTH = 10.0
-ROOM_BREADTH = 10.0
-ROOM_HEIGHT = 3.0
+ROOM_WIDTH   = 40.0
+ROOM_BREADTH = 40.0
+ROOM_HEIGHT  = 3.0
 
 HIGHEST_BEACON = 1.6
 
@@ -53,20 +53,25 @@ define "Beaconline" do
   # Hidden neuron specification is optional. 
   # The name given here is largely meaningless, but may be useful as some sort
   # of unique flag.
-  hidden tan: TanhNeuron, gauss: GaussianNeuron 
+  hidden tan: TanhNeuron,
+         gauss: GaussianNeuron,
+         linear: LinearNeuron,
+         sig: SigmoidNeuron
+         #cos: CosineNeuron,
+         #sin: SineNeuron
 
   ### Settings
   ## General
   hash_on_fitness false
-  start_population_size 30
-  population_size 30
+  start_population_size 100
+  population_size 100
   max_generations 10000
   max_population_history 10
 
   ## Evolver probabilities and SDs
   # Perturbations
-  mutate_perturb_gene_weights_prob 0.10
-  mutate_perturb_gene_weights_sd 0.25
+  mutate_perturb_gene_weights_prob 0.010
+  mutate_perturb_gene_weights_sd 0.10
 
   # Complete Change of weight
   mutate_change_gene_weights_prob 0.10
@@ -84,22 +89,25 @@ define "Beaconline" do
   mate_only_prob 0.10 #0.7
 
   # Mating
-  survival_threshold 0.20 # top % allowed to mate in a species.
+  survival_threshold 0.15 # top % allowed to mate in a species.
   survival_mininum_per_species  4 # for small populations, we need SOMETHING to go on.
 
   # Fitness costs
-  fitness_cost_per_neuron 0.00001
-  fitness_cost_per_gene   0.00001
+  fitness_cost_per_neuron 0.001
+  fitness_cost_per_gene   0.0001
 
   # Speciation
   compatibility_threshold 2.5
   disjoint_coefficient 0.6
   excess_coefficient 0.6
   weight_coefficient 0.2
-  max_species 20
+  max_species 40
   dropoff_age 15
   smallest_species 5
 
+  # elitism
+  elite_pop_count 5
+  
   # Sequencing
   start_sequence_at 0
   end_sequence_at BEACONS - 1
@@ -120,7 +128,7 @@ evolve do
 
   # Here we integrate the cost with the fitness.
   cost { |fitvec, cost|
-    fit = fitvec.reduce(:+) / BEACONS + cost
+    fit = fitvec.max + cost
     $log.debug ">>>>>>> fitvec #{fitvec} => #{fit}, cost #{cost}"
     fit
   }

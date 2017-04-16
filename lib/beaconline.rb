@@ -114,6 +114,7 @@ module Beaconline
     end
     
     def rssi(dist)
+      return dist
       r = -(10.9 * N * Math.log10(dist) + A)
       if r < FADEOUT
         0
