@@ -128,12 +128,12 @@ module Beaconline
 
   # for now, this is just a passthru
   def condition_rssi_vector vec
-    vec
+    vec #vec.map{ |p| -p/40.0 }
   end
 
   # for now, this is just a passthru
   def uncondition_position_vector vec
-    vec
+    vec #vec[0...vec.size].map{ |p| p * 100.0 } + [vec.last]
   end
   
   def node_key i, j

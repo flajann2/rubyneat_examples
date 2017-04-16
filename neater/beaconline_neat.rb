@@ -71,11 +71,11 @@ define "Beaconline" do
   ## Evolver probabilities and SDs
   # Perturbations
   mutate_perturb_gene_weights_prob 0.010
-  mutate_perturb_gene_weights_sd 0.10
+  mutate_perturb_gene_weights_sd 0.010
 
   # Complete Change of weight
-  mutate_change_gene_weights_prob 0.10
-  mutate_change_gene_weights_sd 1.00
+  mutate_change_gene_weights_prob 0.050
+  mutate_change_gene_weights_sd 0.10
 
   # Adding new neurons and genes
   mutate_add_neuron_prob 0.05
@@ -93,8 +93,8 @@ define "Beaconline" do
   survival_mininum_per_species  4 # for small populations, we need SOMETHING to go on.
 
   # Fitness costs
-  fitness_cost_per_neuron 0.001
-  fitness_cost_per_gene   0.0001
+  fitness_cost_per_neuron 0.0001
+  fitness_cost_per_gene   0.00001
 
   # Speciation
   compatibility_threshold 2.5
