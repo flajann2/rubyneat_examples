@@ -1,0 +1,34 @@
+* RubyNEAT Examples for SB
+** Examples
+*** beaconline
+    This is a simulation of doing RSSI locationing using
+    beacons. It is meant as a proof of concept.
+
+*** xor
+    Basic neural net test for functionality. This is the one exampled used in the
+    documentation at: http://rubyneat.com/wiki/Documentation
+
+*** xorall
+    This exercise (nearly) all of the CPPN neuron types.
+
+*** xoranalog
+    This tests represents the XOR function as an analog function.
+
+*** xorsin
+    Solves the XOR problem using the Sine and Cosine Neurons.
+    This converges very fast with normally no hidden layers.
+
+*** invpend
+    Pole Balancing (ongoing, not ready yet)
+** Stuff
+   Let's see how LaTeX work here.
+   \begin{equation}
+     \gamma=\sqrt{\kappa}
+   	 =\frac{u(x)}{v(x)}
+   \end{equation}
+
+   \begin{pmatrix}1&0\\
+   1&0\end{pmatrix}
+
+   If $a^2=b$ and \( b=2/a \), then the solution must be
+   either $$ a=+\sqrt{2} $$ or \[ a=-\sqrt{2} \].
