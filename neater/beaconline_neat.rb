@@ -1,3 +1,4 @@
+# coding: utf-8
 require 'beaconline'
 include Beaconline
 
@@ -10,7 +11,7 @@ include NEAT::DSL
 
 
 NODE_ROWS = 3
-NODE_COLUMS = 3
+NODE_COLUMNS = 3
 
 BEACONS = 20
 
@@ -22,7 +23,7 @@ HIGHEST_BEACON = 1.6
 
 
 $raum = Raum.new(rows: NODE_ROWS,
-                 cols: NODE_COLS,
+                 cols: NODE_COLUMNS,
                  width: ROOM_WIDTH,
                  height: ROOM_HEIGHT,
                  breadth: ROOM_BREADTH,
@@ -30,7 +31,7 @@ $raum = Raum.new(rows: NODE_ROWS,
                  highest: HIGHEST_BEACON)
 
 # This is the goal (fitness) parameter
-MAX_ALLOWED_DISTANCE_ERROR  = 1.0
+MAX_ALLOWED_DISTANCE_ERROR  = 2.0
 
 # This defines the controller
 define "Beaconline" do
@@ -39,12 +40,15 @@ define "Beaconline" do
     Hash[
       (1..NODE_COLUMNS).map{ |j|
         (1..NODE_ROWS).map{ |i|
-          [("i%dr_%dc" % [i, j]).to_sym, InputNeuron]
-        } + [[:bias, BiasNeuron]]
-      }
+          [node_key(i,j), InputNeuron]
+        }
+      }.flatten(1) + [[:bias, BiasNeuron]]
     ]
   }
-  outputs out_x: LinearNeuron, out_y: LinearNeuron, out_z: LinearNeuron
+  outputs ox: LinearNeuron,
+          oy: LinearNeuron,
+          oz: LinearNeuron,
+          oerr: TanhNeuron # should be less 0 if signal is OK
 
   # Hidden neuron specification is optional. 
   # The name given here is largely meaningless, but may be useful as some sort
@@ -84,8 +88,8 @@ define "Beaconline" do
   survival_mininum_per_species  4 # for small populations, we need SOMETHING to go on.
 
   # Fitness costs
-  fitness_cost_per_neuron 0#.00001
-  fitness_cost_per_gene   0#.00001
+  fitness_cost_per_neuron 0.00001
+  fitness_cost_per_gene   0.00001
 
   # Speciation
   compatibility_threshold 2.5
@@ -105,37 +109,34 @@ evolve do
   # This query shall return a vector result that will serve
   # as the inputs to the critter. 
   query { |seq|
-    # We'll use the seq to create the xor sequences via
-    # the least signficant bits.
-    condition_rssi_vector (0 ... BEACON_INPUTS).map{|i| (seq & (1 << i)) != 0}
+    # We'll use the seq to create the rssi sequences
+    condition_rssi_vector $raum.distance_matrix[seq].map{ |node, (rssi, dist)| rssi }
   }
+  
 
   # Compare the fitness of two critters. We may choose a different ordering
   # here.
-  compare {|f1, f2| f2 <=> f1 }
+  compare { |f1, f2| f1 <=> f2 }
 
   # Here we integrate the cost with the fitness.
   cost { |fitvec, cost|
-    fit = BEACON_STATES - fitvec.reduce {|a,r| a+r} - cost
+    fit = fitvec.reduce(:+) / BEACONS + cost
     $log.debug ">>>>>>> fitvec #{fitvec} => #{fit}, cost #{cost}"
     fit
   }
 
   fitness { |vin, vout, seq|
     unless vout == :error
-      bin = uncondition_boolean_vector vin
-      bout = uncondition_boolean_vector vout
-      bactual = [xor(*vin)]
-      vactual = condition_boolean_vector bactual
-      fit = (bout == bactual) ? 0.00 : 1.00
-      #simple_fitness_error(vout, vactual.map{|f| f * 0.50 })
-      bfit = (bout == bactual) ? 'T' : 'F'
-      $log.debug "(%s) Fitness bin=%s, bout=%s, bactual=%s, vout=%s, fit=%6.3f, seq=%s" %
-                     [bfit,
-                      bin,
-                      bout,
-                      bactual,
+      nodes = uncondition_position_vector vin
+      estimated_position = uncondition_position_vector vout
+      actual_position = $raum.beacons.model[seq]
+      fit = distance(estimated_position[0...3], actual_position)
+      
+      $log.debug "(%s) Fitness vin=%s, vout=%s, actual=%s, fit=%6.3f, seq=%s" %
+                     [fit,
+                      vin,
                       vout,
+                      actual_position,
                       fit,
                       seq]
       fit
@@ -147,7 +148,7 @@ evolve do
 
   stop_on_fitness { |fitness, c|
     puts "*** Generation Run #{c.generation_num}, best is #{fitness[:best]} ***\n\n"
-    fitness[:best] >= ALMOST_FIT
+    fitness[:best] <= MAX_ALLOWED_DISTANCE_ERROR
   }
 end
 

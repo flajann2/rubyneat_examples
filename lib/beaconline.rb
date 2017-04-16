@@ -8,7 +8,7 @@ module Beaconline
   N = (80.0 - A) / (10.0 * 1.4) # n - calibration (estimated) -(RSSI - A) / (10 log10 d)
   FADEOUT = -90.0
   MAX_CLOSENESS = -30.0
-  
+
   # Node Model
   class Nodes
     def initialize(rows: nil,
@@ -59,7 +59,7 @@ module Beaconline
     end
   
     def model
-      @model ||= (0..@beacons).map { |b|
+      @model ||= (0...@beacons).map { |b|
         [b, [@room_width * @rand.rand,
              @room_breadth * @rand.rand,
              @highest * @rand.rand]]
@@ -68,6 +68,7 @@ module Beaconline
   end
   
   class Raum
+    include Beaconline    
     attr_accessor :nodes, :beacons
     def initialize(rows: 3,
                    cols: 3,
@@ -104,16 +105,14 @@ module Beaconline
     
     def compute_dm
       beacons.model.map{ |beacon_key, bpos|
-        nodes.model.map{ |node_key, npos|
-          [[beacon_key, node_key], rssi(distance(npos, bpos)), distance(npos, bpos)]
-        }
-      }
+        [beacon_key, nodes.model.map{ |(i, j), npos|
+           [node_key(i, j),
+            [rssi(distance(npos, bpos)),
+             distance(npos, bpos)]]
+        }.to_h]
+      }.to_h
     end
-  
-    def distance(u, v)
-      Math.sqrt u.zip(v).map{ |a, b| (b-a)**2.0 }.reduce(:+)
-    end
-  
+    
     def rssi(dist)
       r = -(10.9 * N * Math.log10(dist) + A)
       if r < FADEOUT
@@ -132,8 +131,16 @@ module Beaconline
   end
 
   # for now, this is just a passthru
-  def uncondition_output_vector vec
+  def uncondition_position_vector vec
     vec
+  end
+  
+  def node_key i, j
+    ("i_%d_%d" % [i, j]).to_sym
+  end
+
+  def distance(u, v)
+    Math.sqrt u.zip(v).map{ |a, b| (b-a)**2.0 }.reduce(:+)
   end
 end
 

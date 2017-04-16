@@ -20,7 +20,12 @@ group :development do
 
   # If you are using an IDE, you may wish to remove
   # or replace with the IDE's debugger gem
-  #gem 'rescue'
+  gem 'pry'
+  gem 'pry-doc'
+  gem 'pry-byebug'
+  gem 'pry-remote'
+  gem 'pry-rescue'
+  gem 'pry-stack_explorer'
 end
 
 #FIXME this should not be necessary here.

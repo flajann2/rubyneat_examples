@@ -6,5 +6,5 @@
 =end
 
 def xor(*inp)
-  inp.map{|n| (n > 0) ? 1 : 0}.reduce {|p, i| p + ((i > 0) ? 1 : 0) } == 1
+  inp.map{ |n| (n > 0) ? 1 : 0}.reduce { |p, i| p + ((i > 0) ? 1 : 0) } == 1
 end

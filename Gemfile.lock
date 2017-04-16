@@ -8,17 +8,43 @@ GEM
       tzinfo (~> 1.1)
     aquarium (0.5.1)
     awesome_print (1.7.0)
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
     bond (0.5.1)
+    byebug (9.0.6)
+    coderay (1.1.1)
     concurrent-ruby (1.0.5)
     debase (0.2.1)
       debase-ruby_core_source
     debase-ruby_core_source (0.9.9)
+    debug_inspector (0.0.2)
     deep_dive (0.3.5)
       json (~> 2.0, >= 2.0.2)
     distribution (0.7.3)
     i18n (0.8.1)
+    interception (0.5)
     json (2.0.4)
+    method_source (0.8.2)
     minitest (5.10.1)
+    pry (0.10.4)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    pry-byebug (3.4.2)
+      byebug (~> 9.0)
+      pry (~> 0.10)
+    pry-doc (0.10.0)
+      pry (~> 0.9)
+      yard (~> 0.9)
+    pry-remote (0.1.8)
+      pry (~> 0.9)
+      slop (~> 3.0)
+    pry-rescue (1.4.5)
+      interception (>= 0.5)
+      pry
+    pry-stack_explorer (0.4.9.2)
+      binding_of_caller (>= 0.7)
+      pry (>= 0.9.11)
     queue_ding (0.1.5)
       aquarium (~> 0)
       json (~> 2.0, >= 2.0.2)
@@ -38,17 +64,25 @@ GEM
       statistics2 (~> 0)
       thor (~> 0)
     semver2 (3.4.2)
+    slop (3.6.0)
     statistics2 (0.54)
     thor (0.19.4)
     thread_safe (0.3.6)
     tzinfo (1.2.3)
       thread_safe (~> 0.1)
+    yard (0.9.8)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   activesupport
+  pry
+  pry-byebug
+  pry-doc
+  pry-remote
+  pry-rescue
+  pry-stack_explorer
   rubyneat (~> 0)
   semver2
 
