@@ -1,7 +1,7 @@
 # Gemfile for your RubyNEAT RubyneatExamples project.
 source 'https://rubygems.org'
 
-gem 'rubyneat', '~> 0.4'
+gem 'rubyneat', '~> 0'
 gem 'activesupport'
 
 # For demo purposes, we include the gosu library, but if you don't
@@ -20,8 +20,7 @@ group :development do
 
   # If you are using an IDE, you may wish to remove
   # or replace with the IDE's debugger gem
-  # gem 'debugger'
-  gem 'rescue'
+  #gem 'rescue'
 end
 
 #FIXME this should not be necessary here.

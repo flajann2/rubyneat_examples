@@ -1,14 +1,15 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (4.2.8)
+    activesupport (5.0.2)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (~> 0.7)
       minitest (~> 5.1)
-      thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     aquarium (0.5.1)
     awesome_print (1.7.0)
     bond (0.5.1)
+    concurrent-ruby (1.0.5)
     debase (0.2.1)
       debase-ruby_core_source
     debase-ruby_core_source (0.9.9)
@@ -16,16 +17,14 @@ GEM
       json (~> 2.0, >= 2.0.2)
     distribution (0.7.3)
     i18n (0.8.1)
-    json (2.0.3)
+    json (2.0.4)
     minitest (5.10.1)
     queue_ding (0.1.5)
       aquarium (~> 0)
       json (~> 2.0, >= 2.0.2)
       semver2 (~> 3)
     rb-readline (0.5.4)
-    rescue (0.0.1)
-      activesupport (~> 4)
-    rubyneat (0.4.5)
+    rubyneat (0.5.0)
       aquarium (~> 0)
       awesome_print (~> 1)
       bond (~> 0)
@@ -35,10 +34,9 @@ GEM
       json (~> 2.0, >= 2.0.2)
       queue_ding
       rb-readline (~> 0)
-      semver (~> 1)
+      semver2 (~> 3)
       statistics2 (~> 0)
       thor (~> 0)
-    semver (1.0.1)
     semver2 (3.4.2)
     statistics2 (0.54)
     thor (0.19.4)
@@ -51,8 +49,7 @@ PLATFORMS
 
 DEPENDENCIES
   activesupport
-  rescue
-  rubyneat (~> 0.4)
+  rubyneat (~> 0)
   semver2
 
 BUNDLED WITH

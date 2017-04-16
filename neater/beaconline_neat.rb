@@ -1,4 +1,5 @@
 require 'beaconline'
+include Beaconline
 
 include NEAT::DSL
 
@@ -43,12 +44,12 @@ define "Beaconline" do
       }
     ]
   }
-  outputs {out_x: TanhNeuron
+  outputs out_x: LinearNeuron, out_y: LinearNeuron, out_z: LinearNeuron
 
   # Hidden neuron specification is optional. 
   # The name given here is largely meaningless, but may be useful as some sort
   # of unique flag.
-  hidden tan: TanhNeuron
+  hidden tan: TanhNeuron, gauss: GaussianNeuron 
 
   ### Settings
   ## General
@@ -97,7 +98,7 @@ define "Beaconline" do
 
   # Sequencing
   start_sequence_at 0
-  end_sequence_at 2 ** BEACON_INPUTS - 1
+  end_sequence_at BEACONS - 1
 end
 
 evolve do
@@ -106,7 +107,7 @@ evolve do
   query { |seq|
     # We'll use the seq to create the xor sequences via
     # the least signficant bits.
-    condition_boolean_vector (0 ... BEACON_INPUTS).map{|i| (seq & (1 << i)) != 0}
+    condition_rssi_vector (0 ... BEACON_INPUTS).map{|i| (seq & (1 << i)) != 0}
   }
 
   # Compare the fitness of two critters. We may choose a different ordering
