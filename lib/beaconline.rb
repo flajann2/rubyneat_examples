@@ -8,13 +8,17 @@ end
 
 # Node Model
 class Nodes
-  def initialize
-    @rows = NODE_ROWS
-    @cols = NODE_COLUMS
+  def initialize(rows: nil,
+                 cols: nil,
+                 width: nil,
+                 height: nil,
+                 breadth: nil)
+    @rows = rows
+    @cols = cols
     @nodes = @rows * @cols
-    @room_width = ROOM_WIDTH
-    @room_height = ROOM_HEIGHT
-    @room_breadth = ROOM_BREADTH
+    @room_width = width
+    @room_height = height
+    @room_breadth = breadth
   end
 
   def model
@@ -29,14 +33,19 @@ class Nodes
 end
 
 class Beacons
-  
-  def initialize
-    @rand = Random.new
-    @beacons = BEACONS
-    @room_width = ROOM_WIDTH
-    @room_height = ROOM_HEIGHT
-    @room_breadth = ROOM_BREADTH
-    @highest = HIGHEST_BEACON
+  def initialize(rand: Random.new,
+                 beacons: 20,
+                 width: nil,
+                 height: nil,
+                 breadth: nil,
+                 highest: nil
+                )
+    @rand = rand
+    @beacons = beacons
+    @room_width = width
+    @room_height = height
+    @room_breadth = breadth
+    @highest = highest
     raise "beacons too high" if @highest > @room_height
   end
 
@@ -49,28 +58,75 @@ class Beacons
   end
 end
 
+class Raum
+  attr_accessor :nodes, :beacons
+  def initialize(rows: 3,
+                 cols: 3,
+                 width: 10.0,
+                 height: 3.0,
+                 breadth: 10.0,
+                 rand: Random.new,
+                 beacons: 20,
+                 highest: 1.6)    
+
+    @width   = width
+    @breadth = breadth
+    @height  = height
+    
+    @nodes = Nodes.new(rows: rows,
+                       cols: cols,
+                       width: width,
+                       height: height,
+                       breadth: breadth)
+
+    @beacons = Beacons.new(rand: rand,
+                           beacons: beacons,
+                           width: width,
+                           height: height,
+                           breadth: breadth,
+                           highest: height)
+  end
+  
+  def distance_matrix
+    @distance_matrix ||= compute_dm
+  end
+
+  private
+  def compute_dm
+    beacons.model.map{ |beacon_key, bpos|
+      nodes.model.map{ |node_key, npos|
+        [[beacon_key, node_key], rssi(distance(npos, bpos))]
+      }
+    }
+  end
+
+  def distance(u, v)
+    Math.sqrt u.zip(v).map{ |a, b| (b-a)**2.0 }.reduce(:+)
+  end
+
+  def rssi(dist)
+    dist
+    #dist < 10.0 ? dist : @width * @breadth * @height
+  end
+end
+
+
 # Testing
 if __FILE__ == $PROGRAM_NAME
   require 'pp'  
-  NODE_ROWS = 3
-  NODE_COLUMS = 3
-  ROOM_WIDTH = 10.0
-  ROOM_BREADTH = 10.0
-  ROOM_HEIGHT = 3.0
-  BEACONS = 20
-  HIGHEST_BEACON = 1.6
 
-  pp Nodes.new.model
-  # Should be
-  # {[1, 1]=>[2.5, 2.5, 3.0],
-  #  [2, 1]=>[5.0, 2.5, 3.0],
-  #  [3, 1]=>[7.5, 2.5, 3.0],
-  #  [1, 2]=>[2.5, 5.0, 3.0],
-  #  [2, 2]=>[5.0, 5.0, 3.0],
-  #  [3, 2]=>[7.5, 5.0, 3.0],
-  #  [1, 3]=>[2.5, 7.5, 3.0],
-  #  [2, 3]=>[5.0, 7.5, 3.0],
-  #  [3, 3]=>[7.5, 7.5, 3.0]}
-  
-  pp Beacons.new.model
+  raum = Raum.new(rows: 3,
+                  cols: 3,
+                  width: 30.0,
+                  height: 3.0,
+                  breadth: 30.0,
+                  beacons: 20,
+                  highest: 1.6)
+
+  puts 'NODES'
+  pp raum.nodes.model  
+  puts 'BEACONS'
+  pp raum.beacons.model
+  puts 'DISTANCE_MATRIX'
+  pp raum.distance_matrix
 end

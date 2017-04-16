@@ -2,6 +2,7 @@
 source 'https://rubygems.org'
 
 gem 'rubyneat', '~> 0.4'
+gem 'activesupport'
 
 # For demo purposes, we include the gosu library, but if you don't
 # need this, then comment it out  or remove it.
@@ -20,6 +21,7 @@ group :development do
   # If you are using an IDE, you may wish to remove
   # or replace with the IDE's debugger gem
   # gem 'debugger'
+  gem 'rescue'
 end
 
 #FIXME this should not be necessary here.
