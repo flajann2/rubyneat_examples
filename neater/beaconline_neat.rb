@@ -1,7 +1,7 @@
 # coding: utf-8
 require 'beaconline'
-include Beaconline
 
+include Beaconline
 include NEAT::DSL
 
 #= Mockup for RSSI Beaconline Positioning
@@ -33,33 +33,43 @@ $raum = Raum.new(rows: NODE_ROWS,
 # This is the goal (fitness) parameter
 MAX_ALLOWED_DISTANCE_ERROR  = 2.0
 
+INLIST = (1..NODE_COLUMNS).map{ |j| (1..NODE_ROWS).map{ |i| node_key(i,j) }}.flatten
+
 # This defines the controller
 define "Beaconline" do
-  # Define the IO neurons
-  inputs {
-    Hash[
-      (1..NODE_COLUMNS).map{ |j|
-        (1..NODE_ROWS).map{ |i|
-          [node_key(i,j), InputNeuron]
-        }
-      }.flatten(1) + [[:bias, BiasNeuron]]
-    ]
-  }
-  outputs ox: LinearNeuron,
-          oy: LinearNeuron,
-          oz: LinearNeuron,
-          oerr: TanhNeuron # should be less 0 if signal is OK
+  compose do
+    tweann :main do
+      # Define the IO neurons
+      inputs {
+        Hash[INLIST.map{ |inp| [inp InputNeuron] } + [[:bias, BiasNeuron]]]
+      }
+      
+      # Hidden neuron specification is optional. 
+      # The name given here is largely meaningless, but may be useful as some sort
+      # of unique flag.
+      hidden tan: TanhNeuron,
+             gauss: GaussianNeuron,
+             linear: LinearNeuron,
+             sig: SigmoidNeuron,
+             cos: CosineNeuron,
+             sin: SineNeuron
+    
+      outputs ox: LinearNeuron,
+              oy: LinearNeuron,
+              oz: LinearNeuron,
+              oerr: TanhNeuron # should be less 0 if signal is OK
+    end
+    
+  end
 
-  # Hidden neuron specification is optional. 
-  # The name given here is largely meaningless, but may be useful as some sort
-  # of unique flag.
-  hidden tan: TanhNeuron,
-         gauss: GaussianNeuron,
-         linear: LinearNeuron,
-         sig: SigmoidNeuron
-         #cos: CosineNeuron,
-         #sin: SineNeuron
-
+  connecitons do
+    inputs {
+      Hash[INLIST.map{ |inp| [inp, {main: inp}] } ]
+    }
+    main out: {output: :out}
+    outputs :ox, :oy, :oz, :oerr
+  end
+  
   ### Settings
   ## General
   hash_on_fitness false
