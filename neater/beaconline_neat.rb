@@ -71,15 +71,15 @@ define "Beaconline" do
   ## Evolver probabilities and SDs
   # Perturbations
   mutate_perturb_gene_weights_prob 0.010
-  mutate_perturb_gene_weights_sd 0.010
+  mutate_perturb_gene_weights_sd 0.050
 
   # Complete Change of weight
   mutate_change_gene_weights_prob 0.050
   mutate_change_gene_weights_sd 0.10
 
   # Adding new neurons and genes
-  mutate_add_neuron_prob 0.05
-  mutate_add_gene_prob 0.20
+  mutate_add_neuron_prob 0.1
+  mutate_add_gene_prob 0.30
 
   # Switching genes on and off
   mutate_gene_disable_prob 0.01
