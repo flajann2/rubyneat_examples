@@ -150,12 +150,12 @@ end
 if __FILE__ == $PROGRAM_NAME
   require 'pp'  
 
-  raum = Beaconline::Raum.new(rows: 3,
-                              cols: 3,
-                              width: 30.0,
+  raum = Beaconline::Raum.new(rows: 10,
+                              cols: 10,
+                              width: 40.0,
                               height: 3.0,
-                              breadth: 30.0,
-                              beacons: 20,
+                              breadth: 40.0,
+                              beacons: 50,
                               highest: 1.6)
 
   puts 'NODES'

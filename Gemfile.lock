@@ -50,7 +50,7 @@ GEM
       json (~> 2.0, >= 2.0.2)
       semver2 (~> 3)
     rb-readline (0.5.4)
-    rubyneat (0.5.0)
+    rubyneat (0.5.2)
       aquarium (~> 0)
       awesome_print (~> 1)
       bond (~> 0)

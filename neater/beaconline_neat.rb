@@ -10,8 +10,8 @@ include NEAT::DSL
 # height(z), respectively.
 
 
-NODE_ROWS = 3
-NODE_COLUMNS = 3
+NODE_ROWS = 10
+NODE_COLUMNS = 4
 
 BEACONS = 50
 
@@ -63,8 +63,8 @@ define "Beaconline" do
   ### Settings
   ## General
   hash_on_fitness false
-  start_population_size 100
-  population_size 100
+  start_population_size 150
+  population_size 150
   max_generations 10000
   max_population_history 10
 
@@ -101,7 +101,7 @@ define "Beaconline" do
   disjoint_coefficient 0.6
   excess_coefficient 0.6
   weight_coefficient 0.2
-  max_species 40
+  max_species 30
   dropoff_age 15
   smallest_species 5
 
@@ -155,7 +155,7 @@ evolve do
   }
 
   stop_on_fitness { |fitness, c|
-    puts "*** Generation Run #{c.generation_num}, best is #{fitness[:best]} ***\n\n"
+    puts "*** Generation Run #{c.generation_num}, best is #{fitness[:best]} at cost #{fitness[:best_cost]} ***\n\n"
     fitness[:best] <= MAX_ALLOWED_DISTANCE_ERROR
   }
 end
